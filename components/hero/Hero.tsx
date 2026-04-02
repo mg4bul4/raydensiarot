@@ -1,35 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Crosshair, Radio } from "lucide-react";
+import { Crosshair } from "lucide-react";
 import { HeroInvaders } from "./HeroInvaders";
 import { Marquee } from "./Marquee";
 
 const DISPLAY_NAME = "RAYDEN SIAROT";
 const ROLE_LINE = "UI DESIGNER & CREATIVE DEVELOPER";
 
+const mechanical = [0.4, 0, 0.2, 1] as const;
+
 const slamFast = {
-  hidden: { y: -48, opacity: 0 },
+  hidden: { y: -24, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring" as const, stiffness: 520, damping: 28, mass: 0.85 },
+    transition: { duration: 0.28, ease: mechanical },
   },
 };
 
 const slamHeavy = {
-  hidden: { y: 72, opacity: 0, skewX: -6 },
+  hidden: { y: 40, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    skewX: 0,
-    transition: { type: "spring" as const, stiffness: 380, damping: 26, mass: 1.1 },
+    transition: { duration: 0.32, ease: mechanical },
   },
 };
 
 const staggerHud = {
   show: {
-    transition: { staggerChildren: 0.06, delayChildren: 0.08 },
+    transition: { staggerChildren: 0.05, delayChildren: 0.04 },
   },
 };
 
@@ -65,39 +66,23 @@ export function Hero() {
         animate="show"
         variants={staggerHud}
       >
-        {/* Top HUD */}
-        <div className="flex items-start justify-between gap-4 border-b border-fg-stark pb-4 font-mono text-[10px] uppercase tracking-widest text-[var(--hud-muted)] sm:text-xs">
-          <motion.div
-            className="flex items-center gap-2 text-neon-green"
-            variants={slamFast}
-          >
-            <Radio className="size-4 shrink-0" strokeWidth={2} />
-            <span className="leading-none">SIG: LIVE // CHANNEL_01</span>
-          </motion.div>
-          <motion.div className="hidden text-right sm:block" variants={slamFast}>
-            <span className="text-fg-stark">COORD</span>{" "}
-            <span className="text-neon-magenta">48.2143°N</span>
-            <span className="mx-1 text-fg-stark/40">|</span>
-            <span className="text-neon-magenta">16.3707°E</span>
-          </motion.div>
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-fg-stark pb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--hud-muted)] sm:text-[11px] sm:tracking-[0.22em]">
+          <motion.span variants={slamFast}>Viewport · 1440px</motion.span>
+          <motion.span variants={slamFast} className="hidden sm:inline">
+            Render · Next.js
+          </motion.span>
+          <motion.span variants={slamFast}>Color · sRGB</motion.span>
         </div>
 
         {/* Corner brackets */}
-        <div className="pointer-events-none absolute left-3 top-[calc(3.25rem+1px)] text-neon-yellow/80 sm:left-5 md:left-8">
-          <Crosshair className="size-6 sm:size-8" strokeWidth={1.25} />
+        <div className="pointer-events-none absolute left-3 top-[calc(3.25rem+1px)] text-neon-yellow/70 sm:left-5 md:left-8">
+          <Crosshair className="size-6 sm:size-8" strokeWidth={1.25} aria-hidden />
         </div>
-        <div className="pointer-events-none absolute right-3 top-[calc(3.25rem+1px)] rotate-90 text-neon-yellow/80 sm:right-5 md:right-8">
-          <Crosshair className="size-6 sm:size-8" strokeWidth={1.25} />
+        <div className="pointer-events-none absolute right-3 top-[calc(3.25rem+1px)] rotate-90 text-neon-yellow/70 sm:right-5 md:right-8">
+          <Crosshair className="size-6 sm:size-8" strokeWidth={1.25} aria-hidden />
         </div>
 
         <div className="flex flex-1 flex-col items-stretch justify-center py-8 sm:py-12 md:py-16">
-          <motion.p
-            className="mb-3 font-mono text-[10px] uppercase tracking-[0.5em] text-neon-magenta sm:text-xs sm:tracking-[0.65em]"
-            variants={slamFast}
-          >
-            PLAYER_01 // SELECT_PROFILE
-          </motion.p>
-
           <motion.h1
             id="hero-heading"
             className="font-display text-[clamp(2.75rem,12vw,9rem)] font-normal uppercase leading-[0.88] tracking-tight text-fg-stark"
@@ -108,7 +93,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="mt-5 max-w-4xl font-mono text-sm uppercase leading-relaxed tracking-[0.2em] text-fg-stark/85 sm:text-base sm:tracking-[0.28em]"
+            className="mt-5 max-w-4xl font-mono text-sm uppercase leading-relaxed tracking-[0.2em] text-fg-stark/75 sm:text-base sm:tracking-[0.24em]"
             variants={slamFast}
           >
             {ROLE_LINE}
@@ -118,42 +103,32 @@ export function Hero() {
             <motion.button
               type="button"
               onClick={scrollToArchive}
-              className="group relative inline-flex w-full items-center justify-center border-2 border-fg-stark bg-fg-stark px-8 py-5 font-mono text-sm font-medium uppercase tracking-[0.25em] text-bg-deep shadow-[6px_6px_0_0_var(--neon-green)] transition-colors sm:w-auto sm:py-4"
+              className="group relative inline-flex w-full items-center justify-center border-2 border-fg-stark bg-fg-stark px-8 py-5 font-mono text-sm font-medium uppercase tracking-[0.2em] text-bg-deep shadow-[6px_6px_0_0_var(--neon-green)] sm:w-auto sm:py-4"
+              transition={{ duration: 0.1, ease: mechanical }}
               whileHover={{
                 backgroundColor: "var(--neon-yellow)",
                 color: "var(--bg-deep)",
                 borderColor: "var(--neon-yellow)",
                 boxShadow: "6px 6px 0 0 var(--neon-magenta)",
-                transition: { duration: 0.08 },
               }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{ scale: 0.99 }}
             >
-              <span className="relative z-10 flex items-center gap-2">
-                <span className="h-2 w-2 bg-neon-green anim-blink group-hover:bg-bg-deep" />
-                START_GAME
-              </span>
+              <span className="relative z-10">Selected work</span>
             </motion.button>
-
-            <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--hud-muted)] sm:text-xs">
-              [ press to load archive ]
-            </p>
           </motion.div>
         </div>
 
         <motion.footer
-          className="mt-auto flex flex-wrap items-end justify-between gap-4 border-t border-fg-stark pt-4 font-mono text-[10px] uppercase tracking-widest text-[var(--hud-muted)] sm:text-xs"
+          className="mt-auto border-t border-fg-stark pt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--hud-muted)] sm:text-[11px]"
           variants={slamFast}
         >
-          <span>BUILD: PROTOTYPE_UI</span>
-          <span className="text-neon-yellow">FIELD_READY: TRUE</span>
+          UI & front-end — available for contract and full-time
         </motion.footer>
       </motion.div>
 
-      {/* CRT + noise stacks */}
       <div className="pointer-events-none absolute inset-0 z-[15] mix-blend-overlay">
-        <div className="crt-flicker-layer absolute inset-0 bg-neon-green/10" />
-        <div className="crt-scanlines absolute inset-0 opacity-70" />
-        <div className="noise-grain absolute inset-0 opacity-80 mix-blend-soft-light" />
+        <div className="crt-scanlines absolute inset-0 opacity-50" />
+        <div className="noise-grain absolute inset-0 opacity-50 mix-blend-soft-light" />
       </div>
     </section>
   );

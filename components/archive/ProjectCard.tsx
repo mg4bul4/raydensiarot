@@ -4,51 +4,40 @@ import { motion, type Variants } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import type { ArchiveProject } from "./archive-data";
 
+const mechanical = [0.4, 0, 0.2, 1] as const;
+
 const cardVariants: Variants = {
   rest: {
     scale: 1,
     x: 0,
-    skewX: 0,
     backgroundColor: "rgba(10, 10, 10, 0.96)",
     color: "var(--fg-stark)",
     filter: "none",
     boxShadow: "6px 6px 0 0 var(--neon-yellow)",
   },
   hover: {
-    scale: 1.02,
-    x: [0, -6, 5, -3, 4, 0],
-    skewX: [0, -3, 2, -1, 0],
+    scale: 1,
+    x: [0, -3, 2, 0],
     backgroundColor: "var(--fg-stark)",
     color: "var(--bg-deep)",
-    filter: ["none", "invert(1)", "invert(0)", "hue-rotate(90deg)", "none"],
+    filter: ["none", "invert(1)", "invert(0)"],
     boxShadow: "8px 8px 0 0 var(--neon-magenta)",
     transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-      filter: { duration: 0.35, times: [0, 0.15, 0.35, 0.55, 1] },
-      x: { duration: 0.45, times: [0, 0.15, 0.35, 0.55, 0.75, 1] },
-      skewX: { duration: 0.45, times: [0, 0.2, 0.45, 0.7, 1] },
-      backgroundColor: { duration: 0.07 },
-      color: { duration: 0.07 },
+      duration: 0.22,
+      ease: mechanical,
+      x: { duration: 0.16, times: [0, 0.35, 0.7, 1], ease: "linear" },
+      filter: { duration: 0.14, times: [0, 0.45, 1], ease: "linear" },
+      backgroundColor: { duration: 0.1, ease: mechanical },
+      color: { duration: 0.1, ease: mechanical },
     },
   },
 };
 
 const glitchLayerVariants: Variants = {
-  rest: { opacity: 0, x: 0 },
+  rest: { opacity: 0 },
   hover: {
-    opacity: [0, 0.85, 0.2, 0.9, 0, 0.6, 0],
-    x: [0, 3, -4, 2, -5, 0],
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
-
-const specsVariants: Variants = {
-  rest: { opacity: 0, y: 6 },
-  hover: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.12, ease: "easeOut" },
+    opacity: [0, 0.5, 0.1, 0.45, 0],
+    transition: { duration: 0.2, ease: "linear" },
   },
 };
 
@@ -61,12 +50,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <motion.article
-      layout
       initial="rest"
       whileHover="hover"
       animate="rest"
       variants={cardVariants}
-      className="group relative flex min-h-[280px] flex-col border-2 border-fg-stark"
+      className="group relative flex min-h-[260px] flex-col border-2 border-fg-stark"
     >
       {isActionable ? (
         <a
@@ -74,59 +62,53 @@ export function ProjectCard({ project }: ProjectCardProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="absolute inset-0 z-20 cursor-pointer"
-          aria-label={`Open project ${project.title}`}
+          aria-label={`${project.title} — opens in a new tab`}
         />
       ) : null}
 
-      {/* CRT-style RGB split ghost (decorative) */}
       <motion.div
         aria-hidden
         variants={glitchLayerVariants}
         className="pointer-events-none absolute inset-0 z-[5] mix-blend-screen"
       >
-        <div className="absolute inset-0 translate-x-[2px] bg-neon-magenta/35" />
-        <div className="absolute inset-0 -translate-x-[3px] bg-neon-green/30" />
-        <div className="crt-scanlines absolute inset-0 opacity-40" />
+        <div className="absolute inset-0 translate-x-[2px] bg-neon-magenta/30" />
+        <div className="absolute inset-0 -translate-x-[2px] bg-neon-green/25" />
       </motion.div>
 
       <div className="relative z-10 flex flex-1 flex-col p-4 sm:p-5">
-        <div className="flex items-start justify-between gap-3 border-b border-current pb-3 font-mono text-[10px] uppercase tracking-[0.35em] opacity-80">
-          <span>DROP_{project.index}</span>
-          {isActionable ? (
-            <ExternalLink className="size-4 shrink-0" strokeWidth={2} aria-hidden />
-          ) : (
-            <span className="text-[9px] tracking-widest">NO_ROUTE</span>
-          )}
+        <div className="flex items-start justify-end gap-2">
+          <p
+            className="border border-current bg-bg-deep px-2 py-1 font-mono text-[9px] uppercase leading-none tracking-[0.18em] text-fg-stark group-hover:border-bg-deep group-hover:bg-fg-stark group-hover:text-bg-deep sm:text-[10px] sm:tracking-[0.22em]"
+            aria-label={`Role: ${project.role}. Year: ${project.year}.`}
+          >
+            {project.role.replace(/\s+/g, " ")} · {project.year}
+          </p>
         </div>
 
-        <h3 className="mt-4 font-display text-2xl uppercase leading-none tracking-tight sm:text-3xl">
+        <h3 className="mt-5 font-display text-2xl uppercase leading-none tracking-tight sm:text-3xl">
           {project.title}
         </h3>
 
-        <dl className="mt-4 space-y-2 font-mono text-xs uppercase leading-snug tracking-wide sm:text-sm">
-          <div className="flex flex-wrap gap-x-2 gap-y-1">
-            <dt className="text-[var(--hud-muted)] group-hover:text-bg-deep/55">ROLE</dt>
-            <dd className="font-medium">{project.role}</dd>
-          </div>
-          <div className="flex flex-wrap gap-x-2 gap-y-1">
-            <dt className="text-[var(--hud-muted)] group-hover:text-bg-deep/55">VIBE</dt>
-            <dd className="font-medium text-neon-yellow group-hover:text-neon-magenta">
-              {project.vibe}
-            </dd>
-          </div>
-        </dl>
+        <p className="mt-4 font-mono text-[11px] uppercase leading-relaxed tracking-wide text-[var(--hud-muted)] group-hover:text-bg-deep/65 sm:text-xs">
+          {project.focus}
+        </p>
 
-        <motion.div
-          variants={specsVariants}
-          className="mt-auto border-t border-dashed border-current pt-4 font-mono text-[10px] uppercase leading-relaxed tracking-wider text-[var(--hud-muted)] group-hover:text-bg-deep/70 sm:text-xs"
-        >
-          <p className="mb-2 text-fg-stark/90 group-hover:text-bg-deep">RAW_READOUT //</p>
-          <ul className="space-y-1">
-            {project.specLines.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
-        </motion.div>
+        <ul className="mt-6 space-y-1.5 border-t border-fg-stark/30 pt-4 font-mono text-[10px] uppercase leading-relaxed tracking-wider text-fg-stark/80 group-hover:text-bg-deep/75 sm:text-[11px] sm:tracking-wide">
+          {project.specLines.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+
+        {isActionable ? (
+          <p className="mt-4 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-neon-green group-hover:text-neon-magenta">
+            <ExternalLink className="size-3.5 shrink-0" strokeWidth={2} aria-hidden />
+            Live
+          </p>
+        ) : (
+          <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--hud-muted)] group-hover:text-bg-deep/50">
+            Case study available on request
+          </p>
+        )}
       </div>
     </motion.article>
   );

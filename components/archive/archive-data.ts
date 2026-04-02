@@ -3,7 +3,8 @@ export type ArchiveProject = {
   index: string;
   title: string;
   role: string;
-  vibe: string;
+  year: string;
+  focus: string;
   href: string;
   specLines: string[];
 };
@@ -14,12 +15,13 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     index: "01",
     title: "Nafs.fyi",
     role: "UI Designer",
-    vibe: "Startup App Design",
+    year: "2024",
+    focus: "Startup product: onboarding, dashboard, and mobile-first layouts.",
     href: "https://nafs.fyi",
     specLines: [
-      "STACK: PRODUCT_UI",
-      "SIGNAL: HI_FI_SCREENS",
-      "TAGS: [MOBILE_FIRST, TOKENS]",
+      "VIEWPORT · 390–1440PX",
+      "HANDOFF · FIGMA · COMPONENT_SET",
+      "COLOR · SRGB · DESIGN_TOKENS",
     ],
   },
   {
@@ -27,12 +29,13 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     index: "02",
     title: "MSA at UTA Website",
     role: "Co-Developer & Designer",
-    vibe: "Community Platform",
+    year: "2023",
+    focus: "Community site: events, content hierarchy, and membership flows.",
     href: "#",
     specLines: [
-      "STACK: WEB_PLATFORM",
-      "SIGNAL: COMMUNITY_OPS",
-      "TAGS: [CMS, EVENTS, BRAND]",
+      "VIEWPORT · 1280PX_LAB",
+      "RENDER · NEXT.JS · RESPONSIVE",
+      "COLOR · SRGB · BRAND_SYSTEM",
     ],
   },
   {
@@ -40,12 +43,13 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     index: "03",
     title: "SIARIA LABS",
     role: "Founder / Lead Designer",
-    vibe: "Design Agency Site",
+    year: "2025",
+    focus: "Studio presence: positioning, case structure, and editorial type.",
     href: "#",
     specLines: [
-      "STACK: AGENCY_FRONTEND",
-      "SIGNAL: STUDIO_LED",
-      "TAGS: [LEADERSHIP, CRAFT]",
+      "VIEWPORT · 1440PX",
+      "RENDER · NEXT.JS · APP_ROUTER",
+      "TYPE · DISPLAY / MONO_PAIR",
     ],
   },
 ];

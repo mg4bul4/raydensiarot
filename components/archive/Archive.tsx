@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Database } from "lucide-react";
 import { ARCHIVE_PROJECTS } from "./archive-data";
 import { ProjectCard } from "./ProjectCard";
 
+const mechanical = [0.4, 0, 0.2, 1] as const;
+
 const sectionReveal = {
-  hidden: { opacity: 0, y: 56 },
+  hidden: { opacity: 0, y: 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring" as const, stiffness: 260, damping: 28 },
+    transition: { duration: 0.35, ease: mechanical },
   },
 };
 
 const gridStagger = {
   show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.08 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.05 },
   },
 };
 
 const tileEntry = {
-  hidden: { opacity: 0, y: 40, rotate: -2 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    rotate: 0,
-    transition: { type: "spring" as const, stiffness: 400, damping: 30 },
+    transition: { duration: 0.28, ease: mechanical },
   },
 };
 
@@ -42,27 +42,22 @@ export function Archive() {
       variants={sectionReveal}
     >
       <div className="relative mx-auto max-w-7xl">
-        <div
-          className="pointer-events-none absolute -left-px -top-px hidden h-16 w-px bg-neon-green/80 md:block"
-          aria-hidden
-        />
-        <div className="mb-10 flex flex-col gap-6 border-b border-fg-stark pb-8 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-5 border-b border-fg-stark pb-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.45em] text-neon-green sm:text-xs">
-              <Database className="size-4 shrink-0" strokeWidth={2} aria-hidden />
-              MODULE // INVENTORY_SCAN
+            <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.35em] text-[var(--hud-muted)] sm:text-xs">
+              Index
             </p>
             <h2
               id="archive-heading"
               className="font-display text-5xl uppercase leading-none tracking-tight text-fg-stark sm:text-6xl md:text-7xl"
               style={{ textShadow: "4px 4px 0 var(--neon-magenta)" }}
             >
-              THE_ARCHIVE
+              Selected work
             </h2>
           </div>
-          <p className="max-w-md font-mono text-xs uppercase leading-relaxed tracking-[0.2em] text-[var(--hud-muted)] sm:text-sm">
-            Select a drop to decode payload. Hover triggers interference pattern +
-            inverse buffer.
+          <p className="max-w-md font-mono text-xs uppercase leading-relaxed tracking-[0.16em] text-fg-stark/60 sm:text-sm">
+            Product, community, and studio sites — interface design with build-ready
+            handoff.
           </p>
         </div>
 
