@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Crosshair, Radio } from "lucide-react";
+import { HeroInvaders } from "./HeroInvaders";
 import { Marquee } from "./Marquee";
 
 const DISPLAY_NAME = "RAYDEN SIAROT";
@@ -53,6 +54,8 @@ export function Hero() {
           backgroundSize: "clamp(28px, 6vw, 56px) clamp(28px, 6vw, 56px)",
         }}
       />
+
+      <HeroInvaders />
 
       <Marquee />
 

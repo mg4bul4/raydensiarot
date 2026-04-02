@@ -87,3 +87,38 @@ body {
 .anim-blink {
   animation: blink-cursor 1.1s step-end infinite;
 }
+
+/* Hero: slow Space Invader–style drift (compositor-friendly translate3d only) */
+@keyframes hero-invader-march {
+  0% {
+    transform: translate3d(-18vw, 0, 0);
+  }
+  100% {
+    transform: translate3d(118vw, 0, 0);
+  }
+}
+
+.hero-invader-march-a {
+  animation: hero-invader-march 55s linear infinite;
+  animation-delay: -8s;
+}
+
+.hero-invader-march-b {
+  animation: hero-invader-march 72s linear infinite;
+  animation-delay: -32s;
+}
+
+.hero-invader-march-c {
+  animation: hero-invader-march 63s linear infinite;
+  animation-delay: -48s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-invader-march-a,
+  .hero-invader-march-b,
+  .hero-invader-march-c {
+    animation: none !important;
+    transform: translate3d(12vw, 0, 0);
+    opacity: 0.5;
+  }
+}
