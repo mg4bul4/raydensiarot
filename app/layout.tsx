@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Rayden Siarot — UI Designer & Creative Developer",
   description:
-    "Brutalist portfolio — UI/UX, creative development, and digital product design.",
+    "UI design and creative development — portfolio of deployments and system specs.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${anton.variable} ${jetbrainsMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased selection:bg-neon-yellow selection:text-bg-deep">
+      <body className="min-h-full flex flex-col antialiased selection:bg-neon-green selection:text-bg-deep">
         {children}
       </body>
     </html>

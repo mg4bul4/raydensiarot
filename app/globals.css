@@ -1,21 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #0a0a0a;
-  --fg-stark: #f5f5f5;
-  --neon-yellow: #eeff00;
+  --bg-deep: #000000;
+  --fg-stark: #ffffff;
   --neon-green: #00ff66;
-  --neon-magenta: #ff00aa;
-  --grid-line: rgba(255, 255, 255, 0.08);
-  --hud-muted: rgba(245, 245, 245, 0.45);
+  --grid-line: rgba(255, 255, 255, 0.1);
+  --hud-muted: rgba(255, 255, 255, 0.52);
 }
 
 @theme inline {
   --color-bg-deep: var(--bg-deep);
   --color-fg-stark: var(--fg-stark);
-  --color-neon-yellow: var(--neon-yellow);
   --color-neon-green: var(--neon-green);
-  --color-neon-magenta: var(--neon-magenta);
   --font-display: var(--font-anton), Impact, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
   --background: var(--bg-deep);
@@ -42,41 +38,25 @@
   }
 }
 
-@keyframes crt-flicker {
-  0%,
-  100% {
-    opacity: 0.03;
-  }
-  50% {
-    opacity: 0.06;
-  }
-}
-
 body {
   background: var(--bg-deep);
   color: var(--fg-stark);
   font-family: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-/* Scanline + grain overlay helpers */
 .crt-scanlines {
   background: repeating-linear-gradient(
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.18) 2px,
-    rgba(0, 0, 0, 0.18) 4px
+    rgba(255, 255, 255, 0.04) 2px,
+    rgba(255, 255, 255, 0.04) 4px
   );
   pointer-events: none;
 }
 
-.crt-flicker-layer {
-  animation: crt-flicker 4s ease-in-out infinite;
-  pointer-events: none;
-}
-
 .noise-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.11'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 
@@ -88,7 +68,6 @@ body {
   animation: blink-cursor 1.1s step-end infinite;
 }
 
-/* Hero: slow Space Invader–style drift (compositor-friendly translate3d only) */
 @keyframes hero-invader-march {
   0% {
     transform: translate3d(-18vw, 0, 0);
@@ -119,6 +98,6 @@ body {
   .hero-invader-march-c {
     animation: none !important;
     transform: translate3d(12vw, 0, 0);
-    opacity: 0.5;
+    opacity: 0.35;
   }
 }

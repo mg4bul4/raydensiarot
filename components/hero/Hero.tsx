@@ -2,41 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Crosshair } from "lucide-react";
+import Link from "next/link";
 import { HeroInvaders } from "./HeroInvaders";
 import { Marquee } from "./Marquee";
 
-const DISPLAY_NAME = "RAYDEN SIAROT";
 const ROLE_LINE = "UI DESIGNER & CREATIVE DEVELOPER";
 
 const mechanical = [0.4, 0, 0.2, 1] as const;
+const snap = { duration: 0.2, ease: mechanical };
 
-const slamFast = {
-  hidden: { y: -24, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.28, ease: mechanical },
-  },
+const fast = {
+  hidden: { y: -16, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: snap },
 };
 
-const slamHeavy = {
-  hidden: { y: 40, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.32, ease: mechanical },
-  },
+const heavy = {
+  hidden: { y: 24, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: snap },
 };
 
 const staggerHud = {
-  show: {
-    transition: { staggerChildren: 0.05, delayChildren: 0.04 },
-  },
+  hidden: {},
+  show: { transition: { staggerChildren: 0.04, delayChildren: 0.03 } },
 };
-
-function scrollToArchive() {
-  document.getElementById("archive")?.scrollIntoView({ behavior: "smooth" });
-}
 
 export function Hero() {
   return (
@@ -44,7 +32,6 @@ export function Hero() {
       className="relative isolate flex min-h-dvh flex-col overflow-hidden bg-bg-deep text-fg-stark"
       aria-labelledby="hero-heading"
     >
-      {/* Structural grid */}
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-90"
         style={{
@@ -60,75 +47,75 @@ export function Hero() {
 
       <Marquee />
 
-      <motion.div
-        className="relative z-10 flex flex-1 flex-col px-4 pb-10 pt-6 sm:px-6 md:px-10"
-        initial="hidden"
-        animate="show"
-        variants={staggerHud}
-      >
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-fg-stark pb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--hud-muted)] sm:text-[11px] sm:tracking-[0.22em]">
-          <motion.span variants={slamFast}>Viewport · 1440px</motion.span>
-          <motion.span variants={slamFast} className="hidden sm:inline">
-            Render · Next.js
-          </motion.span>
-          <motion.span variants={slamFast}>Color · sRGB</motion.span>
+      <div className="relative z-10 flex flex-1 flex-col px-4 pb-10 pt-6 sm:px-6 md:px-10">
+        <div
+          className="pointer-events-none absolute left-4 top-28 z-10 font-mono text-[9px] uppercase leading-tight tracking-[0.14em] text-fg-stark/45 sm:left-6 sm:top-32 sm:text-[10px] md:left-10"
+          aria-hidden
+        >
+          LOC: ARLINGTON_TX
+        </div>
+        <div
+          className="pointer-events-none absolute right-4 top-28 z-10 text-right font-mono text-[9px] uppercase leading-tight tracking-[0.14em] text-fg-stark/45 sm:right-6 sm:top-32 sm:text-[10px] md:right-10"
+          aria-hidden
+        >
+          VER: 2026.04
+        </div>
+        <div
+          className="pointer-events-none absolute bottom-36 left-4 z-10 font-mono text-[9px] uppercase leading-tight tracking-[0.14em] text-fg-stark/45 sm:bottom-40 sm:left-6 sm:text-[10px] md:left-10"
+          aria-hidden
+        >
+          STATUS: ONLINE
         </div>
 
-        {/* Corner brackets */}
-        <div className="pointer-events-none absolute left-3 top-[calc(3.25rem+1px)] text-neon-yellow/70 sm:left-5 md:left-8">
+        <div className="pointer-events-none absolute left-3 top-[calc(3.25rem+1px)] text-fg-stark/35 sm:left-5 md:left-8">
           <Crosshair className="size-6 sm:size-8" strokeWidth={1.25} aria-hidden />
         </div>
-        <div className="pointer-events-none absolute right-3 top-[calc(3.25rem+1px)] rotate-90 text-neon-yellow/70 sm:right-5 md:right-8">
+        <div className="pointer-events-none absolute right-3 top-[calc(3.25rem+1px)] rotate-90 text-fg-stark/35 sm:right-5 md:right-8">
           <Crosshair className="size-6 sm:size-8" strokeWidth={1.25} aria-hidden />
         </div>
 
-        <div className="flex flex-1 flex-col items-stretch justify-center py-8 sm:py-12 md:py-16">
+        <motion.div
+          className="flex flex-1 flex-col items-stretch justify-center border-b border-fg-stark pb-[max(6rem,12vh)] pt-12 sm:pb-20 sm:pt-16"
+          initial="hidden"
+          animate="show"
+          variants={staggerHud}
+        >
           <motion.h1
             id="hero-heading"
-            className="font-display text-[clamp(2.75rem,12vw,9rem)] font-normal uppercase leading-[0.88] tracking-tight text-fg-stark"
-            style={{ textShadow: "4px 4px 0 var(--neon-yellow)" }}
-            variants={slamHeavy}
+            className="font-normal uppercase text-fg-stark"
+            variants={heavy}
           >
-            {DISPLAY_NAME}
+            <span className="block font-display text-[clamp(3.25rem,14vw,10rem)] leading-[0.82] tracking-tighter">
+              RAYDEN
+            </span>
+            <span className="mt-1 block font-display text-[clamp(2.5rem,11vw,8rem)] leading-[0.82] tracking-tighter">
+              SIAROT
+            </span>
+            <span className="mt-8 block max-w-5xl font-display text-[clamp(1rem,3.2vw,2.75rem)] leading-[1.05] tracking-tighter sm:mt-10">
+              {ROLE_LINE}
+            </span>
           </motion.h1>
 
-          <motion.p
-            className="mt-5 max-w-4xl font-mono text-sm uppercase leading-relaxed tracking-[0.2em] text-fg-stark/75 sm:text-base sm:tracking-[0.24em]"
-            variants={slamFast}
+          <motion.div
+            className="mt-12 w-full sm:mt-14 sm:w-auto"
+            variants={fast}
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.995 }}
+            transition={snap}
           >
-            {ROLE_LINE}
-          </motion.p>
-
-          <motion.div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center" variants={slamFast}>
-            <motion.button
-              type="button"
-              onClick={scrollToArchive}
-              className="group relative inline-flex w-full items-center justify-center border-2 border-fg-stark bg-fg-stark px-8 py-5 font-mono text-sm font-medium uppercase tracking-[0.2em] text-bg-deep shadow-[6px_6px_0_0_var(--neon-green)] sm:w-auto sm:py-4"
-              transition={{ duration: 0.1, ease: mechanical }}
-              whileHover={{
-                backgroundColor: "var(--neon-yellow)",
-                color: "var(--bg-deep)",
-                borderColor: "var(--neon-yellow)",
-                boxShadow: "6px 6px 0 0 var(--neon-magenta)",
-              }}
-              whileTap={{ scale: 0.99 }}
+            <Link
+              href="/about"
+              className="flex min-h-[3.25rem] w-full items-center justify-center border border-fg-stark bg-bg-deep px-6 py-4 font-mono text-xs uppercase tracking-[0.16em] text-fg-stark transition-colors hover:bg-neon-green hover:text-bg-deep hover:border-neon-green sm:min-h-0 sm:w-auto sm:px-8 sm:text-sm"
             >
-              <span className="relative z-10">Selected work</span>
-            </motion.button>
+              ABOUT ME
+            </Link>
           </motion.div>
-        </div>
-
-        <motion.footer
-          className="mt-auto border-t border-fg-stark pt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--hud-muted)] sm:text-[11px]"
-          variants={slamFast}
-        >
-          UI & front-end — available for contract and full-time
-        </motion.footer>
-      </motion.div>
+        </motion.div>
+      </div>
 
       <div className="pointer-events-none absolute inset-0 z-[15] mix-blend-overlay">
-        <div className="crt-scanlines absolute inset-0 opacity-50" />
-        <div className="noise-grain absolute inset-0 opacity-50 mix-blend-soft-light" />
+        <div className="crt-scanlines absolute inset-0 opacity-40" />
+        <div className="noise-grain absolute inset-0 opacity-40 mix-blend-soft-light" />
       </div>
     </section>
   );
