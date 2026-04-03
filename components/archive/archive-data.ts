@@ -6,6 +6,8 @@ export type ArchiveProject = {
   year: string;
   description?: string;
   mission?: string;
+  /** Single high-signal outcome line for listings (constraints → result). */
+  outcomeLead?: string;
   impactPoints?: string[];
   href: string;
   featured?: boolean;
@@ -19,12 +21,14 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     type: "Startup platform",
     role: "Creative lead",
     year: "2023",
+    outcomeLead:
+      "0→1 product: dual-audience trust, scheduling, and brand system under one roof.",
     mission:
-      "Bridging the gap between academia and industry. Built a digital bridge for students to access high-level professional mentorship.",
+      "Students needed credible access to industry mentors; mentors needed a low-friction way to show up. I owned brand and platform UX so both sides could commit in minutes—not after a chain of cold emails.",
     impactPoints: [
-      "Jumpstarted the initial brand identity and platform UX.",
-      "Scaled student-to-professional connectivity.",
-      "Established design-driven empowerment as a core mission value.",
+      "End-to-end UI and design system from a standing start—scalable for future product work.",
+      "Booking and profile flows tuned to reduce hesitation on both sides of the marketplace.",
+      "Visual language that reads executive-grade to sponsors and approachable to students.",
     ],
     href: "/projects/grounded-talks",
     featured: true,
@@ -36,8 +40,9 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     type: "Mobile app",
     role: "UI designer",
     year: "—",
+    outcomeLead: "Sensitive category UX: clarity first, judgment never.",
     description:
-      "Muslim women's health startup. Focused on intuitive UX and high-fidelity UI.",
+      "Women’s health startup in a stigmatized space. UI work prioritized scanability, calm hierarchy, and flows that work when users are distracted or low on time.",
     href: "https://nafs.fyi",
     ctaLabel: "Visit site",
   },
@@ -47,8 +52,9 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     type: "Web platform",
     role: "Lead developer",
     year: "—",
+    outcomeLead: "Community site: events, resources, and onboarding in one place.",
     description:
-      "Community-driven digital hub for the UT Arlington Muslim Student Association.",
+      "Owned the student org’s public web presence—information architecture, build, and handoff so leadership can update content without engineering.",
     href: "#",
     ctaLabel: "Soon",
   },
@@ -58,8 +64,9 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     type: "Design agency",
     role: "Founder",
     year: "—",
+    outcomeLead: "Independent practice: product UI and creative direction for hire.",
     description:
-      "A creative lab specializing in distinctive digital experiences.",
+      "Small studio focused on disciplined interfaces and coherent brand execution—fewer surfaces, sharper intent.",
     href: "#",
     ctaLabel: "Soon",
   },

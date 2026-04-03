@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Open_Sans, Raleway } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { BrushRule } from "@/components/kanso/BrushRule";
+import { ExitToHome } from "@/components/layout/ExitToHome";
 import { SectionLabel } from "@/components/kanso/SectionLabel";
 
 const openSans = Open_Sans({
@@ -24,21 +24,21 @@ const helveticaNeueStyle = {
     '"Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif',
 } as const;
 
-const ease = [0.25, 0.1, 0.25, 1] as const;
+const snap = { duration: 0.25, ease: [0.4, 0, 0.2, 1] as const };
 
 const container = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.06, delayChildren: 0.04 },
+    transition: { staggerChildren: 0.05, delayChildren: 0.03 },
   },
 };
 
 const fade = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 12 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease },
+    transition: snap,
   },
 };
 
@@ -64,13 +64,91 @@ function ImageFrame({
 }) {
   return (
     <figure className="flex flex-col">
-      <div className="rounded-sm border border-black/20 bg-[#fff8dc] p-3 sm:p-4">
+      <div className="overflow-hidden rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-3 sm:p-4">
         {children}
       </div>
       <figcaption className="mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-black/45">
         {caption}
       </figcaption>
     </figure>
+  );
+}
+
+function OutcomeSignals() {
+  const items = [
+    {
+      label: "0→1 delivery",
+      detail:
+        "Brand, UI shell, and scheduling-minded flows established together—not as a slide deck.",
+    },
+    {
+      label: "Dual audience",
+      detail:
+        "One system had to earn trust from students and from time-poor professionals without splitting the experience.",
+    },
+    {
+      label: "Friction focus",
+      detail:
+        "Profiles and booking paths were the leverage points: hesitation there kills a two-sided product.",
+    },
+  ];
+
+  return (
+    <motion.div
+      variants={fade}
+      className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3"
+    >
+      {items.map((item) => (
+        <div
+          key={item.label}
+          className="rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-6 sm:p-7"
+        >
+          <p className="kanso-heading text-lg font-bold uppercase leading-tight tracking-tight text-[#d32f2f] sm:text-xl">
+            {item.label}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-black/82 sm:text-[15px]">
+            {item.detail}
+          </p>
+        </div>
+      ))}
+    </motion.div>
+  );
+}
+
+function KeyFindingsGrid() {
+  const findings = [
+    {
+      title: "Scheduling clarity",
+      body: "Primary job-to-be-done: get a session booked without negotiation spam. Controls and states favor obvious next steps.",
+    },
+    {
+      title: "Trust on both sides",
+      body: "Profiles and credentials had to read legitimate to sponsors and low-risk to students—visual restraint over novelty.",
+    },
+    {
+      title: "Brand as proof",
+      body: "The identity signals stability so the platform could borrow authority before it had years of usage data.",
+    },
+    {
+      title: "Scalable system",
+      body: "Tokens, type, and components were set up so later features could plug in without a visual reset.",
+    },
+  ];
+
+  return (
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+      {findings.map((f) => (
+        <div
+          key={f.title}
+          className="rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-5 sm:p-6"
+        >
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#d32f2f]/90">
+            {f.title}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-black/85">{f.body}</p>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -88,18 +166,18 @@ function MaterialsBoard() {
       className="py-16 sm:py-20"
       aria-labelledby="materials-heading"
     >
-      <SectionLabel id="materials-heading">Materials board</SectionLabel>
+      <SectionLabel id="materials-heading">System materials</SectionLabel>
 
       <p className="mt-6 max-w-prose text-sm leading-relaxed text-black/80">
-        Color relationships and type scale for the GroundedTalks system — set on
-        cream ground.
+        A tight palette and typographic contract so marketing and product
+        surfaces stay aligned as the product grows.
       </p>
 
       <div className="mt-10 flex flex-wrap gap-6">
         {swatches.map((s) => (
           <div key={s.hex} className="flex flex-col gap-2">
             <div
-              className="h-14 w-24 rounded-sm border border-black/15 shadow-none"
+              className="h-14 w-24 rounded-sm border border-[#D32F2F]"
               style={{ backgroundColor: s.hex }}
             />
             <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/55">
@@ -110,11 +188,11 @@ function MaterialsBoard() {
         ))}
       </div>
 
-      <div className="mt-12 space-y-6 rounded-sm border border-black/15 bg-[#fff8dc] p-6 sm:p-8">
+      <div className="mt-12 space-y-6 rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-6 sm:p-8">
         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-black/45">
           Typography scale
         </p>
-        <div className="space-y-6 border-t border-black/10 pt-6">
+        <div className="space-y-6 border-t border-[#D32F2F]/35 pt-6">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/40">
               Heading
@@ -133,8 +211,8 @@ function MaterialsBoard() {
             <p
               className={`mt-2 text-[13px] leading-relaxed text-black/88 sm:text-sm ${openSans.className}`}
             >
-              UX logic focused on high-fidelity UI and seamless connection with
-              matching details across scheduling, profiles, and trust surfaces.
+              Supporting copy stays calm and legible—scheduling, profiles, and
+              trust surfaces share the same rhythm.
             </p>
           </div>
           <div>
@@ -152,22 +230,22 @@ function MaterialsBoard() {
         </div>
       </div>
 
-      <div className="mt-10 rounded-sm border border-black/20 bg-neutral-950 p-5 sm:p-6">
+      <div className="mt-10 overflow-hidden rounded-sm border border-[#D32F2F] bg-neutral-950 p-5 sm:p-6">
         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50">
           Logotype lockup
         </p>
-        <div className="relative mx-auto mt-4 w-full max-w-[280px]">
+        <div className="relative mx-auto mt-4 w-full max-w-[280px] overflow-hidden">
           <Image
             src="/projects/grounded-talks/wordmark-groundedtalks-white.png"
             alt="GroundedTalks logotype"
             width={1024}
             height={196}
-            className="h-auto w-full object-contain"
+            className="h-auto w-full object-contain object-bottom"
             sizes="280px"
           />
         </div>
         <div className="mt-6 flex items-center justify-center gap-4 border-t border-white/10 pt-6">
-          <div className="relative h-12 w-12 shrink-0 sm:h-14 sm:w-14">
+          <div className="relative h-12 w-12 shrink-0 overflow-hidden sm:h-14 sm:w-14">
             <Image
               src="/projects/grounded-talks/gt-stem-mark.png"
               alt="GT stem mark"
@@ -177,7 +255,7 @@ function MaterialsBoard() {
             />
           </div>
           <p className="text-left text-xs leading-relaxed text-white/65">
-            Stem mark for app and social surfaces.
+            Stem mark for app icon and social avatars.
           </p>
         </div>
       </div>
@@ -195,82 +273,93 @@ export function GroundedTalksDebrief() {
         variants={container}
       >
         <motion.header variants={fade} className="mb-2">
-          <Link
-            href="/projects"
-            className="text-[11px] font-medium uppercase tracking-[0.22em] text-black/70 transition-colors hover:text-[#d32f2f]"
-          >
-            ← Archive
-          </Link>
-          <p className="mt-10 text-[10px] font-medium uppercase tracking-[0.28em] text-black/45">
-            Mission debriefing
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+            <ExitToHome />
+            <Link
+              href="/projects"
+              className="font-mono text-[10px] uppercase tracking-[0.2em] text-black transition-colors duration-200 hover:text-[#D32F2F] sm:text-[11px]"
+            >
+              ← THE_ARCHIVE
+            </Link>
+          </div>
+          <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.28em] text-black/50">
+            CASE_STUDY
           </p>
-          <h1 className="kanso-heading mt-3 text-[clamp(2rem,7vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-black">
+          <h1 className="kanso-heading mt-3 text-[clamp(2rem,7vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]">
             GroundedTalks
           </h1>
+          <p className="mt-8 max-w-prose text-base leading-relaxed text-black/85 sm:text-[17px]">
+            GroundedTalks needed to feel like a serious bridge—not a campus
+            experiment. The design job was to turn a two-sided access problem
+            into a product that both students and professionals would actually
+            use.
+          </p>
         </motion.header>
 
-        <motion.div variants={fade} className="my-12 md:my-16">
-          <BrushRule />
-        </motion.div>
+        <OutcomeSignals />
+
+        <div className="h-14 md:h-20" aria-hidden />
 
         <motion.section
           variants={fade}
-          id="mission-overview"
-          aria-labelledby="mission-overview-h"
+          id="brand-intent"
+          aria-labelledby="brand-intent-h"
           className="pb-4"
         >
-          <SectionLabel id="mission-overview-h">Mission overview</SectionLabel>
-          <div className="mt-8">
-            <Field label="Project" value="GroundedTalks" />
-            <Field label="Role" value="Creative lead" />
-            <Field label="Timeline" value="2023" />
-            <Field
-              label="Objective"
-              value="Bridge the gap between academic theory and industry reality by connecting students directly with high-level professionals."
-            />
-          </div>
+          <SectionLabel id="brand-intent-h">Brand intent</SectionLabel>
+          <p className="mt-8 max-w-prose text-base leading-relaxed text-black/88 sm:text-[17px]">
+            The emotional target was <strong className="font-semibold text-black">credible warmth</strong>
+            : approachable enough for students exploring careers, restrained enough
+            for mentors who guard their time. Visual noise would have read as
+            unserious; cold corporate polish would have read as inaccessible.
+          </p>
         </motion.section>
 
-        <motion.div variants={fade} className="my-12 md:my-16">
-          <BrushRule />
-        </motion.div>
-
-        <motion.section variants={fade} id="problem" aria-labelledby="problem-h">
-          <SectionLabel id="problem-h">Problem</SectionLabel>
-          <div className="mt-8">
-            <Field label="Situation" value="Critical disconnect" />
-            <Field
-              label="Context"
-              value="Students lacked a direct line to real-world career advice, creating a vacuum between graduation and employment. Industry pros were willing to talk but lacked a centralized portal for connection."
-            />
-          </div>
-        </motion.section>
-
-        <motion.div variants={fade} className="my-12 md:my-16">
-          <BrushRule />
-        </motion.div>
+        <div className="h-14 md:h-20" aria-hidden />
 
         <motion.section
           variants={fade}
-          id="solution"
-          aria-labelledby="solution-h"
+          id="constraints"
+          aria-labelledby="constraints-h"
         >
-          <SectionLabel id="solution-h">Solution</SectionLabel>
+          <SectionLabel id="constraints-h">Operating constraints</SectionLabel>
           <div className="mt-8">
             <Field
-              label="Approach"
-              value="Designed a seamless digital hub for mentorship and career transparency."
+              label="Market gap"
+              value="Students were navigating informal networks; mentors were willing but hard to reach through ad hoc channels. No single place owned the handoff."
             />
             <Field
-              label="Experience focus"
-              value="Focused on frictionless scheduling, clean professional profiles, and a high-trust brand identity that appealed to both Gen-Z students and corporate executives."
+              label="Trust bar"
+              value="Both sides needed to believe the platform was legitimate before sharing time or contact context—brand and UI had to earn that in the first session."
+            />
+            <Field
+              label="Execution scope"
+              value="Creative lead meant brand and product surfaces moved together: identity, key screens, and component logic had to ship as one coherent story."
             />
           </div>
         </motion.section>
 
-        <motion.div variants={fade} className="my-12 md:my-16">
-          <BrushRule />
-        </motion.div>
+        <div className="h-14 md:h-20" aria-hidden />
+
+        <motion.section
+          variants={fade}
+          id="design-response"
+          aria-labelledby="design-response-h"
+        >
+          <SectionLabel id="design-response-h">Design response</SectionLabel>
+          <div className="mt-8">
+            <Field
+              label="Product narrative"
+              value="Flows emphasize scheduling and profile clarity—where hesitation usually kills conversion in mentorship marketplaces."
+            />
+            <Field
+              label="Visual system"
+              value="Cream ground, sharp ink type, and a single accent discipline keep marketing and product surfaces feeling like one institution."
+            />
+          </div>
+        </motion.section>
+
+        <div className="h-14 md:h-20" aria-hidden />
 
         <motion.section
           variants={fade}
@@ -278,14 +367,15 @@ export function GroundedTalksDebrief() {
           aria-labelledby="systems-h"
           className="py-4"
         >
-          <SectionLabel id="systems-h">Systems debriefing</SectionLabel>
+          <SectionLabel id="systems-h">Proof &amp; key findings</SectionLabel>
           <p className="mt-6 text-sm leading-relaxed text-black/75">
-            Product surface and journey map — contained, minimal frames.
+            Primary UI surface alongside the decisions that drove layout and
+            hierarchy—replacing a busy journey poster with explicit findings.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8">
-            <ImageFrame caption="UI surface">
-              <div className="flex min-h-[200px] items-center justify-center bg-[#0a0a0a] sm:min-h-[240px]">
+          <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-10 lg:items-start">
+            <ImageFrame caption="Product UI">
+              <div className="flex min-h-[200px] items-center justify-center overflow-hidden bg-[#0a0a0a] sm:min-h-[240px]">
                 <Image
                   src="/projects/grounded-talks/ui-mockup.png"
                   alt="GroundedTalks UI mockup"
@@ -297,30 +387,22 @@ export function GroundedTalksDebrief() {
                 />
               </div>
             </ImageFrame>
-            <ImageFrame caption="User flow">
-              <div className="flex min-h-[200px] items-center justify-center bg-white sm:min-h-[240px]">
-                <Image
-                  src="/projects/grounded-talks/user-flow-map.png"
-                  alt="User flow map"
-                  width={1800}
-                  height={1000}
-                  className="h-auto max-h-[min(70vh,480px)] w-full object-contain"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-black/45">
+                Key findings
+              </p>
+              <div className="mt-4">
+                <KeyFindingsGrid />
               </div>
-            </ImageFrame>
+            </div>
           </div>
         </motion.section>
 
-        <motion.div variants={fade} className="my-12 md:my-16">
-          <BrushRule />
-        </motion.div>
+        <div className="h-14 md:h-20" aria-hidden />
 
         <MaterialsBoard />
 
-        <motion.div variants={fade} className="my-12 md:my-16">
-          <BrushRule />
-        </motion.div>
+        <div className="h-14 md:h-20" aria-hidden />
 
         <motion.section
           variants={fade}
@@ -328,20 +410,34 @@ export function GroundedTalksDebrief() {
           aria-labelledby="impact-h"
           className="pb-8"
         >
-          <SectionLabel id="impact-h">Impact report</SectionLabel>
-          <div className="mt-8">
-            <Field
-              label="Outcome 1"
-              value="Jumpstarted the initial brand DNA and platform UI from zero."
-            />
-            <Field
-              label="Outcome 2"
-              value="Established a scalable design system for future iterations."
-            />
-            <Field
-              label="Outcome 3"
-              value="Empowered students to bypass traditional networking barriers."
-            />
+          <SectionLabel id="impact-h">Outcomes</SectionLabel>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-3">
+            {[
+              {
+                head: "Foundation",
+                text: "Brand DNA and UI foundation established from zero—ready for future product cycles.",
+              },
+              {
+                head: "Scalable kit",
+                text: "Design decisions packaged as reusable structure, not one-off comps.",
+              },
+              {
+                head: "Access model",
+                text: "Positioned the platform to shorten the path from intent to booked conversation.",
+              },
+            ].map((o) => (
+              <div
+                key={o.head}
+                className="rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-5 sm:p-6"
+              >
+                <p className="kanso-heading text-sm font-bold uppercase leading-tight text-[#D32F2F]">
+                  {o.head}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-black/82">
+                  {o.text}
+                </p>
+              </div>
+            ))}
           </div>
         </motion.section>
       </motion.div>

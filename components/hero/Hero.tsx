@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const ease = [0.25, 0.1, 0.25, 1] as const;
+const ease = [0.4, 0, 0.2, 1] as const;
 
 const titleReveal = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease },
+    transition: { duration: 0.28, ease },
   },
 };
 
@@ -55,7 +55,7 @@ export function Hero() {
         <motion.div variants={titleReveal} className="mt-14 sm:mt-16">
           <Link
             href="/#transmission"
-            className="inline-flex items-center justify-center rounded-none border border-[#d32f2f] bg-transparent px-8 py-3.5 font-mono text-[10px] font-medium uppercase tracking-[0.28em] text-[#d32f2f] transition-colors duration-150 hover:bg-[#d32f2f] hover:text-white sm:text-[11px] sm:tracking-[0.32em]"
+            className="inline-flex items-center justify-center rounded-none border border-[#d32f2f] bg-transparent px-8 py-3.5 font-mono text-[10px] font-medium uppercase tracking-[0.28em] text-[#d32f2f] transition-colors duration-200 hover:bg-[#d32f2f] hover:text-white sm:text-[11px] sm:tracking-[0.32em]"
           >
             [ INITIALIZE_SESSION ]
           </Link>

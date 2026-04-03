@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Inter,
-  JetBrains_Mono,
-  Zen_Kaku_Gothic_New,
-} from "next/font/google";
+import { Inter, JetBrains_Mono, Zen_Kaku_Gothic_New } from "next/font/google";
 import { SiteNav } from "@/components/layout/SiteNav";
 import "./globals.css";
 
@@ -29,7 +25,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Rayden Siarot",
   description:
-    "Portfolio — product design and creative development with clarity and restraint.",
+    "Product designer and front-end developer — case studies and work focused on constraints, clarity, and measurable user outcomes.",
 };
 
 export default function RootLayout({
@@ -46,7 +42,9 @@ export default function RootLayout({
         className={`${inter.className} min-h-full flex flex-col antialiased selection:bg-[#d32f2f] selection:text-white`}
       >
         <SiteNav />
-        <div className="relative z-10 flex min-h-full flex-1 flex-col">{children}</div>
+        <div className="relative z-10 flex min-h-full flex-1 flex-col">
+          {children}
+        </div>
       </body>
     </html>
   );

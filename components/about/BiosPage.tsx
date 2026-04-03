@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BrushRule } from "@/components/kanso/BrushRule";
 import { SectionLabel } from "@/components/kanso/SectionLabel";
+import { ExitToHome } from "@/components/layout/ExitToHome";
 
 const snap = { duration: 0.2, ease: [0.4, 0, 0.2, 1] as const };
 
@@ -46,7 +46,7 @@ function CommLink({
   newTab?: boolean;
 }) {
   const className =
-    "block py-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-black transition-colors hover:text-[#d32f2f] sm:text-sm";
+    "block py-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-black transition-colors duration-200 hover:text-[#d32f2f] sm:text-sm";
 
   const inner = (
     <span className="flex flex-col gap-1">
@@ -86,12 +86,7 @@ export function BiosPage() {
   return (
     <div className="min-h-dvh bg-[#fff8dc] text-black">
       <header className="px-6 pb-4 pt-10 sm:px-10 md:px-12 md:pt-12">
-        <Link
-          href="/"
-          className="text-[11px] font-medium uppercase tracking-[0.22em] text-black/70 transition-colors hover:text-[#d32f2f]"
-        >
-          ← Home
-        </Link>
+        <ExitToHome />
       </header>
 
       <main className="px-6 pb-28 sm:px-10 md:px-12 md:pb-36">
@@ -102,22 +97,18 @@ export function BiosPage() {
           className="mx-auto max-w-2xl"
         >
           <motion.div variants={slide} className="pb-12 md:pb-16">
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-black/45">
-              Bios
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-black/50 sm:text-xs">
+              THE_BIOS
             </p>
-            <h1 className="kanso-heading mt-4 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-black sm:text-6xl md:text-7xl">
+            <h1 className="kanso-heading mt-4 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F] sm:text-6xl md:text-7xl">
               Rayden Siarot
             </h1>
-          </motion.div>
-
-          <motion.div variants={slide} className="py-10 md:py-14">
-            <BrushRule />
           </motion.div>
 
           <motion.section
             variants={slide}
             aria-labelledby="bios-identity"
-            className="pb-16 md:pb-24"
+            className="pb-16 pt-12 md:pb-24 md:pt-16"
           >
             <SectionLabel id="bios-identity">Identity</SectionLabel>
             <dl className="mt-10 space-y-10 text-base leading-[1.75] text-black/88 sm:text-[17px]">
@@ -147,35 +138,28 @@ export function BiosPage() {
             </dl>
           </motion.section>
 
-          <motion.div variants={slide} className="py-10 md:py-14">
-            <BrushRule />
-          </motion.div>
-
           <motion.section
             variants={slide}
             aria-labelledby="bios-mission"
-            className="pb-16 md:pb-24"
+            className="pb-16 pt-12 md:pb-24 md:pt-16"
           >
             <SectionLabel id="bios-mission">Experience</SectionLabel>
             <div className="mt-10 space-y-6 text-base leading-[1.75] text-black/88 sm:text-[17px]">
               <p className="font-semibold text-black">
-                2023 — Creative lead @ GroundedTalks
+                2023 — Creative lead, GroundedTalks
               </p>
               <p>
-                Jumpstarted a startup connecting students to industry
-                professionals. Reinforced a focus on design-driven empowerment.
+                Owned brand and platform UX for a mentorship marketplace:
+                end-to-end UI, design system foundations, and flows aimed at
+                reducing friction between students and industry mentors.
               </p>
             </div>
           </motion.section>
 
-          <motion.div variants={slide} className="py-10 md:py-14">
-            <BrushRule />
-          </motion.div>
-
           <motion.section
             variants={slide}
             aria-labelledby="bios-philosophy"
-            className="pb-16 md:pb-24"
+            className="pb-16 pt-12 md:pb-24 md:pt-16"
           >
             <SectionLabel id="bios-philosophy">Philosophy</SectionLabel>
             <blockquote className="mt-10 text-base leading-[1.75] text-black/88 sm:text-[17px]">
@@ -189,11 +173,11 @@ export function BiosPage() {
             </blockquote>
           </motion.section>
 
-          <motion.div variants={slide} className="py-10 md:py-14">
-            <BrushRule />
-          </motion.div>
-
-          <motion.section variants={slide} aria-labelledby="bios-connect">
+          <motion.section
+            variants={slide}
+            aria-labelledby="bios-connect"
+            className="pt-12 md:pt-16"
+          >
             <SectionLabel id="bios-connect">Connect</SectionLabel>
             <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:gap-16">
               <CommLink href={LINKEDIN_URL} label="LinkedIn" newTab />

@@ -19,24 +19,21 @@ const SKILLS: SkillRow[] = [
     label: "UI / UX design",
     filled: 9,
     total: 10,
-    detail:
-      "Systems, flows, typographic rhythm, and handoff-ready UI.",
+    detail: "Systems, flows, typographic rhythm, and handoff-ready UI.",
   },
   {
     key: "front-end",
     label: "Front-end development",
     filled: 8,
     total: 10,
-    detail:
-      "React and Next.js surfaces wired to design tokens and motion.",
+    detail: "React and Next.js surfaces wired to design tokens and motion.",
   },
   {
     key: "creative",
     label: "Creative direction",
     filled: 9,
     total: 10,
-    detail:
-      "Visual language, narrative, and cross-touchpoint consistency.",
+    detail: "Visual language, narrative, and cross-touchpoint consistency.",
   },
 ];
 
@@ -82,12 +79,12 @@ export function PlayerStats() {
       variants={sectionReveal}
     >
       <div className="mx-auto max-w-3xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50 sm:text-xs">
-          Skills
+        <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-black/50 sm:text-xs">
+          PLAYER_STATS
         </p>
         <h2
           id="stats-heading"
-          className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-black sm:text-5xl"
+          className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F] sm:text-5xl"
         >
           Capabilities
         </h2>

@@ -7,7 +7,7 @@ const links = [
 ] as const;
 
 const linkClass =
-  "text-[11px] font-medium uppercase tracking-[0.28em] text-black transition-colors duration-75 hover:text-[#d32f2f] sm:text-xs sm:tracking-[0.32em]";
+  "text-[11px] font-medium uppercase tracking-[0.28em] text-black transition-colors duration-200 ease-out hover:text-[#d32f2f] sm:text-xs sm:tracking-[0.32em]";
 
 export function SiteNav() {
   return (

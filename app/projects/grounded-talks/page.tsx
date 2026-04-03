@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { GroundedTalksDebrief } from "@/components/projects/GroundedTalksDebrief";
 
 export const metadata: Metadata = {
-  title: "GroundedTalks — The Debriefing",
+  title: "GroundedTalks — Case study",
   description:
-    "Case file: creative lead, platform UX, and impact — GroundedTalks deployment.",
+    "Creative lead: 0→1 brand and platform UX for a student–industry mentorship product—constraints, system, and outcomes.",
 };
 
 export default function GroundedTalksPage() {

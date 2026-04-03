@@ -27,17 +27,17 @@ export function HomeArchiveList() {
       variants={sectionVariants}
     >
       <div className="mx-auto max-w-4xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50 sm:text-xs">
-          Archive
+        <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-black/50 sm:text-xs">
+          THE_ARCHIVE
         </p>
         <h2
           id="archive-home-heading"
-          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-black"
+          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]"
         >
           Projects
         </h2>
 
-        <ul className="mt-12 space-y-0 divide-y divide-black/10">
+        <ul className="mt-12 space-y-12">
           {ARCHIVE_PROJECTS.map((project) => {
             const actionable = project.href !== "#";
             const inner = (
@@ -52,7 +52,7 @@ export function HomeArchiveList() {
             );
 
             return (
-              <li key={project.id} className="py-8 first:pt-2">
+              <li key={project.id} className="first:pt-0">
                 {actionable && isInternalHref(project.href) ? (
                   <Link
                     href={project.href}
@@ -79,7 +79,7 @@ export function HomeArchiveList() {
 
         <Link
           href="/projects"
-          className="mt-12 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#d32f2f] transition-colors hover:text-black sm:text-[11px]"
+          className="mt-12 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#d32f2f] transition-colors duration-200 hover:text-black sm:text-[11px]"
         >
           Full archive →
         </Link>

@@ -22,22 +22,22 @@ export function HomeBiosPreview() {
       variants={sectionVariants}
     >
       <div className="mx-auto max-w-4xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50 sm:text-xs">
-          Bios
+        <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-black/50 sm:text-xs">
+          THE_BIOS
         </p>
         <h2
           id="bios-home-heading"
-          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-black"
+          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]"
         >
           Profile
         </h2>
         <p className="mt-8 max-w-xl text-base leading-relaxed text-black/85 sm:text-lg">
-          Student at UT Arlington (Information Systems). Hawai&apos;i-grown;
-          design-driven work across product, interface, and creative code.
+          Information Systems at UT Arlington. I ship product UI and front-end
+          surfaces with clear constraints—Hawai&apos;i-raised, design-first.
         </p>
         <Link
           href="/about"
-          className="mt-10 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#d32f2f] transition-colors hover:text-black sm:text-[11px]"
+          className="mt-10 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#d32f2f] transition-colors duration-200 hover:text-black sm:text-[11px]"
         >
           Open full bios →
         </Link>

@@ -12,7 +12,7 @@ export function SectionLabel({
       <HankoMarker />
       <h2
         id={id}
-        className="kanso-heading text-xl font-bold uppercase leading-tight tracking-tight text-black sm:text-2xl md:text-3xl"
+        className="kanso-heading text-xl font-bold uppercase leading-tight tracking-tight text-[#D32F2F] sm:text-2xl md:text-3xl"
       >
         {children}
       </h2>

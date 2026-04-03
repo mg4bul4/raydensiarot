@@ -44,12 +44,12 @@ export function Archive({
       <div className="relative mx-auto max-w-6xl">
         {showSectionHeader ? (
           <div className="mb-16 md:mb-20">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50 sm:text-xs">
-              Archive
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-black/50 sm:text-xs">
+              THE_ARCHIVE
             </p>
             <h2
               id="archive-heading"
-              className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-black sm:text-5xl md:text-6xl"
+              className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F] sm:text-5xl md:text-6xl"
             >
               Selected work
             </h2>
@@ -59,7 +59,7 @@ export function Archive({
         <motion.div
           className={
             cardVariant === "bento"
-              ? "grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6 lg:gap-8"
+              ? "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-8"
               : "grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-20 lg:grid-cols-2"
           }
           variants={gridStagger}

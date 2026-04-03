@@ -14,11 +14,13 @@ function isInternalHref(href: string) {
   return href.startsWith("/") && !href.startsWith("//");
 }
 
-export function ProjectCard({ project, variant = "default" }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  variant = "default",
+}: ProjectCardProps) {
   const isActionable = project.href !== "#";
   const internalLink = isActionable && isInternalHref(project.href);
-  const ctaText =
-    project.ctaLabel ?? (isActionable ? "Open" : "Unavailable");
+  const ctaText = project.ctaLabel ?? (isActionable ? "Open" : "Unavailable");
 
   const bodyCopy =
     project.mission != null && project.mission.length > 0
@@ -28,7 +30,7 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
   const bento = variant === "bento";
 
   const shell = bento
-    ? "rounded-sm border border-black/18 bg-[#f3efe4] p-6 shadow-none sm:p-8"
+    ? "rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-6 sm:p-8"
     : "";
 
   const metaRow = bento ? (
@@ -58,7 +60,7 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
       className={`group relative flex flex-col ${bento ? "" : "pt-2"}`}
     >
       {isActionable && internalLink ? (
@@ -80,7 +82,17 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
       <div className={`relative z-[1] flex flex-col ${shell}`}>
         {metaRow}
 
-        <h3 className="kanso-heading mt-6 text-2xl font-bold uppercase leading-tight text-black transition-colors group-hover:text-[#d32f2f] sm:text-3xl">
+        {project.outcomeLead ? (
+          <p
+            className={`mt-5 border-l-2 border-[#d32f2f]/75 pl-4 text-sm font-medium leading-snug text-black/90 sm:text-[15px] ${bento ? "" : "max-w-prose"}`}
+          >
+            {project.outcomeLead}
+          </p>
+        ) : null}
+
+        <h3
+          className={`kanso-heading font-bold uppercase leading-tight text-black transition-colors group-hover:text-[#d32f2f] sm:text-3xl ${project.outcomeLead ? "mt-5" : "mt-6"} text-2xl`}
+        >
           {project.title}
         </h3>
 
@@ -110,11 +122,7 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
         <p
           className={`mt-10 text-[10px] uppercase tracking-[0.18em] sm:text-[11px] ${
             bento ? "font-medium" : "font-mono"
-          } ${
-            isActionable
-              ? "text-[#d32f2f]"
-              : "text-black/35"
-          }`}
+          } ${isActionable ? "text-[#d32f2f]" : "text-black/35"}`}
         >
           {ctaText}
         </p>

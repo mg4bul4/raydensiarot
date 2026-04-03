@@ -12,15 +12,15 @@ const sectionVariants = {
 const ROWS: { label: string; line: string }[] = [
   {
     label: "UI / UX design",
-    line: "Systems, flows, typographic rhythm, handoff-ready UI.",
+    line: "Flows, information hierarchy, and systems that survive handoff and iteration.",
   },
   {
     label: "Front-end development",
-    line: "React / Next.js, design tokens, motion.",
+    line: "React / Next.js implementation aligned to design tokens and interaction specs.",
   },
   {
     label: "Creative direction",
-    line: "Visual language and consistency across touchpoints.",
+    line: "Coherent brand execution across marketing and product touchpoints.",
   },
 ];
 
@@ -36,12 +36,12 @@ export function HomeSkillsList() {
       variants={sectionVariants}
     >
       <div className="mx-auto max-w-4xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50 sm:text-xs">
-          Skills
+        <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-black/50 sm:text-xs">
+          PLAYER_STATS
         </p>
         <h2
           id="skills-home-heading"
-          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-black"
+          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]"
         >
           Capabilities
         </h2>
