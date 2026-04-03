@@ -1,62 +1,66 @@
-export type ArchiveCardVariant = "default" | "missionLead";
-
 export type ArchiveProject = {
   id: string;
-  index: string;
   title: string;
-  /** e.g. PROJECT_ID: 00 // GROUNDED_TALKS */
-  projectIdLine?: string;
-  typeRoleLine: string;
+  type: string;
+  role: string;
+  year: string;
   description?: string;
   mission?: string;
-  impactReport?: string[];
+  impactPoints?: string[];
   href: string;
+  featured?: boolean;
   ctaLabel?: string;
-  cardVariant?: ArchiveCardVariant;
 };
 
 export const ARCHIVE_PROJECTS: ArchiveProject[] = [
   {
     id: "grounded-talks",
-    index: "00",
-    title: "GROUNDED_TALKS",
-    projectIdLine: "PROJECT_ID: 00 // GROUNDED_TALKS",
-    typeRoleLine: "TYPE: STARTUP_PLATFORM // ROLE: CREATIVE_LEAD [2023]",
+    title: "GroundedTalks",
+    type: "Startup platform",
+    role: "Creative lead",
+    year: "2023",
     mission:
       "Bridging the gap between academia and industry. Built a digital bridge for students to access high-level professional mentorship.",
-    impactReport: [
-      "[RESULT_01]: Jumpstarted the initial brand identity and platform UX.",
-      "[RESULT_02]: Scaled student-to-professional connectivity.",
-      "[RESULT_03]: Established design-driven empowerment as a core mission value.",
+    impactPoints: [
+      "Jumpstarted the initial brand identity and platform UX.",
+      "Scaled student-to-professional connectivity.",
+      "Established design-driven empowerment as a core mission value.",
     ],
     href: "/projects/grounded-talks",
-    ctaLabel: "( EXECUTE_INTEL )",
-    cardVariant: "missionLead",
+    featured: true,
+    ctaLabel: "View case study",
   },
   {
     id: "nafs",
-    index: "01",
     title: "Nafs.fyi",
-    typeRoleLine: "TYPE: MOBILE_APP // ROLE: UI_DESIGNER",
+    type: "Mobile app",
+    role: "UI designer",
+    year: "—",
     description:
       "Muslim women's health startup. Focused on intuitive UX and high-fidelity UI.",
     href: "https://nafs.fyi",
+    ctaLabel: "Visit site",
   },
   {
     id: "msa-uta",
-    index: "02",
     title: "MSA at UTA Website",
-    typeRoleLine: "TYPE: WEB_PLATFORM // ROLE: LEAD_DEV",
+    type: "Web platform",
+    role: "Lead developer",
+    year: "—",
     description:
       "Community-driven digital hub for the UT Arlington Muslim Student Association.",
     href: "#",
+    ctaLabel: "Soon",
   },
   {
     id: "siaria",
-    index: "03",
-    title: "SIARIA LABS",
-    typeRoleLine: "TYPE: DESIGN_AGENCY // ROLE: FOUNDER",
-    description: "A creative lab specializing in brutalist digital experiences.",
+    title: "Siaria Labs",
+    type: "Design agency",
+    role: "Founder",
+    year: "—",
+    description:
+      "A creative lab specializing in distinctive digital experiences.",
     href: "#",
+    ctaLabel: "Soon",
   },
 ];

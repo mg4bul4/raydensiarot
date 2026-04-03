@@ -1,21 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #000000;
-  --fg-stark: #ffffff;
-  --neon-green: #00ff66;
-  --grid-line: rgba(255, 255, 255, 0.1);
-  --hud-muted: rgba(255, 255, 255, 0.52);
+  /* Kanso — Japan V4 */
+  --kanso-cream: #fff8dc;
+  --kanso-ink: #000000;
+  --kanso-beni: #d32f2f;
+  /* Legacy token aliases (avoid breaking arbitrary refs) */
+  --bg-deep: var(--kanso-cream);
+  --fg-stark: var(--kanso-ink);
+  --neon-green: var(--kanso-beni);
+  --grid-line: transparent;
 }
 
 @theme inline {
-  --color-bg-deep: var(--bg-deep);
-  --color-fg-stark: var(--fg-stark);
-  --color-neon-green: var(--neon-green);
-  --font-display: var(--font-anton), Impact, sans-serif;
+  --color-bg-deep: var(--kanso-cream);
+  --color-fg-stark: var(--kanso-ink);
+  --color-neon-green: var(--kanso-beni);
+  --color-kanso-cream: var(--kanso-cream);
+  --color-kanso-ink: var(--kanso-ink);
+  --color-kanso-beni: var(--kanso-beni);
+  --font-display: var(--font-kanso-heading), ui-sans-serif, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
-  --background: var(--bg-deep);
-  --foreground: var(--fg-stark);
+  --background: var(--kanso-cream);
+  --foreground: var(--kanso-ink);
 }
 
 @keyframes marquee {
@@ -39,25 +46,21 @@
 }
 
 body {
-  background: var(--bg-deep);
-  color: var(--fg-stark);
-  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  background-color: var(--kanso-cream);
+  color: var(--kanso-ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-.crt-scanlines {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(255, 255, 255, 0.04) 2px,
-    rgba(255, 255, 255, 0.04) 4px
-  );
-  pointer-events: none;
+/* Major headings: fluid Gothic / ink-adjacent sans */
+.kanso-heading {
+  font-family: var(--font-kanso-heading), ui-sans-serif, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
+.crt-scanlines,
 .noise-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
-  pointer-events: none;
+  display: none;
 }
 
 .marquee-track {
@@ -68,36 +71,14 @@ body {
   animation: blink-cursor 1.1s step-end infinite;
 }
 
-@keyframes hero-invader-march {
-  0% {
-    transform: translate3d(-18vw, 0, 0);
-  }
-  100% {
-    transform: translate3d(118vw, 0, 0);
-  }
-}
-
-.hero-invader-march-a {
-  animation: hero-invader-march 55s linear infinite;
-  animation-delay: -8s;
-}
-
-.hero-invader-march-b {
-  animation: hero-invader-march 72s linear infinite;
-  animation-delay: -32s;
-}
-
-.hero-invader-march-c {
-  animation: hero-invader-march 63s linear infinite;
-  animation-delay: -48s;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero-invader-march-a,
-  .hero-invader-march-b,
-  .hero-invader-march-c {
-    animation: none !important;
-    transform: translate3d(12vw, 0, 0);
-    opacity: 0.35;
+  .marquee-track {
+    animation: none;
   }
+}
+
+/* Kanso: sharp geometric containers only when needed */
+.kanso-frame {
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
 }

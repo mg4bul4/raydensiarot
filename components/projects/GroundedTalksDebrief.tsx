@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Open_Sans, Raleway } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { BrushRule } from "@/components/kanso/BrushRule";
+import { SectionLabel } from "@/components/kanso/SectionLabel";
 
 const openSans = Open_Sans({
   weight: ["400"],
@@ -17,390 +19,332 @@ const raleway = Raleway({
   display: "swap",
 });
 
-/** System stack for Helvetica Neue–class neo-grotesque specimens (matches GT wordmark tone). */
 const helveticaNeueStyle = {
   fontFamily:
     '"Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif',
 } as const;
 
+const ease = [0.25, 0.1, 0.25, 1] as const;
+
 const container = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.06 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.04 },
   },
 };
 
-const slam = {
-  hidden: { opacity: 0, y: 40 },
+const fade = {
+  hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      type: "spring" as const,
-      stiffness: 520,
-      damping: 32,
-      mass: 0.9,
-    },
-  },
-};
-
-const manifestInner = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.05 },
-  },
-};
-
-const manifestSlam = {
-  hidden: { opacity: 0, y: 22 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring" as const,
-      stiffness: 480,
-      damping: 30,
-      mass: 0.85,
-    },
+    transition: { duration: 0.4, ease },
   },
 };
 
 function Field({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border-b border-fg-stark/30 py-3 last:border-b-0 sm:py-4">
-      <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-fg-stark/45 sm:text-[10px]">
+    <div className="py-5 first:pt-0">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-black/50">
         {label}
       </p>
-      <p className="mt-1 font-mono text-[11px] leading-relaxed tracking-wide text-fg-stark/90 sm:text-xs">
+      <p className="mt-2 text-[15px] leading-relaxed text-black/90 sm:text-base">
         {value}
       </p>
     </div>
   );
 }
 
-function ModuleShell({
-  id,
-  title,
+function ImageFrame({
   children,
-  collapseWithPrevious = false,
+  caption,
 }: {
-  id: string;
-  title: string;
   children: React.ReactNode;
-  collapseWithPrevious?: boolean;
+  caption: string;
 }) {
   return (
-    <motion.section
-      variants={slam}
-      id={id}
-      className={`col-span-12 border border-fg-stark bg-bg-deep ${collapseWithPrevious ? "-mt-px" : ""}`}
-    >
-      <header className="border-b border-fg-stark px-4 py-3 sm:px-6 sm:py-4">
-        <h2 className="font-display text-xl font-normal uppercase leading-none tracking-tighter text-fg-stark sm:text-2xl md:text-3xl">
-          {title}
-        </h2>
-      </header>
-      <div className="px-4 py-4 sm:px-6 sm:py-5">{children}</div>
-    </motion.section>
+    <figure className="flex flex-col">
+      <div className="rounded-sm border border-black/20 bg-[#fff8dc] p-3 sm:p-4">
+        {children}
+      </div>
+      <figcaption className="mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-black/45">
+        {caption}
+      </figcaption>
+    </figure>
   );
 }
 
-function BrandManifestModule() {
+function MaterialsBoard() {
+  const swatches = [
+    { hex: "#FFF8DC", label: "Canvas" },
+    { hex: "#000000", label: "Ink" },
+    { hex: "#FFFFFF", label: "Paper" },
+    { hex: "#D32F2F", label: "Accent" },
+  ];
+
   return (
-    <motion.aside
-      variants={slam}
-      className="relative col-span-12 -mt-px flex flex-col border border-fg-stark bg-bg-deep sm:col-span-4"
+    <motion.section
+      variants={fade}
+      className="py-16 sm:py-20"
+      aria-labelledby="materials-heading"
     >
-      <span className="absolute left-2 top-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/40 sm:left-3 sm:text-[9px]">
-        [ CODE_01B ]
-      </span>
-      <span className="absolute right-2 top-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/40 sm:right-3 sm:text-[9px]">
-        VER_A
-      </span>
+      <SectionLabel id="materials-heading">Materials board</SectionLabel>
 
-      <header className="border-b border-fg-stark px-3 pb-3 pt-8 sm:px-4 sm:pb-4 sm:pt-9">
-        <h2 className="font-display text-lg font-normal uppercase leading-none tracking-tighter text-fg-stark sm:text-xl">
-          [ 01B_BRAND_MANIFEST ]
-        </h2>
-      </header>
+      <p className="mt-6 max-w-prose text-sm leading-relaxed text-black/80">
+        Color relationships and type scale for the GroundedTalks system — set on
+        cream ground.
+      </p>
 
-      <motion.div
-        className="flex min-h-0 flex-1 flex-col gap-0 p-3 sm:p-4"
-        initial="hidden"
-        animate="show"
-        variants={manifestInner}
-      >
-        <motion.section
-          variants={manifestSlam}
-          className="relative border border-fg-stark bg-[#080808] p-3 sm:p-4"
-        >
-          <span className="absolute bottom-1.5 left-2 z-10 font-mono text-[7px] uppercase text-fg-stark/35">
-            [ CODE_01 ]
-          </span>
-          <span className="absolute right-2 top-2 z-10 font-mono text-[7px] uppercase text-fg-stark/35">
-            VER_A
-          </span>
-          <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.16em] text-fg-stark/55">
-            [ BRAND_IDENTITY_MONOGRAM ]
-          </p>
-
-          <div className="border border-fg-stark bg-black px-3 py-4 sm:px-4 sm:py-5">
-            <div className="relative mx-auto w-full max-w-[280px]">
-              <Image
-                src="/projects/grounded-talks/grounded-talks-wordmark.png"
-                alt="GROUNDEDTALKS typographic logotype with GT stem mark"
-                width={560}
-                height={200}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 640px) 70vw, 220px"
-              />
-            </div>
-            <div className="mt-4 flex items-center justify-center gap-3 border-t border-fg-stark/30 pt-4">
-              <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-                <Image
-                  src="/projects/grounded-talks/gt-stem-mark.png"
-                  alt="GT stem cup mark"
-                  fill
-                  className="object-contain"
-                  sizes="64px"
-                />
-              </div>
-              <p className="font-mono text-[8px] uppercase leading-snug tracking-[0.12em] text-fg-stark/55 sm:text-[9px]">
-                CODE: GT_STEM // [ RENDERED ]
-              </p>
-            </div>
+      <div className="mt-10 flex flex-wrap gap-6">
+        {swatches.map((s) => (
+          <div key={s.hex} className="flex flex-col gap-2">
+            <div
+              className="h-14 w-24 rounded-sm border border-black/15 shadow-none"
+              style={{ backgroundColor: s.hex }}
+            />
+            <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/55">
+              {s.label}
+            </p>
+            <p className="font-mono text-[9px] text-black/40">{s.hex}</p>
           </div>
+        ))}
+      </div>
 
-          <p className="mt-3 font-mono text-[8px] uppercase leading-relaxed tracking-[0.12em] text-fg-stark/50 sm:text-[9px]">
-            LOGOTYPE: GEOMETRIC_SANS_SERIF // CODE: 01A
-          </p>
-        </motion.section>
-
-        <motion.section
-          variants={manifestSlam}
-          className="relative -mt-px border border-fg-stark bg-[#080808] p-3 sm:p-4"
-        >
-          <span className="absolute left-2 top-2 z-10 font-mono text-[7px] uppercase text-fg-stark/35">
-            [ CODE_02B ]
-          </span>
-          <span className="absolute right-2 top-2 z-10 font-mono text-[7px] uppercase text-fg-stark/35">
-            VER_A
-          </span>
-          <p className="mb-3 pt-5 font-mono text-[9px] uppercase tracking-[0.16em] text-fg-stark/55 sm:pt-6">
-            [ TYPOGRAPHIC_MANIFEST ] // [ CODE: 02B ]
-          </p>
-          <div className="border border-fg-stark bg-bg-deep px-2 py-2 sm:px-3 sm:py-2.5">
-            <p className="font-mono text-[8px] uppercase leading-relaxed tracking-[0.14em] text-fg-stark/70 sm:text-[9px]">
-              TYPE: CLEAN_EMPOWERMENT // CODE_MANIFEST: 02B
+      <div className="mt-12 space-y-6 rounded-sm border border-black/15 bg-[#fff8dc] p-6 sm:p-8">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-black/45">
+          Typography scale
+        </p>
+        <div className="space-y-6 border-t border-black/10 pt-6">
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/40">
+              Heading
+            </p>
+            <p
+              className="mt-2 text-lg font-bold uppercase tracking-[-0.03em] text-black sm:text-xl"
+              style={helveticaNeueStyle}
+            >
+              Mission deployment
             </p>
           </div>
-        </motion.section>
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/40">
+              Body
+            </p>
+            <p
+              className={`mt-2 text-[13px] leading-relaxed text-black/88 sm:text-sm ${openSans.className}`}
+            >
+              UX logic focused on high-fidelity UI and seamless connection with
+              matching details across scheduling, profiles, and trust surfaces.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/40">
+              Primary control
+            </p>
+            <div
+              className={`mt-2 inline-flex border border-black bg-black px-4 py-2 ${raleway.className}`}
+            >
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white">
+                Schedule a session
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <motion.section
-          variants={manifestSlam}
-          className="relative -mt-px border border-fg-stark bg-[#080808] p-3 sm:p-4"
-        >
-          <span className="absolute bottom-2 right-2 z-10 font-mono text-[7px] uppercase text-fg-stark/35">
-            VER_A
-          </span>
-          <p className="mb-4 font-mono text-[9px] uppercase tracking-[0.16em] text-fg-stark/55">
-            [ TYPOGRAPHIC_MANIFEST_LIST ] // [ CODE_MANIFEST: 02B ]
+      <div className="mt-10 rounded-sm border border-black/20 bg-neutral-950 p-5 sm:p-6">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50">
+          Logotype lockup
+        </p>
+        <div className="relative mx-auto mt-4 w-full max-w-[280px]">
+          <Image
+            src="/projects/grounded-talks/wordmark-groundedtalks-white.png"
+            alt="GroundedTalks logotype"
+            width={1024}
+            height={196}
+            className="h-auto w-full object-contain"
+            sizes="280px"
+          />
+        </div>
+        <div className="mt-6 flex items-center justify-center gap-4 border-t border-white/10 pt-6">
+          <div className="relative h-12 w-12 shrink-0 sm:h-14 sm:w-14">
+            <Image
+              src="/projects/grounded-talks/gt-stem-mark.png"
+              alt="GT stem mark"
+              fill
+              className="object-contain"
+              sizes="56px"
+            />
+          </div>
+          <p className="text-left text-xs leading-relaxed text-white/65">
+            Stem mark for app and social surfaces.
           </p>
-
-          <ul className="space-y-5 border-t border-fg-stark/30 pt-4">
-            <li className="border-b border-fg-stark/20 pb-4">
-              <p className="font-mono text-[8px] uppercase tracking-wide text-fg-stark/50 sm:text-[9px]">
-                [ HEADING_1 // 700 // HELVETICA_NEUE ]
-              </p>
-              <p
-                className="mt-2 text-lg font-bold uppercase tracking-[-0.04em] text-fg-stark sm:text-xl"
-                style={helveticaNeueStyle}
-              >
-                MISSION_DEPLOYMENT
-              </p>
-            </li>
-
-            <li className="border-b border-fg-stark/20 pb-4">
-              <p className="font-mono text-[8px] uppercase tracking-wide text-fg-stark/50 sm:text-[9px]">
-                [ BODY_TEXT // 400 // OPEN_SANS ]
-              </p>
-              <p
-                className={`mt-2 text-[13px] font-normal leading-relaxed normal-case text-fg-stark/90 sm:text-sm ${openSans.className}`}
-              >
-                UX logic focused on high-fidelity UI and seamless connection with
-                matching details across scheduling, profiles, and trust surfaces.
-              </p>
-            </li>
-
-            <li>
-              <p className="font-mono text-[8px] uppercase tracking-wide text-fg-stark/50 sm:text-[9px]">
-                [ BUTTON_TEXT // 600 // RALEWAY ]
-              </p>
-              <div
-                className={`mt-3 inline-flex border border-fg-stark bg-fg-stark px-5 py-2.5 ${raleway.className}`}
-              >
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-bg-deep sm:text-sm">
-                  EXECUTE
-                </span>
-              </div>
-            </li>
-          </ul>
-        </motion.section>
-      </motion.div>
-    </motion.aside>
+        </div>
+      </div>
+    </motion.section>
   );
 }
 
 export function GroundedTalksDebrief() {
   return (
-    <div className="min-h-dvh bg-bg-deep text-fg-stark">
-      <div
-        className="pointer-events-none fixed inset-0 opacity-90"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px)
-          `,
-          backgroundSize: "clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px)",
-        }}
-        aria-hidden
-      />
-
+    <div className="min-h-dvh bg-[#fff8dc] text-black">
       <motion.div
-        className="relative z-10 mx-auto grid max-w-[120rem] grid-cols-12 gap-0 px-4 pb-20 pt-6 sm:px-6 md:px-10 md:pb-28 md:pt-10"
+        className="relative z-10 mx-auto max-w-4xl px-6 pb-24 pt-24 sm:px-10 md:px-12 md:pb-32 md:pt-28"
         initial="hidden"
         animate="show"
         variants={container}
       >
-        <motion.header variants={slam} className="col-span-12 mb-8 md:mb-12">
+        <motion.header variants={fade} className="mb-2">
           <Link
-            href="/#archive"
-            className="inline-flex border border-fg-stark bg-bg-deep px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-fg-stark transition-colors hover:bg-neon-green hover:text-bg-deep hover:border-neon-green sm:text-sm"
+            href="/projects"
+            className="text-[11px] font-medium uppercase tracking-[0.22em] text-black/70 transition-colors hover:text-[#d32f2f]"
           >
-            [ RETURN_TO_ARCHIVE ]
+            ← Archive
           </Link>
-          <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.35em] text-fg-stark/45 sm:text-xs">
-            CASE_FILE // GROUNDED_TALKS
+          <p className="mt-10 text-[10px] font-medium uppercase tracking-[0.28em] text-black/45">
+            Mission debriefing
           </p>
-          <h1 className="mt-3 font-display text-[clamp(2.5rem,8vw,5.5rem)] font-normal uppercase leading-[0.92] tracking-tighter">
-            THE_DEBRIEFING
+          <h1 className="kanso-heading mt-3 text-[clamp(2rem,7vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-black">
+            GroundedTalks
           </h1>
         </motion.header>
 
-        <ModuleShell id="mission-overview" title="[ 00_MISSION_OVERVIEW ]">
-          <Field label="PROJECT" value="GROUNDED_TALKS" />
-          <Field label="ROLE" value="CREATIVE_LEAD" />
-          <Field label="TIMELINE" value="2023_DEPLOYMENT" />
-          <Field
-            label="OBJECTIVE"
-            value="Bridge the gap between academic theory and industry reality by connecting students directly with high-level professionals."
-          />
-        </ModuleShell>
-
-        <ModuleShell
-          id="the-problem"
-          title="[ 01_THE_PROBLEM ]"
-          collapseWithPrevious
-        >
-          <Field label="STATUS" value="CRITICAL_DISCONNECT" />
-          <Field
-            label="INTEL"
-            value="Students lacked a direct line to real-world career advice, creating a vacuum between graduation and employment. Industry pros were willing to talk but lacked a centralized portal for connection."
-          />
-        </ModuleShell>
-
-        <ModuleShell
-          id="the-solution"
-          title="[ 02_THE_SOLUTION ]"
-          collapseWithPrevious
-        >
-          <Field
-            label="EXECUTION"
-            value="Designed a seamless digital hub for mentorship and career transparency."
-          />
-          <Field
-            label="UX_LOGIC"
-            value="Focused on frictionless scheduling, clean professional profiles, and a high-trust brand identity that appealed to both Gen-Z students and Corporate Executives."
-          />
-        </ModuleShell>
-
-        <motion.div
-          variants={slam}
-          className="relative col-span-12 -mt-px min-h-[200px] border border-fg-stark bg-[#050505] sm:col-span-8 sm:min-h-[260px] md:min-h-[320px] sm:border-r-0"
-        >
-          <span className="absolute left-2 top-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/50 sm:left-3 sm:text-[9px]">
-            [ CODE_01A ]
-          </span>
-          <span className="absolute right-2 top-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/50 sm:right-3 sm:text-[9px]">
-            VER_A
-          </span>
-          <div className="flex items-center justify-center px-3 pb-10 pt-9 sm:px-4 sm:pb-12 sm:pt-10">
-            <Image
-              src="/projects/grounded-talks/ui-mockup.png"
-              alt="GroundedTalks product UI mockup on laptop and phone"
-              width={1600}
-              height={1000}
-              className="h-auto max-h-[min(72vh,540px)] w-full max-w-[920px] object-contain"
-              sizes="(max-width: 640px) 100vw, 66vw"
-              priority
-            />
-          </div>
-          <span className="absolute bottom-2 left-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/45 sm:bottom-3 sm:left-3 sm:text-[9px]">
-            [ SYSTEM_UI_SCREENSHOT_01 ]
-          </span>
+        <motion.div variants={fade} className="my-12 md:my-16">
+          <BrushRule />
         </motion.div>
 
-        <BrandManifestModule />
-
-        <motion.div
-          variants={slam}
-          className="relative col-span-12 -mt-px min-h-[220px] border border-fg-stark bg-[#050505] md:min-h-[280px]"
+        <motion.section
+          variants={fade}
+          id="mission-overview"
+          aria-labelledby="mission-overview-h"
+          className="pb-4"
         >
-          <span className="absolute left-2 top-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/50 sm:left-3 sm:text-[9px]">
-            [ CODE_03_FLOW ]
-          </span>
-          <span className="absolute right-2 top-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/50 sm:right-3 sm:text-[9px]">
-            VER_A
-          </span>
-          <div className="flex items-center justify-center px-3 pb-10 pt-9 sm:px-4 sm:pb-12 sm:pt-10">
-            <Image
-              src="/projects/grounded-talks/user-flow-map.png"
-              alt="GroundedTalks user flow diagram: landing, mentors, content library, and mentor profiles"
-              width={1800}
-              height={1000}
-              className="h-auto max-h-[min(85vh,720px)] w-full max-w-[1100px] object-contain"
-              sizes="(max-width: 640px) 100vw, 100vw"
+          <SectionLabel id="mission-overview-h">Mission overview</SectionLabel>
+          <div className="mt-8">
+            <Field label="Project" value="GroundedTalks" />
+            <Field label="Role" value="Creative lead" />
+            <Field label="Timeline" value="2023" />
+            <Field
+              label="Objective"
+              value="Bridge the gap between academic theory and industry reality by connecting students directly with high-level professionals."
             />
           </div>
-          <span className="absolute bottom-2 left-2 z-10 font-mono text-[8px] uppercase tracking-[0.14em] text-fg-stark/45 sm:bottom-3 sm:left-3 sm:text-[9px]">
-            [ USER_FLOW_MAP ]
-          </span>
+        </motion.section>
+
+        <motion.div variants={fade} className="my-12 md:my-16">
+          <BrushRule />
         </motion.div>
 
-        <ModuleShell
+        <motion.section variants={fade} id="problem" aria-labelledby="problem-h">
+          <SectionLabel id="problem-h">Problem</SectionLabel>
+          <div className="mt-8">
+            <Field label="Situation" value="Critical disconnect" />
+            <Field
+              label="Context"
+              value="Students lacked a direct line to real-world career advice, creating a vacuum between graduation and employment. Industry pros were willing to talk but lacked a centralized portal for connection."
+            />
+          </div>
+        </motion.section>
+
+        <motion.div variants={fade} className="my-12 md:my-16">
+          <BrushRule />
+        </motion.div>
+
+        <motion.section
+          variants={fade}
+          id="solution"
+          aria-labelledby="solution-h"
+        >
+          <SectionLabel id="solution-h">Solution</SectionLabel>
+          <div className="mt-8">
+            <Field
+              label="Approach"
+              value="Designed a seamless digital hub for mentorship and career transparency."
+            />
+            <Field
+              label="Experience focus"
+              value="Focused on frictionless scheduling, clean professional profiles, and a high-trust brand identity that appealed to both Gen-Z students and corporate executives."
+            />
+          </div>
+        </motion.section>
+
+        <motion.div variants={fade} className="my-12 md:my-16">
+          <BrushRule />
+        </motion.div>
+
+        <motion.section
+          variants={fade}
+          id="systems-debriefing"
+          aria-labelledby="systems-h"
+          className="py-4"
+        >
+          <SectionLabel id="systems-h">Systems debriefing</SectionLabel>
+          <p className="mt-6 text-sm leading-relaxed text-black/75">
+            Product surface and journey map — contained, minimal frames.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8">
+            <ImageFrame caption="UI surface">
+              <div className="flex min-h-[200px] items-center justify-center bg-[#0a0a0a] sm:min-h-[240px]">
+                <Image
+                  src="/projects/grounded-talks/ui-mockup.png"
+                  alt="GroundedTalks UI mockup"
+                  width={1600}
+                  height={1000}
+                  className="h-auto max-h-[min(60vh,420px)] w-full object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </ImageFrame>
+            <ImageFrame caption="User flow">
+              <div className="flex min-h-[200px] items-center justify-center bg-white sm:min-h-[240px]">
+                <Image
+                  src="/projects/grounded-talks/user-flow-map.png"
+                  alt="User flow map"
+                  width={1800}
+                  height={1000}
+                  className="h-auto max-h-[min(70vh,480px)] w-full object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </ImageFrame>
+          </div>
+        </motion.section>
+
+        <motion.div variants={fade} className="my-12 md:my-16">
+          <BrushRule />
+        </motion.div>
+
+        <MaterialsBoard />
+
+        <motion.div variants={fade} className="my-12 md:my-16">
+          <BrushRule />
+        </motion.div>
+
+        <motion.section
+          variants={fade}
           id="impact-report"
-          title="[ 03_IMPACT_REPORT ]"
-          collapseWithPrevious
+          aria-labelledby="impact-h"
+          className="pb-8"
         >
-          <Field
-            label="METRIC_01"
-            value="Jumpstarted the initial brand DNA and platform UI from zero."
-          />
-          <Field
-            label="METRIC_02"
-            value="Established a scalable design system for future iterations."
-          />
-          <Field
-            label="METRIC_03"
-            value="Empowered students to bypass traditional networking barriers."
-          />
-        </ModuleShell>
+          <SectionLabel id="impact-h">Impact report</SectionLabel>
+          <div className="mt-8">
+            <Field
+              label="Outcome 1"
+              value="Jumpstarted the initial brand DNA and platform UI from zero."
+            />
+            <Field
+              label="Outcome 2"
+              value="Established a scalable design system for future iterations."
+            />
+            <Field
+              label="Outcome 3"
+              value="Empowered students to bypass traditional networking barriers."
+            />
+          </div>
+        </motion.section>
       </motion.div>
-
-      <div className="pointer-events-none fixed inset-0 z-[5] mix-blend-overlay">
-        <div className="crt-scanlines absolute inset-0 opacity-25" />
-        <div className="noise-grain absolute inset-0 opacity-30 mix-blend-soft-light" />
-      </div>
     </div>
   );
 }
