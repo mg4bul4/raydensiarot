@@ -29,7 +29,7 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
       "[RESULT_02]: Scaled student-to-professional connectivity.",
       "[RESULT_03]: Established design-driven empowerment as a core mission value.",
     ],
-    href: "#",
+    href: "/projects/grounded-talks",
     ctaLabel: "( EXECUTE_INTEL )",
     cardVariant: "missionLead",
   },

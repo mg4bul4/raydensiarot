@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
 import type { ArchiveProject } from "./archive-data";
 
 const mechanical = [0.4, 0, 0.2, 1] as const;
@@ -59,8 +60,13 @@ type ProjectCardProps = {
   project: ArchiveProject;
 };
 
+function isInternalHref(href: string) {
+  return href.startsWith("/") && !href.startsWith("//");
+}
+
 export function ProjectCard({ project }: ProjectCardProps) {
   const isActionable = project.href !== "#";
+  const internalLink = isActionable && isInternalHref(project.href);
   const isMissionLead = project.cardVariant === "missionLead";
   const variants = isMissionLead ? missionLeadCardVariants : defaultCardVariants;
   const ctaText = project.ctaLabel ?? "( EXECUTE_VIEW )";
@@ -86,7 +92,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
       ) : null}
 
-      {isActionable ? (
+      {isActionable && internalLink ? (
+        <Link
+          href={project.href}
+          className="absolute inset-0 z-20 cursor-pointer"
+          aria-label={`${project.title} — open project`}
+        />
+      ) : isActionable ? (
         <a
           href={project.href}
           target="_blank"
