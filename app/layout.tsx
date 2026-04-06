@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Zen_Kaku_Gothic_New } from "next/font/google";
+import { Epilogue, Inter, JetBrains_Mono, Manrope, Zen_Kaku_Gothic_New } from "next/font/google";
 import { SiteNav } from "@/components/layout/SiteNav";
 import "./globals.css";
 
@@ -22,6 +22,20 @@ const inter = Inter({
   display: "swap",
 });
 
+const stitchHeadline = Epilogue({
+  subsets: ["latin"],
+  variable: "--font-stitch-headline",
+  weight: ["700", "800"],
+  display: "swap",
+});
+
+const stitchBody = Manrope({
+  subsets: ["latin"],
+  variable: "--font-stitch-body",
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Rayden Siarot",
   description:
@@ -36,13 +50,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${zenKaku.variable} ${jetbrainsMono.variable} ${inter.variable} h-full scroll-smooth`}
+      className={`${zenKaku.variable} ${jetbrainsMono.variable} ${inter.variable} ${stitchHeadline.variable} ${stitchBody.variable} h-full scroll-smooth`}
     >
       <body
         className={`${inter.className} min-h-full flex flex-col antialiased selection:bg-[#d32f2f] selection:text-white`}
       >
         <SiteNav />
-        <div className="relative z-10 flex min-h-full flex-1 flex-col">
+        <div className="relative z-10 flex min-h-full flex-1 flex-col pt-20 sm:pt-24">
           {children}
         </div>
       </body>

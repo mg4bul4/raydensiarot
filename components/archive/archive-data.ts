@@ -52,7 +52,8 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     type: "Web platform",
     role: "Lead developer",
     year: "—",
-    outcomeLead: "Community site: events, resources, and onboarding in one place.",
+    outcomeLead:
+      "Community site: events, resources, and onboarding in one place.",
     description:
       "Owned the student org’s public web presence—information architecture, build, and handoff so leadership can update content without engineering.",
     href: "#",
@@ -64,7 +65,8 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     type: "Design agency",
     role: "Founder",
     year: "—",
-    outcomeLead: "Independent practice: product UI and creative direction for hire.",
+    outcomeLead:
+      "Independent practice: product UI and creative direction for hire.",
     description:
       "Small studio focused on disciplined interfaces and coherent brand execution—fewer surfaces, sharper intent.",
     href: "#",

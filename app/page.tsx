@@ -1,17 +1,12 @@
-import { Hero } from "@/components/hero/Hero";
-import { HomeArchiveList } from "@/components/home/HomeArchiveList";
-import { HomeBiosPreview } from "@/components/home/HomeBiosPreview";
-import { HomeSkillsList } from "@/components/home/HomeSkillsList";
-import { Transmission } from "@/components/transmission/Transmission";
+import type { Metadata } from "next";
+import { StitchSiariaLanding } from "@/components/landing/StitchSiariaLanding";
+
+export const metadata: Metadata = {
+  title: "Rayden Siarot — UI Designer & Creative Developer",
+  description:
+    "UI designer and brand strategist specializing in high-fidelity implementation and aesthetic logic.",
+};
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <HomeBiosPreview />
-      <HomeArchiveList />
-      <HomeSkillsList />
-      <Transmission />
-    </>
-  );
+  return <StitchSiariaLanding />;
 }

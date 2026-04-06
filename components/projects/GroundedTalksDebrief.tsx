@@ -308,10 +308,14 @@ export function GroundedTalksDebrief() {
         >
           <SectionLabel id="brand-intent-h">Brand intent</SectionLabel>
           <p className="mt-8 max-w-prose text-base leading-relaxed text-black/88 sm:text-[17px]">
-            The emotional target was <strong className="font-semibold text-black">credible warmth</strong>
-            : approachable enough for students exploring careers, restrained enough
-            for mentors who guard their time. Visual noise would have read as
-            unserious; cold corporate polish would have read as inaccessible.
+            The emotional target was{" "}
+            <strong className="font-semibold text-black">
+              credible warmth
+            </strong>
+            : approachable enough for students exploring careers, restrained
+            enough for mentors who guard their time. Visual noise would have
+            read as unserious; cold corporate polish would have read as
+            inaccessible.
           </p>
         </motion.section>
 

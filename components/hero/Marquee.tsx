@@ -10,7 +10,10 @@ type MarqueeProps = {
   className?: string;
 };
 
-export function Marquee({ items = DEFAULT_ITEMS, className = "" }: MarqueeProps) {
+export function Marquee({
+  items = DEFAULT_ITEMS,
+  className = "",
+}: MarqueeProps) {
   const line = items.join("    ") + "    ";
   const doubled = line + line;
 
