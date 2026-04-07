@@ -1,16 +1,13 @@
 import Link from "next/link";
 import { ArrowUpRight, Shield } from "lucide-react";
 import { ExitToHome } from "@/components/layout/ExitToHome";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ContactFormClient } from "@/components/contact/ContactFormClient";
+import { SITE_LINKEDIN_URL } from "@/lib/site-links";
 
 const HEADLINE =
   "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
-
-const LINKEDIN_URL =
-  typeof process.env.NEXT_PUBLIC_LINKEDIN_URL === "string"
-    ? process.env.NEXT_PUBLIC_LINKEDIN_URL
-    : "#";
 
 const RESUME_URL =
   typeof process.env.NEXT_PUBLIC_RESUME_URL === "string"
@@ -62,8 +59,6 @@ function ExternalRow({
 }
 
 export function StitchContactPage() {
-  const year = new Date().getFullYear();
-
   return (
     <div className={`min-h-dvh bg-[#fdf9ea] text-[#1e1c0b] ${BODY}`}>
       <main className="mx-auto max-w-screen-2xl px-6 pb-24 pt-4 sm:px-8 md:pb-32">
@@ -112,7 +107,7 @@ export function StitchContactPage() {
                       <ExternalRow href={RESUME_URL} label="Resume" />
                     </li>
                     <li>
-                      <ExternalRow href={LINKEDIN_URL} label="LinkedIn" />
+                      <ExternalRow href={SITE_LINKEDIN_URL} label="LinkedIn" />
                     </li>
                     <li>
                       <ExternalRow href={READCV_URL} label="Read.cv" />
@@ -125,46 +120,7 @@ export function StitchContactPage() {
         </div>
       </main>
 
-      <footer className="border-t border-[#af101a] bg-[#fdf9ea]">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-4 px-8 py-12 md:flex-row">
-          <div
-            className={`text-[10px] font-bold uppercase tracking-widest text-[#af101a] ${HEADLINE}`}
-          >
-            Rayden Siarot {year}
-          </div>
-          <p
-            className={`text-center text-[10px] uppercase tracking-widest text-[#1e1c0b] ${HEADLINE}`}
-          >
-            © {year} THE DIGITAL CALLIGRAPHER. ALL RIGHTS RESERVED.
-          </p>
-          <div className="flex flex-wrap justify-center gap-8">
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-all duration-200 hover:text-[#af101a] hover:underline ${HEADLINE}`}
-            >
-              LinkedIn
-            </a>
-            <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-all duration-200 hover:text-[#af101a] hover:underline ${HEADLINE}`}
-            >
-              My resume
-            </a>
-            <a
-              href="https://siaria.fyi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-all duration-200 hover:text-[#af101a] hover:underline ${HEADLINE}`}
-            >
-              Siaria Labs
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

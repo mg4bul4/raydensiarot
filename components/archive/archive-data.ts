@@ -1,3 +1,8 @@
+import {
+  SITE_MSA_UTA_URL,
+  SITE_SIARIA_LABS_URL,
+} from "@/lib/site-links";
+
 export type ArchiveProject = {
   id: string;
   title: string;
@@ -56,8 +61,8 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
       "Community site: events, resources, and onboarding in one place.",
     description:
       "Owned the student org’s public web presence—information architecture, build, and handoff so leadership can update content without engineering.",
-    href: "#",
-    ctaLabel: "Soon",
+    href: SITE_MSA_UTA_URL,
+    ctaLabel: "Visit site",
   },
   {
     id: "siaria",
@@ -69,7 +74,7 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
       "Independent practice: product UI and creative direction for hire.",
     description:
       "Small studio focused on disciplined interfaces and coherent brand execution—fewer surfaces, sharper intent.",
-    href: "#",
-    ctaLabel: "Soon",
+    href: SITE_SIARIA_LABS_URL,
+    ctaLabel: "Visit site",
   },
 ];

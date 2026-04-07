@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { ExitToHome } from "@/components/layout/ExitToHome";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 const HEADLINE =
   "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
 
 export function MessageSentPage() {
-  const year = new Date().getFullYear();
-
   return (
     <div className={`flex min-h-dvh flex-col bg-[#fff9e8] text-[#1e1c0b] selection:bg-[#af101a] selection:text-white ${BODY}`}>
       <main className="flex flex-grow flex-col items-center justify-center bg-[#fffbf0] p-8 md:p-24">
@@ -57,13 +56,7 @@ export function MessageSentPage() {
         </div>
       </main>
 
-      <footer className="mt-auto w-full border-t border-[#af101a] bg-[#fff9e8]">
-        <div className="flex flex-col items-center justify-between gap-8 px-8 py-12 md:flex-row">
-          <p className={`text-[0.75rem] uppercase tracking-widest text-[#1e1c0b] ${BODY}`}>
-            © {year} THE DIGITAL CALLIGRAPHER. ALL RIGHTS RESERVED.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter className="mt-auto w-full" />
     </div>
   );
 }

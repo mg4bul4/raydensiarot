@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
 import { ExitToHome } from "@/components/layout/ExitToHome";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import {
+  SITE_MSA_UTA_URL,
+  SITE_SIARIA_LABS_URL,
+} from "@/lib/site-links";
 
 const BORDER = "border-[#af101a]";
 const HEADLINE =
@@ -16,16 +21,6 @@ const IMG = {
     "https://lh3.googleusercontent.com/aida/ADBb0uj91YS6EZNG3VowYWpVC3JSddrEdRbYUqHCQyYoo2DlqRgURzyOazqsPrxW0n4SPHjQV6j3QxZ_3Blwar7YPeiBKLqWbY2_6T1Mrzeg_QpebQctH65TjBdIsGiD06VQQP_XbqeN5CqwF7_kMn0qCvSyueVcjk3-xFY5BDmXHJ3NO1Lfab3SHv119t_Tr2xNSH9bhpioDTrq8U0bW4CxMvWgOx0xQ78rxXl2EkvEEAxVQWPn-BqgJ8LZSgvZnKmHKMJHzAq-3jKlE3I",
   nafs: "https://lh3.googleusercontent.com/aida/ADBb0uhJhtcHuE1FW8r4NB0T5bBf2so_pGWRPVHQhvaRZBMXe6seH53cPFY1NtB3sfdt8FCYxFl05K9jM3unPI3LazAuN5yof1NMd-QwHs3Q3fbim67oRjH__ts1NuMR2L6F9qIVkUPJPFojalzLznB0T0e7yUmnmPdLLZD85NC9tCxldiDtLVLdnhb1IMaogaEdXX24dhJ3uKusTvnrdetfoH4sTVedlq1kYWtHPKspn1PPj4rlbmBxlQKPiqgDe8dBJ2mYnqClXMS6Wxc",
 } as const;
-
-const LINKEDIN_URL =
-  typeof process.env.NEXT_PUBLIC_LINKEDIN_URL === "string"
-    ? process.env.NEXT_PUBLIC_LINKEDIN_URL
-    : "#";
-
-const RESUME_URL =
-  typeof process.env.NEXT_PUBLIC_RESUME_URL === "string"
-    ? process.env.NEXT_PUBLIC_RESUME_URL
-    : "/accomplishments.pdf";
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
@@ -107,7 +102,7 @@ export function StitchProjectsIndex() {
                 </div>
               </div>
               <Link
-                href="https://siaria.fyi"
+                href={SITE_SIARIA_LABS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`group flex items-center gap-4 text-xl font-bold uppercase tracking-tighter text-[#1e1c0b] hover:text-[#af101a] ${HEADLINE}`}
@@ -145,6 +140,15 @@ export function StitchProjectsIndex() {
                 <Tag>Web design</Tag>
                 <Tag>Web development</Tag>
               </div>
+              <Link
+                href={SITE_MSA_UTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group mb-8 inline-flex items-center gap-4 text-xl font-bold uppercase tracking-tighter text-[#1e1c0b] hover:text-[#af101a] ${HEADLINE}`}
+              >
+                Visit site
+                <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-2" />
+              </Link>
             </div>
             <div
               className={`relative mt-auto h-80 min-h-[240px] overflow-hidden border-t bg-[#fff8dc] ${BORDER}`}
@@ -275,44 +279,7 @@ export function StitchProjectsIndex() {
         </div>
       </div>
 
-      <footer className={`border-t bg-[#fdf9ea] ${BORDER}`}>
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-6 px-8 py-12 md:flex-row">
-          <div
-            className={`text-[10px] font-bold uppercase tracking-widest text-[#af101a] ${HEADLINE}`}
-          >
-            Rayden Siarot {new Date().getFullYear()}
-          </div>
-          <p className="text-center text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-70">
-            Portfolio &amp; selected work.
-          </p>
-          <div className="flex flex-wrap justify-center gap-8">
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-colors hover:text-[#af101a] hover:underline"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-colors hover:text-[#af101a] hover:underline"
-            >
-              My resume
-            </a>
-            <a
-              href="https://siaria.fyi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-colors hover:text-[#af101a] hover:underline"
-            >
-              Siaria Labs
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

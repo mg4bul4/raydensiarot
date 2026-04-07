@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BarChart3, Brush, Compass, Pencil } from "lucide-react";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SITE_MSA_UTA_URL, SITE_SIARIA_LABS_URL } from "@/lib/site-links";
 
 const IMG = {
   profile:
@@ -15,11 +17,6 @@ const IMG = {
 const BORDER = "border-[#af101a]";
 const HEADLINE = "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
-
-const LINKEDIN_URL =
-  typeof process.env.NEXT_PUBLIC_LINKEDIN_URL === "string"
-    ? process.env.NEXT_PUBLIC_LINKEDIN_URL
-    : "#";
 
 const RESUME_URL =
   typeof process.env.NEXT_PUBLIC_RESUME_URL === "string"
@@ -41,9 +38,9 @@ export function StitchSiariaLanding() {
 
   return (
     <div
-      className={`min-h-dvh bg-[#fff9e8] text-[#1e1c0b] ${BODY}`}
+      className={`flex min-h-dvh flex-col bg-[#fff9e8] text-[#1e1c0b] ${BODY}`}
     >
-      <main className="mx-auto max-w-7xl p-4 md:p-8">
+      <main className="mx-auto w-full max-w-7xl flex-1 p-4 md:p-8">
         {/* Hero — bento */}
         <section
           className={`mb-8 grid grid-cols-1 gap-0 border md:grid-cols-12 ${BORDER}`}
@@ -115,7 +112,7 @@ export function StitchSiariaLanding() {
           </div>
           <div className={`grid grid-cols-1 gap-0 border md:grid-cols-3 ${BORDER}`}>
             <Link
-              href="https://siaria.fyi"
+              href={SITE_SIARIA_LABS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex cursor-pointer flex-col overflow-hidden border-b border-[#af101a] bg-[#fff9e8] md:col-span-2 md:row-span-2 md:border-b-0 md:border-r"
@@ -188,7 +185,9 @@ export function StitchSiariaLanding() {
             </Link>
 
             <Link
-              href="/projects"
+              href={SITE_MSA_UTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex h-full cursor-pointer flex-col bg-[#fbf4d8]"
             >
               <div className={`flex items-center justify-between border-b p-8 ${BORDER}`}>
@@ -299,45 +298,7 @@ export function StitchSiariaLanding() {
         </section>
       </main>
 
-      <footer className="mt-auto border-t border-[#af101a] bg-[#fff9e8] px-8 py-12">
-        <div className="mx-auto flex w-full max-w-[100rem] flex-col items-center justify-between gap-8 md:flex-row">
-          <div
-            className={`text-sm font-bold uppercase tracking-[0.2em] text-[#af101a] ${HEADLINE}`}
-          >
-            Rayden Siarot {new Date().getFullYear()}
-          </div>
-          <div className="flex flex-col items-center gap-4 md:flex-row md:gap-12">
-            <div
-              className={`flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-[0.3em] ${HEADLINE}`}
-            >
-              <a
-                href={LINKEDIN_URL}
-                className="text-[#1e1c0b] transition-colors hover:text-[#af101a]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a
-                href={RESUME_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#1e1c0b] transition-colors hover:text-[#af101a]"
-              >
-                My resume
-              </a>
-              <a
-                href="https://siaria.fyi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#1e1c0b] transition-colors hover:text-[#af101a]"
-              >
-                Siaria Labs
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter className="mt-auto" />
     </div>
   );
 }

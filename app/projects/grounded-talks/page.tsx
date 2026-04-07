@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { GroundedTalksDebrief } from "@/components/projects/GroundedTalksDebrief";
 
 export const metadata: Metadata = {
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function GroundedTalksPage() {
-  return <GroundedTalksDebrief />;
+  return (
+    <>
+      <GroundedTalksDebrief />
+      <SiteFooter />
+    </>
+  );
 }
