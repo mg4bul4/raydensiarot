@@ -51,7 +51,7 @@ export function SiteNav() {
         </nav>
 
         <Link
-          href="/#contact-cta"
+          href="/contact"
           className="shrink-0 bg-[#af101a] px-5 py-2 text-xs font-bold uppercase tracking-tighter text-white transition-colors hover:opacity-90 [font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]"
         >
           Contact

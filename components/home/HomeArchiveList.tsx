@@ -32,7 +32,7 @@ export function HomeArchiveList() {
         </p>
         <h2
           id="archive-home-heading"
-          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]"
+          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#af101a]"
         >
           Projects
         </h2>
@@ -56,7 +56,7 @@ export function HomeArchiveList() {
                 {actionable && isInternalHref(project.href) ? (
                   <Link
                     href={project.href}
-                    className="block transition-colors hover:text-[#d32f2f]"
+                    className="block transition-colors hover:text-[#af101a]"
                   >
                     {inner}
                   </Link>
@@ -65,7 +65,7 @@ export function HomeArchiveList() {
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block transition-colors hover:text-[#d32f2f]"
+                    className="block transition-colors hover:text-[#af101a]"
                   >
                     {inner}
                   </a>
@@ -79,7 +79,7 @@ export function HomeArchiveList() {
 
         <Link
           href="/projects"
-          className="mt-12 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#d32f2f] transition-colors duration-200 hover:text-black sm:text-[11px]"
+          className="mt-12 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#af101a] transition-colors duration-200 hover:text-black sm:text-[11px]"
         >
           Full archive →
         </Link>

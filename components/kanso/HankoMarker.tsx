@@ -9,7 +9,7 @@ export function HankoMarker({ className = "" }: { className?: string }) {
         width="22"
         height="22"
         viewBox="0 0 22 22"
-        className="text-[#d32f2f]"
+        className="text-[#af101a]"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >

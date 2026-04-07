@@ -54,8 +54,8 @@ export function Hero() {
 
         <motion.div variants={titleReveal} className="mt-14 sm:mt-16">
           <Link
-            href="/#transmission"
-            className="inline-flex items-center justify-center rounded-none border border-[#d32f2f] bg-transparent px-8 py-3.5 font-mono text-[10px] font-medium uppercase tracking-[0.28em] text-[#d32f2f] transition-colors duration-200 hover:bg-[#d32f2f] hover:text-white sm:text-[11px] sm:tracking-[0.32em]"
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-none border border-[#af101a] bg-transparent px-8 py-3.5 font-mono text-[10px] font-medium uppercase tracking-[0.28em] text-[#af101a] transition-colors duration-200 hover:bg-[#af101a] hover:text-white sm:text-[11px] sm:tracking-[0.32em]"
           >
             [ INITIALIZE_SESSION ]
           </Link>

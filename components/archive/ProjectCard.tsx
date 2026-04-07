@@ -30,7 +30,7 @@ export function ProjectCard({
   const bento = variant === "bento";
 
   const shell = bento
-    ? "rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-6 sm:p-8"
+    ? "rounded-sm border border-[#af101a] bg-[#F5EED7] p-6 sm:p-8"
     : "";
 
   const metaRow = bento ? (
@@ -84,14 +84,14 @@ export function ProjectCard({
 
         {project.outcomeLead ? (
           <p
-            className={`mt-5 border-l-2 border-[#d32f2f]/75 pl-4 text-sm font-medium leading-snug text-black/90 sm:text-[15px] ${bento ? "" : "max-w-prose"}`}
+            className={`mt-5 border-l-2 border-[#af101a]/75 pl-4 text-sm font-medium leading-snug text-black/90 sm:text-[15px] ${bento ? "" : "max-w-prose"}`}
           >
             {project.outcomeLead}
           </p>
         ) : null}
 
         <h3
-          className={`kanso-heading font-bold uppercase leading-tight text-black transition-colors group-hover:text-[#d32f2f] sm:text-3xl ${project.outcomeLead ? "mt-5" : "mt-6"} text-2xl`}
+          className={`kanso-heading font-bold uppercase leading-tight text-black transition-colors group-hover:text-[#af101a] sm:text-3xl ${project.outcomeLead ? "mt-5" : "mt-6"} text-2xl`}
         >
           {project.title}
         </h3>
@@ -122,7 +122,7 @@ export function ProjectCard({
         <p
           className={`mt-10 text-[10px] uppercase tracking-[0.18em] sm:text-[11px] ${
             bento ? "font-medium" : "font-mono"
-          } ${isActionable ? "text-[#d32f2f]" : "text-black/35"}`}
+          } ${isActionable ? "text-[#af101a]" : "text-black/35"}`}
         >
           {ctaText}
         </p>

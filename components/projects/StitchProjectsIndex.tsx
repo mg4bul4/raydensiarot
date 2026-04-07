@@ -48,7 +48,7 @@ export function StitchProjectsIndex() {
         <header className="mb-16 grid grid-cols-12 gap-8 lg:mb-24">
           <div className="col-span-12 lg:col-span-8">
             <h1
-              className={`text-[clamp(3rem,10vw,10rem)] font-black uppercase leading-[0.85] tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+              className={`text-[clamp(3rem,10vw,10rem)] font-black uppercase leading-[0.85] tracking-tighter text-[#af101a] ${HEADLINE}`}
             >
               My projects
             </h1>
@@ -90,7 +90,7 @@ export function StitchProjectsIndex() {
                   </span>
                 </div>
                 <h2
-                  className={`mb-8 text-5xl font-bold uppercase tracking-tighter text-[#D32F2F] lg:text-7xl ${HEADLINE}`}
+                  className={`mb-8 text-5xl font-bold uppercase tracking-tighter text-[#af101a] lg:text-7xl ${HEADLINE}`}
                 >
                   Siaria Labs
                 </h2>
@@ -131,7 +131,7 @@ export function StitchProjectsIndex() {
                 </span>
               </div>
               <h3
-                className={`mb-6 text-4xl font-bold uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+                className={`mb-6 text-4xl font-bold uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
               >
                 MSA at UTA website
               </h3>
@@ -185,7 +185,7 @@ export function StitchProjectsIndex() {
                 </span>
               </div>
               <h3
-                className={`mb-6 text-4xl font-bold uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+                className={`mb-6 text-4xl font-bold uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
               >
                 GroundedTalks
               </h3>
@@ -219,7 +219,7 @@ export function StitchProjectsIndex() {
               Mobile UI design
             </span>
             <h3
-              className={`mb-6 text-4xl font-bold uppercase tracking-tighter text-[#D32F2F] lg:text-5xl ${HEADLINE}`}
+              className={`mb-6 text-4xl font-bold uppercase tracking-tighter text-[#af101a] lg:text-5xl ${HEADLINE}`}
             >
               Nafs.fyi
             </h3>
@@ -266,7 +266,7 @@ export function StitchProjectsIndex() {
               If I don&apos;t answer in 24 hours, coffee is on me.
             </p>
             <Link
-              href="/#contact-cta"
+              href="/contact"
               className={`inline-flex w-fit bg-white px-8 py-3 text-sm font-bold uppercase tracking-widest text-[#af101a] transition-colors hover:bg-[#f5eed2] ${HEADLINE}`}
             >
               Contact me

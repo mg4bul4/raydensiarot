@@ -27,7 +27,7 @@ export function HomeBiosPreview() {
         </p>
         <h2
           id="bios-home-heading"
-          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]"
+          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#af101a]"
         >
           Profile
         </h2>
@@ -37,7 +37,7 @@ export function HomeBiosPreview() {
         </p>
         <Link
           href="/about"
-          className="mt-10 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#d32f2f] transition-colors duration-200 hover:text-black sm:text-[11px]"
+          className="mt-10 inline-block font-mono text-[10px] uppercase tracking-[0.24em] text-[#af101a] transition-colors duration-200 hover:text-black sm:text-[11px]"
         >
           Open full bios →
         </Link>

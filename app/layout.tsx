@@ -53,7 +53,7 @@ export default function RootLayout({
       className={`${zenKaku.variable} ${jetbrainsMono.variable} ${inter.variable} ${stitchHeadline.variable} ${stitchBody.variable} h-full scroll-smooth`}
     >
       <body
-        className={`${inter.className} min-h-full flex flex-col antialiased selection:bg-[#d32f2f] selection:text-white`}
+        className={`${inter.className} min-h-full flex flex-col antialiased selection:bg-[#af101a] selection:text-white`}
       >
         <SiteNav />
         <div className="relative z-10 flex min-h-full flex-1 flex-col pt-20 sm:pt-24">

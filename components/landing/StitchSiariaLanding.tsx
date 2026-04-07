@@ -26,11 +26,6 @@ const RESUME_URL =
     ? process.env.NEXT_PUBLIC_RESUME_URL
     : "/accomplishments.pdf";
 
-const CONTACT_EMAIL =
-  typeof process.env.NEXT_PUBLIC_CONTACT_EMAIL === "string"
-    ? process.env.NEXT_PUBLIC_CONTACT_EMAIL
-    : "";
-
 function Hanko({ children }: { children: React.ReactNode }) {
   return (
     <div
@@ -43,7 +38,6 @@ function Hanko({ children }: { children: React.ReactNode }) {
 }
 
 export function StitchSiariaLanding() {
-  const mailHref = CONTACT_EMAIL ? `mailto:${CONTACT_EMAIL}` : "#";
 
   return (
     <div
@@ -62,12 +56,12 @@ export function StitchSiariaLanding() {
             </Hanko>
             <div>
               <span
-                className={`mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-[#d32f2f]`}
+                className={`mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-[#af101a]`}
               >
                 Hey, I&apos;m Rayden
               </span>
               <h1
-                className={`mb-6 text-5xl font-extrabold leading-none tracking-tighter text-[#d32f2f] md:text-7xl lg:text-8xl ${HEADLINE}`}
+                className={`mb-6 text-5xl font-extrabold leading-none tracking-tighter text-[#af101a] md:text-7xl lg:text-8xl ${HEADLINE}`}
               >
                 UI DESIGNER &amp; BRAND STRATEGIST
               </h1>
@@ -110,7 +104,7 @@ export function StitchSiariaLanding() {
         <section className="mb-8">
           <div className="mb-4 flex items-center justify-between">
             <h2
-              className={`text-3xl font-bold uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+              className={`text-3xl font-bold uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
             >
               Selected work
             </h2>
@@ -144,7 +138,7 @@ export function StitchSiariaLanding() {
                 />
               </div>
               <div className="flex flex-grow flex-col justify-center p-10 md:p-14">
-                <span className="mb-6 block text-[10px] font-bold uppercase tracking-[0.3em] text-[#D32F2F]">
+                <span className="mb-6 block text-[10px] font-bold uppercase tracking-[0.3em] text-[#af101a]">
                   Role: Co-founder &amp; lead designer
                 </span>
                 <p className="max-w-2xl text-xl font-medium leading-relaxed md:text-2xl">
@@ -220,7 +214,7 @@ export function StitchSiariaLanding() {
         <section className={`mb-8 grid grid-cols-1 gap-0 border md:grid-cols-2 ${BORDER}`}>
           <div className={`flex flex-col bg-[#fff9e8] p-12 md:border-r ${BORDER}`}>
             <h2
-              className={`mb-12 text-3xl font-bold uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+              className={`mb-12 text-3xl font-bold uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
             >
               Skills
             </h2>
@@ -251,7 +245,7 @@ export function StitchSiariaLanding() {
           <div className="flex flex-col justify-between bg-[#f5eed2] p-12">
             <div>
               <h2
-                className={`mb-12 text-3xl font-bold uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+                className={`mb-12 text-3xl font-bold uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
               >
                 My mission
               </h2>
@@ -287,12 +281,12 @@ export function StitchSiariaLanding() {
             Looking for the bridge between design and deployment?
           </h2>
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
-            <a
-              href={mailHref}
+            <Link
+              href="/contact"
               className={`w-full bg-[#fff9e8] px-12 py-4 font-extrabold uppercase tracking-widest text-[#af101a] transition-colors hover:bg-[#f5eed2] md:w-auto ${HEADLINE}`}
             >
               Get in contact
-            </a>
+            </Link>
             <a
               href={RESUME_URL}
               target="_blank"

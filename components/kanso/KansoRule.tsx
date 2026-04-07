@@ -9,7 +9,7 @@ export function KansoRule({
 }) {
   return (
     <div
-      className={`h-px w-full shrink-0 ${tone === "beni" ? "bg-[#D32F2F]" : "bg-black"} ${className}`}
+      className={`h-px w-full shrink-0 ${tone === "beni" ? "bg-[#af101a]" : "bg-black"} ${className}`}
       aria-hidden
     />
   );

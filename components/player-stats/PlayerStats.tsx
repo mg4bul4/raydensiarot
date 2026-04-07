@@ -60,7 +60,7 @@ function SkillBar({ filled, total }: { filled: number; total: number }) {
       aria-label={`Relative emphasis ${pct} percent`}
     >
       <div
-        className="h-full bg-[#d32f2f] transition-[width] duration-500"
+        className="h-full bg-[#af101a] transition-[width] duration-500"
         style={{ width: `${pct}%` }}
       />
     </div>
@@ -84,7 +84,7 @@ export function PlayerStats() {
         </p>
         <h2
           id="stats-heading"
-          className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F] sm:text-5xl"
+          className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#af101a] sm:text-5xl"
         >
           Capabilities
         </h2>

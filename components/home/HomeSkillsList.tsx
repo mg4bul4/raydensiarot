@@ -41,7 +41,7 @@ export function HomeSkillsList() {
         </p>
         <h2
           id="skills-home-heading"
-          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]"
+          className="kanso-heading mt-3 text-[clamp(2.5rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#af101a]"
         >
           Capabilities
         </h2>

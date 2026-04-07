@@ -46,7 +46,7 @@ export function Transmission() {
         </p>
         <h2
           id="transmission-heading"
-          className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F] sm:text-5xl md:text-6xl"
+          className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#af101a] sm:text-5xl md:text-6xl"
         >
           Message
         </h2>
@@ -64,7 +64,7 @@ export function Transmission() {
               name="subject"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              className="mt-2 w-full border-0 border-b border-black/20 bg-transparent px-0 py-2 text-sm text-black outline-none transition-colors duration-200 placeholder:text-black/25 focus:border-[#d32f2f]"
+              className="mt-2 w-full border-0 border-b border-black/20 bg-transparent px-0 py-2 text-sm text-black outline-none transition-colors duration-200 placeholder:text-black/25 focus:border-[#af101a]"
               placeholder="Project or collaboration"
               autoComplete="off"
             />
@@ -82,13 +82,13 @@ export function Transmission() {
               value={body}
               onChange={(e) => setBody(e.target.value)}
               rows={5}
-              className="mt-2 w-full resize-y border-0 border-b border-black/20 bg-transparent px-0 py-2 text-sm text-black outline-none transition-colors duration-200 placeholder:text-black/25 focus:border-[#d32f2f]"
+              className="mt-2 w-full resize-y border-0 border-b border-black/20 bg-transparent px-0 py-2 text-sm text-black outline-none transition-colors duration-200 placeholder:text-black/25 focus:border-[#af101a]"
               placeholder="Scope, timeline, links."
             />
           </div>
           <motion.button
             type="submit"
-            className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-black transition-colors duration-200 hover:text-[#d32f2f] sm:text-xs"
+            className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-black transition-colors duration-200 hover:text-[#af101a] sm:text-xs"
             transition={snap}
             whileTap={{ scale: 0.995 }}
           >

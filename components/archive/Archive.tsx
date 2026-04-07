@@ -49,7 +49,7 @@ export function Archive({
             </p>
             <h2
               id="archive-heading"
-              className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F] sm:text-5xl md:text-6xl"
+              className="kanso-heading mt-3 text-4xl font-bold uppercase leading-[0.95] tracking-tight text-[#af101a] sm:text-5xl md:text-6xl"
             >
               Selected work
             </h2>

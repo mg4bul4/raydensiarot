@@ -64,7 +64,7 @@ function ImageFrame({
 }) {
   return (
     <figure className="flex flex-col">
-      <div className="overflow-hidden rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-3 sm:p-4">
+      <div className="overflow-hidden rounded-sm border border-[#af101a] bg-[#F5EED7] p-3 sm:p-4">
         {children}
       </div>
       <figcaption className="mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-black/45">
@@ -101,9 +101,9 @@ function OutcomeSignals() {
       {items.map((item) => (
         <div
           key={item.label}
-          className="rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-6 sm:p-7"
+          className="rounded-sm border border-[#af101a] bg-[#F5EED7] p-6 sm:p-7"
         >
-          <p className="kanso-heading text-lg font-bold uppercase leading-tight tracking-tight text-[#d32f2f] sm:text-xl">
+          <p className="kanso-heading text-lg font-bold uppercase leading-tight tracking-tight text-[#af101a] sm:text-xl">
             {item.label}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-black/82 sm:text-[15px]">
@@ -140,9 +140,9 @@ function KeyFindingsGrid() {
       {findings.map((f) => (
         <div
           key={f.title}
-          className="rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-5 sm:p-6"
+          className="rounded-sm border border-[#af101a] bg-[#F5EED7] p-5 sm:p-6"
         >
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#d32f2f]/90">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#af101a]/90">
             {f.title}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-black/85">{f.body}</p>
@@ -157,7 +157,7 @@ function MaterialsBoard() {
     { hex: "#FFF8DC", label: "Canvas" },
     { hex: "#000000", label: "Ink" },
     { hex: "#FFFFFF", label: "Paper" },
-    { hex: "#D32F2F", label: "Accent" },
+    { hex: "#af101a", label: "Accent" },
   ];
 
   return (
@@ -177,7 +177,7 @@ function MaterialsBoard() {
         {swatches.map((s) => (
           <div key={s.hex} className="flex flex-col gap-2">
             <div
-              className="h-14 w-24 rounded-sm border border-[#D32F2F]"
+              className="h-14 w-24 rounded-sm border border-[#af101a]"
               style={{ backgroundColor: s.hex }}
             />
             <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/55">
@@ -188,11 +188,11 @@ function MaterialsBoard() {
         ))}
       </div>
 
-      <div className="mt-12 space-y-6 rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-6 sm:p-8">
+      <div className="mt-12 space-y-6 rounded-sm border border-[#af101a] bg-[#F5EED7] p-6 sm:p-8">
         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-black/45">
           Typography scale
         </p>
-        <div className="space-y-6 border-t border-[#D32F2F]/35 pt-6">
+        <div className="space-y-6 border-t border-[#af101a]/35 pt-6">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/40">
               Heading
@@ -230,7 +230,7 @@ function MaterialsBoard() {
         </div>
       </div>
 
-      <div className="mt-10 overflow-hidden rounded-sm border border-[#D32F2F] bg-neutral-950 p-5 sm:p-6">
+      <div className="mt-10 overflow-hidden rounded-sm border border-[#af101a] bg-neutral-950 p-5 sm:p-6">
         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50">
           Logotype lockup
         </p>
@@ -277,7 +277,7 @@ export function GroundedTalksDebrief() {
             <ExitToHome />
             <Link
               href="/projects"
-              className="font-mono text-[10px] uppercase tracking-[0.2em] text-black transition-colors duration-200 hover:text-[#D32F2F] sm:text-[11px]"
+              className="font-mono text-[10px] uppercase tracking-[0.2em] text-black transition-colors duration-200 hover:text-[#af101a] sm:text-[11px]"
             >
               ← THE_ARCHIVE
             </Link>
@@ -285,7 +285,7 @@ export function GroundedTalksDebrief() {
           <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.28em] text-black/50">
             CASE_STUDY
           </p>
-          <h1 className="kanso-heading mt-3 text-[clamp(2rem,7vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#D32F2F]">
+          <h1 className="kanso-heading mt-3 text-[clamp(2rem,7vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-[#af101a]">
             GroundedTalks
           </h1>
           <p className="mt-8 max-w-prose text-base leading-relaxed text-black/85 sm:text-[17px]">
@@ -432,9 +432,9 @@ export function GroundedTalksDebrief() {
             ].map((o) => (
               <div
                 key={o.head}
-                className="rounded-sm border border-[#D32F2F] bg-[#F5EED7] p-5 sm:p-6"
+                className="rounded-sm border border-[#af101a] bg-[#F5EED7] p-5 sm:p-6"
               >
-                <p className="kanso-heading text-sm font-bold uppercase leading-tight text-[#D32F2F]">
+                <p className="kanso-heading text-sm font-bold uppercase leading-tight text-[#af101a]">
                   {o.head}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-black/82">

@@ -4,7 +4,7 @@
   /* Kanso — Japan V4 */
   --kanso-cream: #fff8dc;
   --kanso-ink: #000000;
-  --kanso-beni: #d32f2f;
+  --kanso-beni: #af101a;
   /* Legacy token aliases (avoid breaking arbitrary refs) */
   --bg-deep: var(--kanso-cream);
   --fg-stark: var(--kanso-ink);

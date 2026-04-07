@@ -6,7 +6,7 @@ import { ExitToHome } from "@/components/layout/ExitToHome";
 const HEADLINE =
   "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
-const BORDER = "border-[#D32F2F]";
+const BORDER = "border-[#af101a]";
 
 const PORTRAIT =
   "https://lh3.googleusercontent.com/aida/ADBb0ujRwSr44eXwa3wRszczGmMMF2RVA4lh4GlJUbTMqiMQrWNfUHe_iVpQWjT0K9YW-jqyOBC7DIp-ms60CGPCxcYovbY8uLEsgClsLYJaBP0nnCYLm1Az8DTcvWO4K9ZMS9vKdtRVOEozmGZe0u-HGzW32qiftl2UxG0RNuZ99SPQWjukdlNpnDWkO5keI6NTaqaGgviZw6Gr_zm_RaEfu1jTs-vsa1XifLTYudvuCgZ5X3XL2ZOFNS3pWVwXbFXh7NOR55VQOCLsnQ";
@@ -43,10 +43,10 @@ export function StitchAboutPage() {
           <div className="flex flex-col justify-between bg-[#fff9e8] p-8 md:col-span-8 md:p-12">
             <div>
               <h1
-                className={`mb-8 text-5xl font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#D32F2F] md:text-7xl lg:text-8xl ${HEADLINE}`}
+                className={`mb-8 text-5xl font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#af101a] md:text-7xl lg:text-8xl ${HEADLINE}`}
               >
                 Hey, I&apos;m{" "}
-                <span className="inline-block bg-[#D32F2F] px-2 text-white">
+                <span className="inline-block bg-[#af101a] px-2 text-white">
                   Rayden
                 </span>
               </h1>
@@ -79,18 +79,18 @@ export function StitchAboutPage() {
           >
             <div className="flex items-start justify-between">
               <h2
-                className={`text-3xl font-black uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+                className={`text-3xl font-black uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
               >
                 Professional Experience
               </h2>
               <GraduationCap
-                className="h-8 w-8 shrink-0 text-[#D32F2F]"
+                className="h-8 w-8 shrink-0 text-[#af101a]"
                 strokeWidth={1.5}
                 aria-hidden
               />
             </div>
             <div className="space-y-16">
-              <div className="border-l border-[#D32F2F] pl-6">
+              <div className="border-l border-[#af101a] pl-6">
                 <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
                   <h3
                     className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}
@@ -98,7 +98,7 @@ export function StitchAboutPage() {
                     Ark Design Agency
                   </h3>
                   <span
-                    className={`text-sm font-bold text-[#D32F2F] ${BODY}`}
+                    className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
                     Senior UI Designer | JUN 2024 — PRESENT
                   </span>
@@ -109,7 +109,7 @@ export function StitchAboutPage() {
                   ecosystems.
                 </p>
               </div>
-              <div className="border-l border-[#D32F2F] pl-6">
+              <div className="border-l border-[#af101a] pl-6">
                 <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
                   <h3
                     className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}
@@ -117,7 +117,7 @@ export function StitchAboutPage() {
                     GroundedTalks
                   </h3>
                   <span
-                    className={`text-sm font-bold text-[#D32F2F] ${BODY}`}
+                    className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
                     Lead Visual Designer | OCT 2023 — JUN 2024
                   </span>
@@ -127,7 +127,7 @@ export function StitchAboutPage() {
                   sustainable-tech podcast and media platform.
                 </p>
               </div>
-              <div className="border-l border-[#D32F2F] pl-6">
+              <div className="border-l border-[#af101a] pl-6">
                 <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
                   <h3
                     className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}
@@ -135,7 +135,7 @@ export function StitchAboutPage() {
                     Tomorrow&apos;s Leaders Today
                   </h3>
                   <span
-                    className={`text-sm font-bold text-[#D32F2F] ${BODY}`}
+                    className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
                     UI Developer Intern | JAN 2024 — APR 2024
                   </span>
@@ -153,7 +153,7 @@ export function StitchAboutPage() {
               className={`flex flex-col border bg-[#efe8cd] p-8 ${BORDER}`}
             >
               <h2
-                className={`mb-6 text-2xl font-black uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+                className={`mb-6 text-2xl font-black uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
               >
                 DESIGN PHILOSOPHY
               </h2>
@@ -162,7 +162,7 @@ export function StitchAboutPage() {
               >
                 {PHILOSOPHY.map((line) => (
                   <li key={line} className="flex items-center gap-2">
-                    <span className="h-2 w-2 shrink-0 bg-[#D32F2F]" aria-hidden />
+                    <span className="h-2 w-2 shrink-0 bg-[#af101a]" aria-hidden />
                     {line}
                   </li>
                 ))}
@@ -172,12 +172,12 @@ export function StitchAboutPage() {
             <div className={`flex flex-col border bg-white p-8 ${BORDER}`}>
               <div className="mb-6 flex items-start justify-between">
                 <h2
-                  className={`text-2xl font-black uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+                  className={`text-2xl font-black uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
                 >
                   PERSPECTIVE
                 </h2>
                 <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#D32F2F] text-white"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#af101a] text-white"
                   aria-hidden
                 >
                   <Pencil className="h-5 w-5" strokeWidth={2} />
@@ -195,7 +195,7 @@ export function StitchAboutPage() {
 
         {/* CTA */}
         <div
-          className={`flex flex-col items-center justify-between gap-8 border bg-[#D32F2F] p-10 text-white md:flex-row md:p-12 ${BORDER}`}
+          className={`flex flex-col items-center justify-between gap-8 border bg-[#af101a] p-10 text-white md:flex-row md:p-12 ${BORDER}`}
         >
           <h2
             className={`text-center text-3xl font-black uppercase tracking-tighter md:text-left md:text-4xl lg:text-5xl ${HEADLINE}`}
@@ -211,8 +211,8 @@ export function StitchAboutPage() {
               If I don&apos;t answer in 24 hours, coffee is on me
             </p>
             <Link
-              href="/#contact-cta"
-              className={`bg-white px-12 py-4 text-xl font-bold uppercase tracking-tighter text-[#D32F2F] transition-colors duration-200 hover:bg-[#f5eed2] ${HEADLINE}`}
+              href="/contact"
+              className={`bg-white px-12 py-4 text-xl font-bold uppercase tracking-tighter text-[#af101a] transition-colors duration-200 hover:bg-[#f5eed2] ${HEADLINE}`}
             >
               Get In Touch
             </Link>
