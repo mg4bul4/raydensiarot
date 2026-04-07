@@ -1,0 +1,265 @@
+import Image from "next/image";
+import Link from "next/link";
+import { GraduationCap, Pencil } from "lucide-react";
+import { ExitToHome } from "@/components/layout/ExitToHome";
+
+const HEADLINE =
+  "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
+const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
+const BORDER = "border-[#D32F2F]";
+
+const PORTRAIT =
+  "https://lh3.googleusercontent.com/aida/ADBb0ujRwSr44eXwa3wRszczGmMMF2RVA4lh4GlJUbTMqiMQrWNfUHe_iVpQWjT0K9YW-jqyOBC7DIp-ms60CGPCxcYovbY8uLEsgClsLYJaBP0nnCYLm1Az8DTcvWO4K9ZMS9vKdtRVOEozmGZe0u-HGzW32qiftl2UxG0RNuZ99SPQWjukdlNpnDWkO5keI6NTaqaGgviZw6Gr_zm_RaEfu1jTs-vsa1XifLTYudvuCgZ5X3XL2ZOFNS3pWVwXbFXh7NOR55VQOCLsnQ";
+
+const LINKEDIN_URL =
+  typeof process.env.NEXT_PUBLIC_LINKEDIN_URL === "string"
+    ? process.env.NEXT_PUBLIC_LINKEDIN_URL
+    : "#";
+
+const RESUME_URL =
+  typeof process.env.NEXT_PUBLIC_RESUME_URL === "string"
+    ? process.env.NEXT_PUBLIC_RESUME_URL
+    : "/accomplishments.pdf";
+
+const PHILOSOPHY = [
+  "Functional Minimalism",
+  "Implementation-First Design",
+  "Agile Rapid Prototyping",
+  "Holistic Brand Integrity",
+] as const;
+
+export function StitchAboutPage() {
+  const year = new Date().getFullYear();
+
+  return (
+    <div className={`min-h-dvh bg-[#fff9e8] text-[#1e1c0b] ${BODY}`}>
+      <main className="mx-auto max-w-7xl px-6 pb-12 pt-4 sm:px-8 md:pb-16">
+        <div className="relative z-10 mb-8">
+          <ExitToHome />
+        </div>
+
+        {/* Hero + portrait */}
+        <div className={`mb-12 grid grid-cols-1 gap-0 border bg-[#fff9e8] md:grid-cols-12 ${BORDER}`}>
+          <div className="flex flex-col justify-between bg-[#fff9e8] p-8 md:col-span-8 md:p-12">
+            <div>
+              <h1
+                className={`mb-8 text-5xl font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#D32F2F] md:text-7xl lg:text-8xl ${HEADLINE}`}
+              >
+                Hey, I&apos;m{" "}
+                <span className="inline-block bg-[#D32F2F] px-2 text-white">
+                  Rayden
+                </span>
+              </h1>
+              <p className="max-w-2xl text-xl font-medium leading-snug md:text-2xl lg:text-3xl">
+                A visual-focused UI Designer &amp; Developer dedicated to crafting
+                clean, intentional digital experiences. I transform complex data
+                into functional, user-centric interfaces through the lens of Kanso
+                minimalism.
+              </p>
+            </div>
+          </div>
+          <div
+            className={`relative aspect-square min-h-[280px] border-t md:col-span-4 md:aspect-auto md:min-h-0 md:border-l md:border-t-0 ${BORDER}`}
+          >
+            <Image
+              src={PORTRAIT}
+              alt="Rayden Siarot"
+              fill
+              className="object-cover contrast-125"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Experience + side columns */}
+        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div
+            className={`flex flex-col gap-12 border bg-[#fbf4d8] p-8 md:col-span-2 md:p-12 ${BORDER}`}
+          >
+            <div className="flex items-start justify-between">
+              <h2
+                className={`text-3xl font-black uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+              >
+                Professional Experience
+              </h2>
+              <GraduationCap
+                className="h-8 w-8 shrink-0 text-[#D32F2F]"
+                strokeWidth={1.5}
+                aria-hidden
+              />
+            </div>
+            <div className="space-y-16">
+              <div className="border-l border-[#D32F2F] pl-6">
+                <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
+                  <h3
+                    className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}
+                  >
+                    Ark Design Agency
+                  </h3>
+                  <span
+                    className={`text-sm font-bold text-[#D32F2F] ${BODY}`}
+                  >
+                    Senior UI Designer | JUN 2024 — PRESENT
+                  </span>
+                </div>
+                <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
+                  Leading design systems and high-fidelity interface design for
+                  global enterprise clients, focusing on data-heavy dashboard
+                  ecosystems.
+                </p>
+              </div>
+              <div className="border-l border-[#D32F2F] pl-6">
+                <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
+                  <h3
+                    className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}
+                  >
+                    GroundedTalks
+                  </h3>
+                  <span
+                    className={`text-sm font-bold text-[#D32F2F] ${BODY}`}
+                  >
+                    Lead Visual Designer | OCT 2023 — JUN 2024
+                  </span>
+                </div>
+                <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
+                  Defined the visual identity and mobile experience for a
+                  sustainable-tech podcast and media platform.
+                </p>
+              </div>
+              <div className="border-l border-[#D32F2F] pl-6">
+                <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
+                  <h3
+                    className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}
+                  >
+                    Tomorrow&apos;s Leaders Today
+                  </h3>
+                  <span
+                    className={`text-sm font-bold text-[#D32F2F] ${BODY}`}
+                  >
+                    UI Developer Intern | JAN 2024 — APR 2024
+                  </span>
+                </div>
+                <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
+                  Bridging the gap between design and code by implementing
+                  responsive web components and interactive prototypes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            <div
+              className={`flex flex-col border bg-[#efe8cd] p-8 ${BORDER}`}
+            >
+              <h2
+                className={`mb-6 text-2xl font-black uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+              >
+                DESIGN PHILOSOPHY
+              </h2>
+              <ul
+                className={`space-y-2 text-lg font-bold uppercase tracking-tight ${HEADLINE}`}
+              >
+                {PHILOSOPHY.map((line) => (
+                  <li key={line} className="flex items-center gap-2">
+                    <span className="h-2 w-2 shrink-0 bg-[#D32F2F]" aria-hidden />
+                    {line}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={`flex flex-col border bg-white p-8 ${BORDER}`}>
+              <div className="mb-6 flex items-start justify-between">
+                <h2
+                  className={`text-2xl font-black uppercase tracking-tighter text-[#D32F2F] ${HEADLINE}`}
+                >
+                  PERSPECTIVE
+                </h2>
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#D32F2F] text-white"
+                  aria-hidden
+                >
+                  <Pencil className="h-5 w-5" strokeWidth={2} />
+                </div>
+              </div>
+              <p className="italic leading-relaxed text-[#1e1c0b]">
+                &ldquo;I view every pixel through a dual lens: aesthetic grace
+                and business impact. I design for the brand&apos;s longevity,
+                turning complex problems into simple, high-fidelity solutions that
+                stand the test of time.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div
+          className={`flex flex-col items-center justify-between gap-8 border bg-[#D32F2F] p-10 text-white md:flex-row md:p-12 ${BORDER}`}
+        >
+          <h2
+            className={`text-center text-3xl font-black uppercase tracking-tighter md:text-left md:text-4xl lg:text-5xl ${HEADLINE}`}
+          >
+            Let&apos;s build something
+            <br />
+            intentional together.
+          </h2>
+          <div className="flex flex-col items-center gap-4 md:items-end">
+            <p
+              className={`text-center text-sm uppercase tracking-widest opacity-80 md:text-right ${BODY}`}
+            >
+              If I don&apos;t answer in 24 hours, coffee is on me
+            </p>
+            <Link
+              href="/#contact-cta"
+              className={`bg-white px-12 py-4 text-xl font-bold uppercase tracking-tighter text-[#D32F2F] transition-colors duration-200 hover:bg-[#f5eed2] ${HEADLINE}`}
+            >
+              Get In Touch
+            </Link>
+          </div>
+        </div>
+      </main>
+
+      <footer className="border-t border-[#af101a] bg-[#fdf9ea]">
+        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-4 px-8 py-12 md:flex-row">
+          <div
+            className={`text-[10px] font-bold uppercase tracking-widest text-[#af101a] ${HEADLINE}`}
+          >
+            Rayden Siarot {year}
+          </div>
+          <p
+            className={`text-center text-[10px] uppercase tracking-widest text-[#1e1c0b] ${HEADLINE}`}
+          >
+            © {year} THE DIGITAL CALLIGRAPHER. ALL RIGHTS RESERVED.
+          </p>
+          <div className="flex flex-wrap justify-center gap-8">
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-all duration-200 hover:text-[#af101a] hover:underline ${HEADLINE}`}
+            >
+              LinkedIn
+            </a>
+            <a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-all duration-200 hover:text-[#af101a] hover:underline ${HEADLINE}`}
+            >
+              My resume
+            </a>
+            <a
+              href="https://siaria.fyi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-all duration-200 hover:text-[#af101a] hover:underline ${HEADLINE}`}
+            >
+              Siaria Labs
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

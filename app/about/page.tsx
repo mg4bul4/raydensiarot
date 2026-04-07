@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { BiosPage } from "@/components/about/BiosPage";
+import { StitchAboutPage } from "@/components/about/StitchAboutPage";
 
 export const metadata: Metadata = {
-  title: "BIOS — Rayden Siarot",
+  title: "About — Rayden Siarot",
   description:
-    "Profile: identity, mission history, and philosophy — Rayden Siarot.",
+    "UI designer and developer: experience, design philosophy, and how I work — The Digital Calligrapher.",
 };
 
 export default function AboutPage() {
-  return <BiosPage />;
+  return <StitchAboutPage />;
 }
