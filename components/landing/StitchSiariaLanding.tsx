@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BarChart3, Brush, Compass, Pencil } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { SITE_MSA_UTA_URL, SITE_SIARIA_LABS_URL } from "@/lib/site-links";
+import {
+  SITE_MSA_UTA_URL,
+  SITE_RESUME_HREF,
+  SITE_SIARIA_LABS_URL,
+} from "@/lib/site-links";
 
 const IMG = {
   profile:
@@ -17,11 +21,6 @@ const IMG = {
 const BORDER = "border-[#af101a]";
 const HEADLINE = "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
-
-const RESUME_URL =
-  typeof process.env.NEXT_PUBLIC_RESUME_URL === "string"
-    ? process.env.NEXT_PUBLIC_RESUME_URL
-    : "/accomplishments.pdf";
 
 function Hanko({ children }: { children: React.ReactNode }) {
   return (
@@ -286,14 +285,12 @@ export function StitchSiariaLanding() {
             >
               Get in contact
             </Link>
-            <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={SITE_RESUME_HREF}
               className={`w-full border border-white px-12 py-4 font-extrabold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-[#af101a] md:w-auto ${HEADLINE}`}
             >
-              Download CV
-            </a>
+              VIEW CV
+            </Link>
           </div>
         </section>
       </main>

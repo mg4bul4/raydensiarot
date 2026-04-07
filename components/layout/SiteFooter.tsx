@@ -1,15 +1,19 @@
+import Link from "next/link";
 import {
   SITE_LINKEDIN_URL,
+  SITE_RESUME_HREF,
   SITE_SIARIA_LABS_URL,
 } from "@/lib/site-links";
 
 const HEADLINE =
   "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 
-const RESUME_URL =
-  typeof process.env.NEXT_PUBLIC_RESUME_URL === "string"
-    ? process.env.NEXT_PUBLIC_RESUME_URL
-    : "/accomplishments.pdf";
+const resumeLinkClass =
+  "text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-colors hover:text-[#af101a] hover:underline";
+
+function isInternalHref(href: string) {
+  return href.startsWith("/") && !href.startsWith("//");
+}
 
 export type SiteFooterProps = {
   /** Extra classes on the footer element (e.g. mt-auto w-full). */
@@ -46,14 +50,20 @@ export function SiteFooter({ className }: SiteFooterProps) {
           >
             LinkedIn
           </a>
-          <a
-            href={RESUME_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[10px] uppercase tracking-widest text-[#1e1c0b] opacity-60 transition-colors hover:text-[#af101a] hover:underline"
-          >
-            My resume
-          </a>
+          {isInternalHref(SITE_RESUME_HREF) ? (
+            <Link href={SITE_RESUME_HREF} className={resumeLinkClass}>
+              My resume
+            </Link>
+          ) : (
+            <a
+              href={SITE_RESUME_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={resumeLinkClass}
+            >
+              My resume
+            </a>
+          )}
           <a
             href={SITE_SIARIA_LABS_URL}
             target="_blank"

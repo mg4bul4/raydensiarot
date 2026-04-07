@@ -3,16 +3,11 @@ import { ArrowUpRight, Shield } from "lucide-react";
 import { ExitToHome } from "@/components/layout/ExitToHome";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ContactFormClient } from "@/components/contact/ContactFormClient";
-import { SITE_LINKEDIN_URL } from "@/lib/site-links";
+import { SITE_LINKEDIN_URL, SITE_RESUME_HREF } from "@/lib/site-links";
 
 const HEADLINE =
   "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
-
-const RESUME_URL =
-  typeof process.env.NEXT_PUBLIC_RESUME_URL === "string"
-    ? process.env.NEXT_PUBLIC_RESUME_URL
-    : "/accomplishments.pdf";
 
 const READCV_URL =
   typeof process.env.NEXT_PUBLIC_READCV_URL === "string"
@@ -104,7 +99,7 @@ export function StitchContactPage() {
                   </span>
                   <ul className="space-y-4">
                     <li>
-                      <ExternalRow href={RESUME_URL} label="Resume" />
+                      <ExternalRow href={SITE_RESUME_HREF} label="Resume" />
                     </li>
                     <li>
                       <ExternalRow href={SITE_LINKEDIN_URL} label="LinkedIn" />
