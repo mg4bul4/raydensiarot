@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GraduationCap, Pencil } from "lucide-react";
-import { ExitToHome } from "@/components/layout/ExitToHome";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 const HEADLINE =
@@ -23,10 +22,6 @@ export function StitchAboutPage() {
   return (
     <div className={`min-h-dvh bg-[#fff9e8] text-[#1e1c0b] ${BODY}`}>
       <main className="mx-auto max-w-7xl px-6 pb-12 pt-4 sm:px-8 md:pb-16">
-        <div className="relative z-10 mb-8">
-          <ExitToHome />
-        </div>
-
         {/* Hero + portrait */}
         <div className={`mb-12 grid grid-cols-1 gap-0 border bg-[#fff9e8] md:grid-cols-12 ${BORDER}`}>
           <div className="flex flex-col justify-between bg-[#fff9e8] p-8 md:col-span-8 md:p-12">

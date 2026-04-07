@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Open_Sans, Raleway } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { ExitToHome } from "@/components/layout/ExitToHome";
 import { SectionLabel } from "@/components/kanso/SectionLabel";
 
 const openSans = Open_Sans({
@@ -273,8 +272,7 @@ export function GroundedTalksDebrief() {
         variants={container}
       >
         <motion.header variants={fade} className="mb-2">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-            <ExitToHome />
+          <div className="flex justify-end">
             <Link
               href="/projects"
               className="font-mono text-[10px] uppercase tracking-[0.2em] text-black transition-colors duration-200 hover:text-[#af101a] sm:text-[11px]"

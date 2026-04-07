@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ExitToHome } from "@/components/layout/ExitToHome";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 const HEADLINE =
@@ -10,9 +9,6 @@ export function MessageSentPage() {
   return (
     <div className={`flex min-h-dvh flex-col bg-[#fff9e8] text-[#1e1c0b] selection:bg-[#af101a] selection:text-white ${BODY}`}>
       <main className="flex flex-grow flex-col items-center justify-center bg-[#fffbf0] p-8 md:p-24">
-        <div className="mb-10 w-full max-w-3xl self-start px-0 sm:px-2">
-          <ExitToHome />
-        </div>
         <div className="relative w-full max-w-3xl overflow-hidden border border-[#af101a] bg-[#fff9e8] p-12 md:p-24">
           <div className="relative z-10 space-y-8">
             <h1

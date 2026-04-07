@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
-import { ExitToHome } from "@/components/layout/ExitToHome";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import {
   SITE_MSA_UTA_URL,
@@ -36,10 +35,6 @@ export function StitchProjectsIndex() {
   return (
     <div className={`min-h-dvh bg-[#fdf9ea] text-[#1e1c0b] ${BODY}`}>
       <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-4 sm:px-8 md:pb-24">
-        <div className="relative z-20">
-          <ExitToHome />
-        </div>
-
         <header className="mb-16 grid grid-cols-12 gap-8 lg:mb-24">
           <div className="col-span-12 lg:col-span-8">
             <h1

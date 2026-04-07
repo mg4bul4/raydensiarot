@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowUpRight, Shield } from "lucide-react";
-import { ExitToHome } from "@/components/layout/ExitToHome";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ContactFormClient } from "@/components/contact/ContactFormClient";
 import { SITE_LINKEDIN_URL, SITE_RESUME_HREF } from "@/lib/site-links";
@@ -57,10 +56,6 @@ export function StitchContactPage() {
   return (
     <div className={`min-h-dvh bg-[#fdf9ea] text-[#1e1c0b] ${BODY}`}>
       <main className="mx-auto max-w-screen-2xl px-6 pb-24 pt-4 sm:px-8 md:pb-32">
-        <div className="relative z-10 mb-12">
-          <ExitToHome />
-        </div>
-
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-24">
           <div className="space-y-16 md:col-span-8 lg:space-y-24">
             <section>

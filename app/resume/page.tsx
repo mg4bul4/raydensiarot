@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExitToHome } from "@/components/layout/ExitToHome";
 
 const PDF_SRC = "/rayden-siarot-resume-2026.pdf";
 
@@ -12,8 +11,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <div className="flex min-h-[calc(100dvh-5rem)] flex-col bg-[#fdf9ea]">
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#af101a] bg-[#fdf9ea] px-6 py-4 sm:px-8">
-        <ExitToHome />
+      <div className="flex flex-wrap items-center justify-end gap-4 border-b border-[#af101a] bg-[#fdf9ea] px-6 py-4 sm:px-8">
         <Link
           href={PDF_SRC}
           target="_blank"
