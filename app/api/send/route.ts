@@ -30,7 +30,7 @@ function buildEmailHtml(name: string, email: string, message: string) {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background-color:#ffffff;border:1px solid #e7e5e4;">
 <tr>
 <td style="padding:32px 36px 8px 36px;border-bottom:3px solid #af101a;">
-<p style="margin:0;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#78716c;font-family:system-ui,sans-serif;">Portfolio — contact form</p>
+<p style="margin:0;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#78716c;font-family:system-ui,sans-serif;">Portfolio: contact form</p>
 <h1 style="margin:12px 0 0 0;font-size:22px;font-weight:700;color:#1c1917;font-family:system-ui,sans-serif;letter-spacing:-0.02em;">New message</h1>
 </td>
 </tr>
@@ -56,7 +56,7 @@ function buildEmailHtml(name: string, email: string, message: string) {
 </tr>
 <tr>
 <td style="padding:0 36px 32px 36px;border-top:1px solid #e7e5e4;">
-<p style="margin:0;font-size:12px;line-height:1.5;color:#a8a29e;font-family:system-ui,sans-serif;">Reply directly to this email to respond to <strong style="color:#57534e;">${safeName}</strong> — their address is set as the reply-to.</p>
+<p style="margin:0;font-size:12px;line-height:1.5;color:#a8a29e;font-family:system-ui,sans-serif;">Reply directly to this email to respond to <strong style="color:#57534e;">${safeName}</strong>; their address is set as the reply-to.</p>
 </td>
 </tr>
 </table>

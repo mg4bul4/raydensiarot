@@ -4,7 +4,7 @@ import Link from "next/link";
 const PDF_SRC = "/rayden-siarot-resume-2026.pdf";
 
 export const metadata: Metadata = {
-  title: "CV — Rayden Siarot",
+  title: "CV | Rayden Siarot",
   description: "View résumé (PDF).",
 };
 
@@ -22,7 +22,7 @@ export default function ResumePage() {
         </Link>
       </div>
       <iframe
-        title="Rayden Siarot — CV (PDF)"
+        title="Rayden Siarot | CV (PDF)"
         src={`${PDF_SRC}#view=FitH`}
         className="min-h-[calc(100dvh-5rem-4.25rem)] w-full flex-1 border-0 bg-[#e7e5e4]"
       />

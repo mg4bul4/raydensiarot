@@ -29,9 +29,9 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     outcomeLead:
       "0→1 product: dual-audience trust, scheduling, and brand system under one roof.",
     mission:
-      "Students needed credible access to industry mentors; mentors needed a low-friction way to show up. I owned brand and platform UX so both sides could commit in minutes—not after a chain of cold emails.",
+      "Students needed credible access to industry mentors; mentors needed a low-friction way to show up. I owned brand and platform UX so both sides could commit in minutes, not after a chain of cold emails.",
     impactPoints: [
-      "End-to-end UI and design system from a standing start—scalable for future product work.",
+      "End-to-end UI and design system from a standing start, scalable for future product work.",
       "Booking and profile flows tuned to reduce hesitation on both sides of the marketplace.",
       "Visual language that reads executive-grade to sponsors and approachable to students.",
     ],
@@ -44,7 +44,7 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     title: "Nafs.fyi",
     type: "Mobile app",
     role: "UI designer",
-    year: "—",
+    year: "–",
     outcomeLead: "Sensitive category UX: clarity first, judgment never.",
     description:
       "Women’s health startup in a stigmatized space. UI work prioritized scanability, calm hierarchy, and flows that work when users are distracted or low on time.",
@@ -56,11 +56,11 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     title: "MSA at UTA Website",
     type: "Web platform",
     role: "Lead developer",
-    year: "—",
+    year: "–",
     outcomeLead:
       "Community site: events, resources, and onboarding in one place.",
     description:
-      "Owned the student org’s public web presence—information architecture, build, and handoff so leadership can update content without engineering.",
+      "Owned the student org’s public web presence: information architecture, build, and handoff so leadership can update content without engineering.",
     href: SITE_MSA_UTA_URL,
     ctaLabel: "Visit site",
   },
@@ -69,11 +69,11 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
     title: "Siaria Labs",
     type: "Design agency",
     role: "Founder",
-    year: "—",
+    year: "–",
     outcomeLead:
       "Independent practice: product UI and creative direction for hire.",
     description:
-      "Small studio focused on disciplined interfaces and coherent brand execution—fewer surfaces, sharper intent.",
+      "Small studio focused on disciplined interfaces and coherent brand execution: fewer surfaces, sharper intent.",
     href: SITE_SIARIA_LABS_URL,
     ctaLabel: "Visit site",
   },

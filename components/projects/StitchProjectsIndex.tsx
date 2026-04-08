@@ -2,10 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import {
-  SITE_MSA_UTA_URL,
-  SITE_SIARIA_LABS_URL,
-} from "@/lib/site-links";
+import { SITE_MSA_UTA_URL } from "@/lib/site-links";
 
 const BORDER = "border-[#af101a]";
 const HEADLINE =
@@ -47,7 +44,7 @@ export function StitchProjectsIndex() {
         </header>
 
         <div className="grid grid-cols-12 gap-8 lg:gap-12">
-          {/* Siaria — featured */}
+          {/* Siaria: featured */}
           <article
             className={`relative col-span-12 grid grid-cols-12 gap-0 border bg-[#fff8dc] ${BORDER}`}
           >
@@ -96,15 +93,11 @@ export function StitchProjectsIndex() {
                   <Tag>Frontend implementation</Tag>
                 </div>
               </div>
-              <Link
-                href={SITE_SIARIA_LABS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group flex items-center gap-4 text-xl font-bold uppercase tracking-tighter text-[#1e1c0b] hover:text-[#af101a] ${HEADLINE}`}
+              <p
+                className={`text-xl font-bold uppercase tracking-[0.2em] text-[#af101a] ${HEADLINE}`}
               >
-                View project
-                <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-2" />
-              </Link>
+                UNDER CONSTRUCTION
+              </p>
             </div>
           </article>
 

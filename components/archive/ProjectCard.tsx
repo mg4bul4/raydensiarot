@@ -67,7 +67,7 @@ export function ProjectCard({
         <Link
           href={project.href}
           className="absolute inset-0 z-10 cursor-pointer rounded-sm"
-          aria-label={`${project.title} — open project`}
+          aria-label={`${project.title}, open project`}
         />
       ) : isActionable ? (
         <a
@@ -75,7 +75,7 @@ export function ProjectCard({
           target="_blank"
           rel="noopener noreferrer"
           className="absolute inset-0 z-10 cursor-pointer rounded-sm"
-          aria-label={`${project.title} — open link`}
+          aria-label={`${project.title}, open link`}
         />
       ) : null}
 

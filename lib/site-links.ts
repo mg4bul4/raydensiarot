@@ -4,7 +4,7 @@
 
 const DEFAULT_LINKEDIN = "https://www.linkedin.com/in/raydensiarot/";
 const DEFAULT_SIARIA_LABS = "https://siarialabs.com/";
-const DEFAULT_MSA_UTA = "https://utaatmsa.org";
+const DEFAULT_MSA_UTA = "https://msaatuta.org";
 
 /** In-app PDF viewer route (embeds /public/rayden-siarot-resume-2026.pdf). */
 const DEFAULT_RESUME_PATH = "/resume";

@@ -31,9 +31,13 @@ export function HomeBiosPreview() {
         >
           Profile
         </h2>
-        <p className="mt-8 max-w-xl text-base leading-relaxed text-black/85 sm:text-lg">
-          Information Systems at UT Arlington. I ship product UI and front-end
-          surfaces with clear constraints—Hawai&apos;i-raised, design-first.
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-black/85 sm:text-lg">
+          UI Designer &amp; Brand Strategist dedicated to building purposeful
+          digital identities and user-centric interfaces. My approach is rooted in
+          a disciplined design process that balances aesthetic grace with strategic
+          market insights. I am eager to apply my experience in high-fidelity
+          prototyping and visual logic to help collaborative teams solve complex
+          brand and product challenges.
         </p>
         <Link
           href="/about"

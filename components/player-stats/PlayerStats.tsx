@@ -89,7 +89,7 @@ export function PlayerStats() {
           Capabilities
         </h2>
         <p className="mt-6 max-w-prose font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-black/50 sm:text-[11px]">
-          Relative emphasis across practice areas — not a score.
+          Relative emphasis across practice areas, not a score.
         </p>
 
         <motion.div

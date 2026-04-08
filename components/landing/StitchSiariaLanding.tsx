@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BarChart3, Brush, Compass, Pencil } from "lucide-react";
+import { ArrowUpRight, Brush, Compass, Pencil } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import {
   SITE_MSA_UTA_URL,
   SITE_RESUME_HREF,
-  SITE_SIARIA_LABS_URL,
 } from "@/lib/site-links";
 import { PROFILE_PHOTO_SRC } from "@/lib/profile-photo";
 
@@ -40,7 +39,7 @@ export function StitchSiariaLanding() {
       className={`flex min-h-dvh flex-col bg-[#fff9e8] text-[#1e1c0b] ${BODY}`}
     >
       <main className="mx-auto w-full max-w-7xl flex-1 p-4 md:p-8">
-        {/* Hero — bento */}
+        {/* Hero: bento */}
         <section
           className={`mb-8 grid grid-cols-1 gap-0 border md:grid-cols-12 ${BORDER}`}
         >
@@ -61,8 +60,9 @@ export function StitchSiariaLanding() {
               >
                 UI DESIGNER &amp; BRAND STRATEGIST
               </h1>
-              <p className="max-w-md text-lg leading-relaxed opacity-80 md:text-xl">
-                Specializing in high-fidelity implementation and aesthetic logic.
+              <p className="max-w-2xl text-lg leading-relaxed opacity-80 md:text-xl">
+                Where structural logic meets aesthetic grace. I build visual systems
+                that align brand identity with seamless user experience.
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export function StitchSiariaLanding() {
               src={IMG.profile}
               alt="Rayden Siarot"
               fill
-              className="object-cover object-top"
+              className="object-cover object-top grayscale"
               sizes="(max-width: 768px) 100vw, 33vw"
               priority
             />
@@ -114,11 +114,8 @@ export function StitchSiariaLanding() {
             </span>
           </div>
           <div className={`grid grid-cols-1 gap-0 border md:grid-cols-3 ${BORDER}`}>
-            <Link
-              href={SITE_SIARIA_LABS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex cursor-pointer flex-col overflow-hidden border-b border-[#af101a] bg-[#fff9e8] md:col-span-2 md:row-span-2 md:border-b-0 md:border-r"
+            <div
+              className="flex flex-col overflow-hidden border-b border-[#af101a] bg-[#fff9e8] md:col-span-2 md:row-span-2 md:border-b-0 md:border-r"
             >
               <div
                 className={`flex items-center justify-between border-b bg-[#fff9e8] p-8 ${BORDER}`}
@@ -126,14 +123,18 @@ export function StitchSiariaLanding() {
                 <h3 className={`text-2xl font-bold uppercase tracking-tight ${HEADLINE}`}>
                   Siaria Labs
                 </h3>
-                <ArrowUpRight className="h-5 w-5 text-[#af101a]" />
+                <span
+                  className={`text-xs font-bold uppercase tracking-[0.2em] text-[#af101a] ${HEADLINE}`}
+                >
+                  UNDER CONSTRUCTION
+                </span>
               </div>
               <div className="relative aspect-video bg-black">
                 <Image
                   src={IMG.siaria}
                   alt=""
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 66vw"
                 />
               </div>
@@ -160,11 +161,8 @@ export function StitchSiariaLanding() {
                     Founding designer
                   </span>
                 </div>
-                <Hanko>
-                  <BarChart3 className="h-3.5 w-3.5" strokeWidth={2} />
-                </Hanko>
               </div>
-            </Link>
+            </div>
 
             <Link
               href="/projects/grounded-talks"
@@ -260,8 +258,8 @@ export function StitchSiariaLanding() {
             </div>
             <div className="relative mt-12 border border-[#af101a] bg-[#fff9e8] p-8">
               <p className="text-sm italic">
-                &ldquo;Design is the silent ambassador of your brand.&rdquo; —
-                Paul Rand
+                &ldquo;Design is the silent ambassador of your brand.&rdquo;{" "}
+                <span className="text-black/60">Paul Rand</span>
               </p>
               <div className="absolute -bottom-3 -right-3">
                 <Hanko>

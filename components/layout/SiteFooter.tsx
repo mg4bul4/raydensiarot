@@ -21,7 +21,7 @@ export type SiteFooterProps = {
 };
 
 /**
- * Standard site footer — matches the projects page: three columns, tagline, links.
+ * Standard site footer: matches the projects page (three columns, tagline, links).
  */
 export function SiteFooter({ className }: SiteFooterProps) {
   const year = new Date().getFullYear();

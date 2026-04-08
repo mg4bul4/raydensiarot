@@ -3,9 +3,9 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { GroundedTalksDebrief } from "@/components/projects/GroundedTalksDebrief";
 
 export const metadata: Metadata = {
-  title: "GroundedTalks — Case study",
+  title: "GroundedTalks | Case study",
   description:
-    "Creative lead: 0→1 brand and platform UX for a student–industry mentorship product—constraints, system, and outcomes.",
+    "GroundedTalks: discovery platform for 300+ students. Research, gamified UX, Cup of Joe branding, Squarespace build, usability outcomes.",
 };
 
 export default function GroundedTalksPage() {

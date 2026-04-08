@@ -33,10 +33,12 @@ export function StitchAboutPage() {
                 </span>
               </h1>
               <p className="max-w-2xl text-xl font-medium leading-snug md:text-2xl lg:text-3xl">
-                A visual-focused UI Designer &amp; Developer dedicated to crafting
-                clean, intentional digital experiences. I transform complex data
-                into functional, user-centric interfaces through the lens of Kanso
-                minimalism.
+                UI Designer &amp; Brand Strategist dedicated to building purposeful
+                digital identities and user-centric interfaces. My approach is rooted
+                in a disciplined design process that balances aesthetic grace with
+                strategic market insights. I am eager to apply my experience in
+                high-fidelity prototyping and visual logic to help collaborative
+                teams solve complex brand and product challenges.
               </p>
             </div>
           </div>
@@ -82,7 +84,7 @@ export function StitchAboutPage() {
                   <span
                     className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
-                    Senior UI Designer | JUN 2024 — PRESENT
+                    Founding Designer | JUN 2024 to PRESENT
                   </span>
                 </div>
                 <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
@@ -101,7 +103,7 @@ export function StitchAboutPage() {
                   <span
                     className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
-                    Lead Visual Designer | OCT 2023 — JUN 2024
+                    Design Lead | OCT 2023 to JUN 2024
                   </span>
                 </div>
                 <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
@@ -119,11 +121,11 @@ export function StitchAboutPage() {
                   <span
                     className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
-                    UI Developer Intern | JAN 2024 — APR 2024
+                    Web Dev and Design Intern | JAN 2024 to APR 2024
                   </span>
                 </div>
                 <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
-                  Bridging the gap between design and code by implementing
+                  Bridged the gap between design and code by implementing
                   responsive web components and interactive prototypes.
                 </p>
               </div>

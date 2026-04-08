@@ -39,7 +39,7 @@ const stitchBody = Manrope({
 export const metadata: Metadata = {
   title: "Rayden Siarot",
   description:
-    "Product designer and front-end developer — case studies and work focused on constraints, clarity, and measurable user outcomes.",
+    "Product designer and front-end developer. Case studies and work focused on constraints, clarity, and measurable user outcomes.",
 };
 
 export default function RootLayout({
