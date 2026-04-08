@@ -2,14 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { GraduationCap, Pencil } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { PROFILE_PHOTO_SRC } from "@/lib/profile-photo";
 
 const HEADLINE =
   "[font-family:var(--font-stitch-headline),ui-sans-serif,sans-serif]";
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
 const BORDER = "border-[#af101a]";
-
-const PORTRAIT =
-  "https://lh3.googleusercontent.com/aida/ADBb0ujRwSr44eXwa3wRszczGmMMF2RVA4lh4GlJUbTMqiMQrWNfUHe_iVpQWjT0K9YW-jqyOBC7DIp-ms60CGPCxcYovbY8uLEsgClsLYJaBP0nnCYLm1Az8DTcvWO4K9ZMS9vKdtRVOEozmGZe0u-HGzW32qiftl2UxG0RNuZ99SPQWjukdlNpnDWkO5keI6NTaqaGgviZw6Gr_zm_RaEfu1jTs-vsa1XifLTYudvuCgZ5X3XL2ZOFNS3pWVwXbFXh7NOR55VQOCLsnQ";
 
 const PHILOSOPHY = [
   "Functional Minimalism",
@@ -46,10 +44,10 @@ export function StitchAboutPage() {
             className={`relative aspect-square min-h-[280px] border-t md:col-span-4 md:aspect-auto md:min-h-0 md:border-l md:border-t-0 ${BORDER}`}
           >
             <Image
-              src={PORTRAIT}
+              src={PROFILE_PHOTO_SRC}
               alt="Rayden Siarot"
               fill
-              className="object-cover contrast-125"
+              className="object-cover object-top"
               sizes="(max-width: 768px) 100vw, 33vw"
               priority
             />

@@ -7,10 +7,10 @@ import {
   SITE_RESUME_HREF,
   SITE_SIARIA_LABS_URL,
 } from "@/lib/site-links";
+import { PROFILE_PHOTO_SRC } from "@/lib/profile-photo";
 
 const IMG = {
-  profile:
-    "https://lh3.googleusercontent.com/aida/ADBb0ujrob54-0M3zO3p59gkNkyjYh0Q_-9nf07_2tJRB81rSSakwon1pVAeVl8YB_McCIyUduf0ZAy4T99SdjrJ_ps0yhMb8B-UYtpouLocnEff4aXdV8-oJDzSX2KBUs3L6Dt4Se4WYDFOhJL9VS6iLeqSepEV9YFvlCbn9x12gpdQceAoPEToZBMQsvDiT77CYyhxRQptRf27va-Hlq_4YssAd748ZDbbmOL5y14t6bIpBlnMOjx_UJmFwOaoT2giGGz7fUZZ082zl9w",
+  profile: PROFILE_PHOTO_SRC,
   siaria:
     "https://lh3.googleusercontent.com/aida/ADBb0uhb87DfVZRVt5n0FJBWG6ItefxKpU_EMSnRfHT-F8dhZhHwmEv2w9bTr_5txzZ17kk97s6_UIk1vVcXKcN9m9LkbvLJMt4UNP9K1keKrB3-ZyXtQ5R1QsxGqKONuUGJDgAvkjd12hooKvlevEyAovg5tWeL-K9sMgY9UsECrDj_Lmznrh3kYbpLC9fPDtESmKjMuN9qHGXvgG01rQI63MCq_awpdmmMpSVxWAX569ux8w_53RPQLBVCNAiYEcub-LUfTUDTmMPt1FA",
   grounded:
@@ -69,13 +69,17 @@ export function StitchSiariaLanding() {
           <div className="relative flex min-h-[280px] flex-col items-center justify-center overflow-hidden bg-[#f5eed2] p-8 md:col-span-4 md:min-h-0">
             <Image
               src={IMG.profile}
-              alt=""
+              alt="Rayden Siarot"
               fill
-              className="object-cover opacity-40 grayscale contrast-150"
+              className="object-cover object-top"
               sizes="(max-width: 768px) 100vw, 33vw"
+              priority
             />
             <div className="relative z-10 text-center">
-              <Link href="/about" className="group block">
+              <Link
+                href="/about"
+                className="group block rounded-sm bg-[#fff9e8]/90 px-5 py-4 shadow-sm backdrop-blur-[1px]"
+              >
                 <span
                   className={`mb-2 block text-4xl font-bold uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
                 >
