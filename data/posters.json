@@ -1,0 +1,81 @@
+{
+  "posters": [
+    {
+      "id": "all-time-high-tour",
+      "title": "All Time High Tour",
+      "year": "2024",
+      "src": "/projects/posters/all-time-high-tour.png",
+      "width": 768,
+      "height": 1024,
+      "alt": "Concert poster for All Time High Tour with halftone band photo and torn-paper typography",
+      "objective": "Promote a local DIY punk show with a raw, high-energy visual identity that reads instantly in the underground scene.",
+      "visualLogic": "High-contrast halftone and cut-and-paste type evoke 90s zine culture and classic punk flyers."
+    },
+    {
+      "id": "dreaming",
+      "title": "Dreaming",
+      "year": "2024",
+      "src": "/projects/posters/dreaming.png",
+      "width": 768,
+      "height": 1024,
+      "alt": "Poster with floating silhouette, fiery glow, and DREAMING display type on a grainy dark ground",
+      "objective": "Capture a surreal, subconscious mood using a gritty, lo-fi visual language.",
+      "visualLogic": "Silhouette and airbrushed glow sit on dense texture so depth and mystery stay legible at poster scale."
+    },
+    {
+      "id": "retro-gundam-screenprint",
+      "title": "Retro Gundam Screenprint",
+      "year": "2024",
+      "src": "/projects/posters/retro-gundam-screenprint.png",
+      "width": 778,
+      "height": 1024,
+      "alt": "Vintage screenprint-style poster with RX-78 Gundam, orange and purple type, and red frame",
+      "objective": "Evoke nostalgia for classic mecha anime with a distressed, limited-palette graphic.",
+      "visualLogic": "Complementary orange and purple on a dark field, framed by a bold red edge for vintage print impact."
+    },
+    {
+      "id": "i-wont-tell",
+      "title": "I Won't Tell",
+      "year": "2024",
+      "src": "/projects/posters/i-wont-tell.png",
+      "width": 768,
+      "height": 1024,
+      "alt": "Halftone classical bust with cyan bar across the eyes reading I WON'T TELL IF YOU DON'T TELL",
+      "objective": "Bridge classical sculpture and digital print with a provocative take on secrecy and identity.",
+      "visualLogic": "Halftone pattern and a censorship strip focus attention on what is withheld, not shown."
+    },
+    {
+      "id": "showdown-nights-after-hours",
+      "title": "Showdown Nights After Hours",
+      "year": "2024",
+      "src": "/projects/posters/showdown-nights-after-hours.png",
+      "width": 819,
+      "height": 1024,
+      "alt": "Event poster with night sky, speaker portrait, and silver and gold typography",
+      "objective": "Promote a late-night community program that balances energy, clarity, and spiritual tone.",
+      "visualLogic": "Celestial backdrop with metallic type keeps hierarchy readable over a busy photographic scene."
+    },
+    {
+      "id": "quran-night-serenity",
+      "title": "Quran Night: The Serenity of Remembrance",
+      "year": "2023",
+      "src": "/projects/posters/quran-night-serenity.png",
+      "width": 791,
+      "height": 1024,
+      "alt": "Formal event poster with script title, speaker portraits, and soft Quran photography",
+      "objective": "Design a dignified invite for a university spiritual event that welcomes students and guests.",
+      "visualLogic": "Warm dark palette, script headline, and serif detail signal tradition and calm in one glance."
+    },
+    {
+      "id": "future-folklore-festival",
+      "title": "Future Folklore Festival",
+      "year": "2125",
+      "src": "/projects/posters/future-folklore-festival.png",
+      "width": 723,
+      "height": 1024,
+      "alt": "Speculative festival poster with neon gradients, scanline texture, and Marrakech sector details",
+      "objective": "Promote a fictional festival that blends North African heritage with a far-future, cyberpunk lens.",
+      "visualLogic": "Neon gradients and scanline texture sell retro-futurism without losing cultural silhouette."
+    }
+  ]
+}

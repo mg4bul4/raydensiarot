@@ -41,7 +41,7 @@ export function StitchSiariaLanding() {
       <main className="mx-auto w-full max-w-7xl flex-1 p-4 md:p-8">
         {/* Hero: bento */}
         <section
-          className={`mb-8 grid grid-cols-1 gap-0 border md:grid-cols-12 ${BORDER}`}
+          className={`mb-8 grid grid-cols-1 gap-0 kanso-card md:grid-cols-12`}
         >
           <div
             className={`flex min-h-[500px] flex-col justify-between bg-[#fff9e8] p-12 md:col-span-8 md:border-r md:p-24 ${BORDER}`}
@@ -71,7 +71,7 @@ export function StitchSiariaLanding() {
               src={IMG.profile}
               alt="Rayden Siarot"
               fill
-              className="object-cover object-top grayscale"
+              className="object-cover object-top kanso-photo"
               sizes="(max-width: 768px) 100vw, 33vw"
               priority
             />
@@ -113,14 +113,14 @@ export function StitchSiariaLanding() {
               Est. 2023
             </span>
           </div>
-          <div className={`grid grid-cols-1 gap-0 border md:grid-cols-3 ${BORDER}`}>
+          <div className={`grid grid-cols-1 gap-0 kanso-card md:grid-cols-3`}>
             <div
               className="flex flex-col overflow-hidden border-b border-[#af101a] bg-[#fff9e8] md:col-span-2 md:row-span-2 md:border-b-0 md:border-r"
             >
               <div
                 className={`flex items-center justify-between border-b bg-[#fff9e8] p-8 ${BORDER}`}
               >
-                <h3 className={`text-2xl font-bold uppercase tracking-tight ${HEADLINE}`}>
+                <h3 className={`text-2xl font-bold uppercase tracking-tight text-[#1e1c0b] ${HEADLINE}`}>
                   Siaria Labs
                 </h3>
                 <span
@@ -169,7 +169,7 @@ export function StitchSiariaLanding() {
               className="group cursor-pointer border-b border-[#af101a] bg-[#fff9e8] md:border-b"
             >
               <div className={`flex items-center justify-between border-b p-8 ${BORDER}`}>
-                <h3 className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}>
+                <h3 className={`text-xl font-bold uppercase tracking-tight text-[#1e1c0b] ${HEADLINE}`}>
                   GroundedTalks: edutech platform
                 </h3>
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-[#af101a]" />
@@ -192,7 +192,7 @@ export function StitchSiariaLanding() {
               className="group flex h-full cursor-pointer flex-col bg-[#fbf4d8]"
             >
               <div className={`flex items-center justify-between border-b p-8 ${BORDER}`}>
-                <h3 className={`text-xl font-bold uppercase tracking-tight ${HEADLINE}`}>
+                <h3 className={`text-xl font-bold uppercase tracking-tight text-[#1e1c0b] ${HEADLINE}`}>
                   MSA at UTA website
                 </h3>
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-[#af101a]" />
@@ -211,7 +211,7 @@ export function StitchSiariaLanding() {
         </section>
 
         {/* Skills & mission */}
-        <section className={`mb-8 grid grid-cols-1 gap-0 border md:grid-cols-2 ${BORDER}`}>
+        <section className={`mb-8 grid grid-cols-1 gap-0 kanso-card md:grid-cols-2`}>
           <div className={`flex flex-col bg-[#fff9e8] p-12 md:border-r ${BORDER}`}>
             <h2
               className={`mb-12 text-3xl font-bold uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
@@ -273,8 +273,10 @@ export function StitchSiariaLanding() {
         {/* CTA */}
         <section
           id="contact-cta"
-          className="border border-[#af101a] bg-[#af101a] p-12 text-center md:p-24"
+          className="relative kanso-card bg-[#af101a] p-12 text-center md:p-24"
         >
+          {/* Inner border — frame within a frame, Showa print motif */}
+          <div className="pointer-events-none absolute inset-3 border border-[#fff9e8]/40" />
           <h2
             className={`mb-8 text-4xl font-extrabold uppercase tracking-tighter text-[#fff9e8] md:text-6xl lg:text-7xl ${HEADLINE}`}
           >

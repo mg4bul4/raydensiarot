@@ -44,7 +44,10 @@ export function LightboxImage(props: LightboxImageProps) {
   const [mounted, setMounted] = useState(false);
   const titleId = useId();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   useEffect(() => {
     if (!open) return;

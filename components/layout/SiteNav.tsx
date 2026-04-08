@@ -80,7 +80,8 @@ export function SiteNav() {
   }, [menuOpen, closeMenu]);
 
   useEffect(() => {
-    closeMenu();
+    const id = requestAnimationFrame(() => closeMenu());
+    return () => cancelAnimationFrame(id);
   }, [pathname, closeMenu]);
 
   return (

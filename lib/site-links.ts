@@ -5,6 +5,7 @@
 const DEFAULT_LINKEDIN = "https://www.linkedin.com/in/raydensiarot/";
 const DEFAULT_SIARIA_LABS = "https://siarialabs.com/";
 const DEFAULT_MSA_UTA = "https://msaatuta.org";
+const DEFAULT_TANZEEL_INITIATIVE = "https://www.tanzeelinitiative.org/";
 
 /** In-app PDF viewer route (embeds /public/rayden-siarot-resume-2026.pdf). */
 const DEFAULT_RESUME_PATH = "/resume";
@@ -22,6 +23,10 @@ export const SITE_SIARIA_LABS_URL =
 
 export const SITE_MSA_UTA_URL =
   trimEnv(process.env.NEXT_PUBLIC_MSA_UTA_URL) ?? DEFAULT_MSA_UTA;
+
+export const SITE_TANZEEL_INITIATIVE_URL =
+  trimEnv(process.env.NEXT_PUBLIC_TANZEEL_INITIATIVE_URL) ??
+  DEFAULT_TANZEEL_INITIATIVE;
 
 /** Résumé: default `/resume` (embedded PDF viewer). Override with NEXT_PUBLIC_RESUME_URL. */
 export const SITE_RESUME_HREF =
