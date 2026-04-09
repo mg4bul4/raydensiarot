@@ -15,7 +15,7 @@ export const PROJECT_REGISTRY: Record<string, ProjectCardConfig> = {
     primaryHref: SITE_SIARIA_LABS_URL,
     primaryLabel: "Visit Website",
     primaryExternal: true,
-    showPrimary: true,
+    showPrimary: false,
     docsContent: {
       manualTitle: "Siaria Labs",
       brandStrategy: {
