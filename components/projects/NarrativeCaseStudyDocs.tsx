@@ -8,6 +8,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import type { NarrativeCaseStudy } from "@/lib/narrative-case-study-types";
 import { NarrativeRichText } from "@/components/projects/NarrativeRichText";
 
+// Visual refresh: elevated editorial type hierarchy, stronger contrast, expanded section rhythm, and refined card/image/callout depth while preserving structure and existing brand colors.
 /* ─── Design tokens ──────────────────────────────────────────────────────── */
 /* Primary background  : #fdf9ea  (warm cream)                               */
 /* Ink                 : #1e1c0b                                              */
@@ -22,11 +23,11 @@ const BODY =
   "[font-family:var(--font-stitch-body,var(--font-inter),ui-sans-serif,sans-serif)]";
 
 const LABEL =
-  `text-[10px] font-bold uppercase tracking-[0.28em] text-[color:var(--accent-red)] ${HL}`;
+  `text-[11px] font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${HL}`;
 const PROSE =
-  `text-[15px] leading-[1.85] text-[#1e1c0b]/85 ${BODY}`;
+  `max-w-[72ch] text-[17px] leading-[1.72] text-[#1e1c0b]/92 ${BODY}`;
 const SECTION_HEADING =
-  `text-[11px] font-bold uppercase tracking-[0.22em] text-[#1e1c0b]/45 ${HL}`;
+  `text-[11px] font-bold uppercase tracking-[0.18em] text-[#1e1c0b]/58 ${HL}`;
 
 /* ─── Sidebar section registry ───────────────────────────────────────────── */
 const SECTIONS = [
@@ -50,14 +51,14 @@ function BentoCard({
 }) {
   return (
     <div
-      className={`flex flex-col gap-3 rounded-[2px] border p-6 ${
+      className={`flex flex-col gap-3 rounded-[2px] border p-7 shadow-[0_10px_28px_rgba(30,28,11,0.06)] sm:p-8 ${
         accent
           ? "border-[color:var(--accent-red)]/30 bg-[color:var(--accent-red)]/5"
           : "border-[rgba(30,28,11,0.10)] bg-[#fff9e8]"
       }`}
     >
       <p className={LABEL}>{label}</p>
-      <p className={`text-[14px] leading-[1.7] text-[#1e1c0b]/80 ${BODY}`}>{body}</p>
+      <p className={`text-[16px] leading-[1.7] text-[#1e1c0b]/90 ${BODY}`}>{body}</p>
     </div>
   );
 }
@@ -72,8 +73,8 @@ function InlineImage({
 }) {
   if (!image) {
     return (
-      <div className="flex min-h-[28vh] items-center justify-center rounded-[2px] border border-dashed border-[color:var(--accent-red)]/30 bg-[#fff9e8] px-6 py-14">
-        <p className={`text-center text-[11px] font-medium uppercase tracking-[0.22em] text-[#1e1c0b]/38 ${HL}`}>
+      <div className="flex min-h-[28vh] items-center justify-center rounded-[2px] border border-dashed border-[color:var(--accent-red)]/30 bg-[#fff9e8] px-6 py-14 shadow-[0_10px_24px_rgba(30,28,11,0.05)]">
+        <p className={`text-center text-[11px] font-medium uppercase tracking-[0.22em] text-[#1e1c0b]/46 ${HL}`}>
           {caption}
         </p>
       </div>
@@ -114,8 +115,8 @@ function InlineImage({
 
   /* Desktop variant */
   return (
-    <div className="border border-[color:var(--accent-red)]/20 p-1">
-      <div className="relative w-full overflow-hidden">
+    <div className="rounded-[2px] border border-[color:var(--accent-red)]/20 p-1 shadow-[0_14px_34px_rgba(30,28,11,0.12)]">
+      <div className="relative w-full overflow-hidden rounded-[1px]">
         <Image
           src={image.src}
           alt={image.alt}
@@ -163,11 +164,11 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
     <div className={`min-h-dvh bg-[#fdf9ea] text-[#1e1c0b] ${BODY}`}>
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="border-b border-[rgba(30,28,11,0.10)] px-6 pb-20 pt-10 sm:px-8 lg:px-16 xl:px-32">
+      <section className="border-b border-[rgba(30,28,11,0.10)] px-6 pb-20 pt-8 sm:px-8 sm:pb-24 lg:px-16 xl:px-24 2xl:px-32">
         <div className="mx-auto max-w-[90rem]">
           <Link
             href="/projects"
-            className={`mb-14 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[color:var(--accent-red)] transition-colors hover:text-[#1e1c0b] ${HL}`}
+            className={`mb-12 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[color:var(--accent-red)] transition-colors duration-200 hover:text-[#1e1c0b] ${HL}`}
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
             Projects
@@ -176,16 +177,16 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
           <p className={`mb-5 ${LABEL}`}>Case study</p>
 
           <h1
-            className={`text-[clamp(2.8rem,10vw,6rem)] font-black uppercase leading-[0.92] tracking-[-0.03em] text-[color:var(--accent-red)] ${HL}`}
+            className={`text-[clamp(2.7rem,8vw,5.9rem)] font-black uppercase leading-[0.95] tracking-[-0.02em] text-[color:var(--accent-red)] ${HL}`}
           >
             {n.displayTitle}
           </h1>
 
-          <p className={`mt-8 max-w-xl text-[17px] leading-[1.65] text-[#1e1c0b]/60 ${BODY}`}>
+          <p className={`mt-7 max-w-2xl text-[17px] leading-[1.7] text-[#1e1c0b]/88 sm:text-[18px] ${BODY}`}>
             {n.tagline}
           </p>
 
-          <p className={`mt-5 text-[12px] leading-[1.6] text-[#1e1c0b]/45 ${HL} font-medium uppercase tracking-[0.18em]`}>
+          <p className={`mt-6 text-[11px] leading-6 text-[#1e1c0b]/64 ${HL} font-medium uppercase tracking-[0.14em]`}>
             {n.roleLine}
           </p>
         </div>
@@ -194,12 +195,12 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
       {/* ── Bento summary ────────────────────────────────────────────────── */}
       <section
         aria-label="Project summary"
-        className="border-b border-[rgba(30,28,11,0.10)] px-6 py-16 sm:px-8 lg:px-16 xl:px-32"
+        className="border-b border-[rgba(30,28,11,0.10)] px-6 py-16 sm:px-8 sm:py-18 lg:px-16 xl:px-24 2xl:px-32"
       >
         <div className="mx-auto max-w-[90rem]">
-          <p className={`mb-8 ${LABEL}`}>At a glance</p>
+          <p className={`mb-9 ${LABEL}`}>At a glance</p>
           {/* 2-col on sm, 4-col on lg */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
             <BentoCard label="Core problem"        body={n.bentoSummary.coreProblem}       />
             <BentoCard label="My role"             body={n.bentoSummary.myRole}            />
             <BentoCard label="Strategic decision"  body={n.bentoSummary.strategicDecision} accent />
@@ -208,25 +209,49 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
         </div>
       </section>
 
+      {/* Mobile anchor bar mirrors desktop sticky nav for long reads. */}
+      <div className="sticky top-[73px] z-30 border-b border-[rgba(30,28,11,0.1)] bg-[#fdf9ea]/95 px-6 py-3 backdrop-blur-sm sm:top-[81px] sm:px-8 lg:hidden">
+        <div className="mx-auto max-w-[90rem] overflow-x-auto">
+          <div className="flex min-w-max gap-2">
+            {SECTIONS.map(({ id, label }, i) => {
+              const active = activeSection === id;
+              return (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className={`inline-flex items-center border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-200 ${HL} ${
+                    active
+                      ? "border-[color:var(--accent-red)] bg-[color:var(--accent-red)]/8 text-[color:var(--accent-red)]"
+                      : "border-[#1e1c0b]/20 text-[#1e1c0b]/65 hover:border-[color:var(--accent-red)]/40 hover:text-[#1e1c0b]"
+                  }`}
+                >
+                  {i + 1}. {label}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
       {/* ── Scrollytelling body ───────────────────────────────────────────── */}
-      <div className="px-6 sm:px-8 lg:px-16 xl:px-32">
+      <div className="px-6 sm:px-8 lg:px-16 xl:px-24 2xl:px-32">
         <div className="mx-auto max-w-[90rem]">
           {/*
             Asymmetric 2-col grid:
             - Left  30%  sticky sidebar  (hidden on mobile, shown lg+)
             - Right 70%  main content
           */}
-          <div className="lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:gap-16 xl:gap-24">
+          <div className="lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:gap-14 xl:gap-20">
 
             {/* ── Sticky sidebar ─────────────────────────────────────────── */}
             <aside
               aria-label="Section navigation"
               className="hidden lg:block"
             >
-              <div className="sticky top-[6rem] pt-20 pb-32">
+              <div className="sticky top-24 pt-14 pb-24">
                 <p className={`mb-6 ${LABEL}`}>Contents</p>
                 <nav>
-                  <ul className="space-y-1 list-none m-0 p-0">
+                  <ul className="m-0 list-none space-y-1 p-0">
                     {SECTIONS.map(({ id, label }, i) => {
                       const active = activeSection === id;
                       return (
@@ -237,7 +262,7 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
                               e.preventDefault();
                               document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
                             }}
-                            className={`group flex items-center gap-3 py-2.5 text-[12px] font-medium uppercase tracking-[0.18em] transition-colors duration-200 no-underline ${HL} ${
+                            className={`group flex items-center gap-3 py-2 text-[11px] font-medium uppercase tracking-[0.14em] transition-colors duration-200 no-underline ${HL} ${
                               active
                                 ? "text-[color:var(--accent-red)]"
                                 : "text-[#1e1c0b]/38 hover:text-[#1e1c0b]/70"
@@ -262,29 +287,29 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
             </aside>
 
             {/* ── Main content ───────────────────────────────────────────── */}
-            <main className="min-w-0 py-20 pb-32">
+            <main className="min-w-0 py-14 pb-24 sm:py-16 sm:pb-28 lg:py-20 lg:pb-32">
 
               {/* 1. Project overview */}
-              <section id="overview" className="mb-24 scroll-mt-28 lg:mb-32">
-                <p className={`mb-10 ${LABEL}`}>1. Project overview</p>
+              <section id="overview" className="mb-24 border-b border-[rgba(30,28,11,0.1)] pb-18 scroll-mt-28 lg:mb-28 lg:pb-24">
+                <p className={`mb-8 ${LABEL}`}>1. Project overview</p>
 
-                <div className="space-y-10">
+                <div className="space-y-10 sm:space-y-12">
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Title &amp; summary</h2>
+                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Title &amp; summary</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.overview.summary} />
                     </p>
                   </div>
 
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>The challenge</h2>
+                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>The challenge</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.overview.challenge} />
                     </p>
                   </div>
 
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Target audience</h2>
+                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Target audience</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.overview.audience} />
                     </p>
@@ -293,19 +318,19 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
               </section>
 
               {/* 2. Strategic logic */}
-              <section id="strategic-logic" className="mb-24 scroll-mt-28 lg:mb-32">
-                <p className={`mb-10 ${LABEL}`}>2. Strategic logic</p>
+              <section id="strategic-logic" className="mb-24 border-b border-[rgba(30,28,11,0.1)] pb-18 scroll-mt-28 lg:mb-28 lg:pb-24">
+                <p className={`mb-8 ${LABEL}`}>2. Strategic logic</p>
 
-                <div className="space-y-10">
+                <div className="space-y-10 sm:space-y-12">
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Design strategy</h2>
+                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Design strategy</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.strategicLogic.designStrategy} />
                     </p>
                   </div>
 
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Visual identity</h2>
+                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Visual identity</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.strategicLogic.visualIdentity} />
                     </p>
@@ -314,16 +339,17 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
               </section>
 
               {/* 3. The solution */}
-              <section id="solution" className="mb-0 scroll-mt-28">
-                <p className={`mb-10 ${LABEL}`}>3. The solution</p>
+              <section id="solution" className="mb-24 border-b border-[rgba(30,28,11,0.1)] pb-18 scroll-mt-28 lg:mb-28 lg:pb-24">
+                <p className={`mb-8 ${LABEL}`}>3. The solution</p>
 
                 <div>
-                  <h2 className={`mb-3 ${SECTION_HEADING}`}>High-fidelity execution</h2>
+                  <h2 className={`mb-3.5 ${SECTION_HEADING}`}>High-fidelity execution</h2>
                   <p className={PROSE}>
                     <NarrativeRichText text={n.solution.body} />
                   </p>
 
-                  <div className="mt-12 space-y-6">
+                  {/* Keep evidence blocks visually grouped as one narrative chunk. */}
+                  <div className="mt-12 space-y-7">
                     {n.solution.imagePlaceholders.map((caption, i) => (
                       <InlineImage
                         key={caption}
@@ -337,17 +363,18 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
 
               {/* 4. The outcome */}
               <section id="outcome" className="scroll-mt-28">
-                <p className={`mb-10 ${LABEL}`}>4. The outcome</p>
+                <p className={`mb-8 ${LABEL}`}>4. The outcome</p>
 
-                <div className="space-y-10">
+                <div className="space-y-10 sm:space-y-12">
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Impact &amp; takeaways</h2>
+                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Impact &amp; takeaways</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.outcome.impact} />
                     </p>
                   </div>
 
-                  <div className="border-l-2 border-[color:var(--accent-red)]/30 pl-6">
+                  {/* Pull this synthesis as a styled callout for quick executive scan. */}
+                  <div className="rounded-[2px] border border-[#1e1c0b]/12 border-l-2 border-l-[color:var(--accent-red)]/50 bg-[color:var(--accent-red)]/5 px-5 py-5 shadow-[0_10px_24px_rgba(30,28,11,0.06)] sm:pl-6 sm:pr-6">
                     <p className={`mb-4 ${SECTION_HEADING}`}>Strategic through-line</p>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.outcome.throughLine} />
