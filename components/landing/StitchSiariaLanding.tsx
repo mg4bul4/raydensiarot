@@ -10,7 +10,7 @@ import { PROFILE_PHOTO_SRC } from "@/lib/profile-photo";
 
 const IMG = {
   profile: PROFILE_PHOTO_SRC,
-  siaria: "/images/hero-product-designer-v2.png",
+  siaria: "/images/siarialabs-thumbnail.png",
   grounded: "/projects/grounded-talks/final-screen-01-landing.png",
   msa: "/projects/msa-uta/hero-desktop.png",
 } as const;
