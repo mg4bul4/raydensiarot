@@ -1,5 +1,6 @@
 "use client";
 
+// [CONSISTENCY AUDIT] — normalized MSA/Tanzeel docs to shared container width, heading scale, body typography, metadata rhythm, and section spacing tokens used across project pages.
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,11 +24,11 @@ const BODY =
   "[font-family:var(--font-stitch-body,var(--font-inter),ui-sans-serif,sans-serif)]";
 
 const LABEL =
-  `text-[11px] font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${HL}`;
+  `text-xs font-bold uppercase tracking-widest text-[color:var(--accent-red)]/80 ${HL}`;
 const PROSE =
-  `max-w-[72ch] text-[17px] leading-[1.72] text-[#1e1c0b]/92 ${BODY}`;
+  `max-w-4xl text-base leading-relaxed text-[#1e1c0b]/92 md:text-lg ${BODY}`;
 const SECTION_HEADING =
-  `text-[11px] font-bold uppercase tracking-[0.18em] text-[#1e1c0b]/58 ${HL}`;
+  `text-2xl font-semibold leading-tight tracking-tight text-[#1e1c0b] md:text-3xl ${HL}`;
 
 /* ─── Sidebar section registry ───────────────────────────────────────────── */
 const SECTIONS = [
@@ -164,11 +165,11 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
     <div className={`min-h-dvh bg-[#fdf9ea] text-[#1e1c0b] ${BODY}`}>
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="border-b border-[rgba(30,28,11,0.10)] px-6 pb-20 pt-8 sm:px-8 sm:pb-24 lg:px-16 xl:px-24 2xl:px-32">
-        <div className="mx-auto max-w-[90rem]">
+      <section className="border-b border-[rgba(30,28,11,0.10)] px-6 pb-16 pt-8 md:px-12 md:pb-24">
+        <div className="mx-auto max-w-6xl">
           <Link
             href="/projects"
-            className={`mb-12 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[color:var(--accent-red)] transition-colors duration-200 hover:text-[#1e1c0b] ${HL}`}
+            className={`mb-12 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[color:var(--accent-red)] transition-colors duration-200 hover:text-[#1e1c0b] ${HL}`}
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
             Projects
@@ -176,17 +177,15 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
 
           <p className={`mb-5 ${LABEL}`}>Case study</p>
 
-          <h1
-            className={`text-[clamp(2.7rem,8vw,5.9rem)] font-black uppercase leading-[0.95] tracking-[-0.02em] text-[color:var(--accent-red)] ${HL}`}
-          >
+          <h1 className={`text-5xl font-black uppercase leading-[0.95] tracking-tight text-[color:var(--accent-red)] md:text-6xl ${HL}`}>
             {n.displayTitle}
           </h1>
 
-          <p className={`mt-7 max-w-2xl text-[17px] leading-[1.7] text-[#1e1c0b]/88 sm:text-[18px] ${BODY}`}>
+          <p className={`mt-6 max-w-4xl text-lg leading-relaxed text-[#1e1c0b]/88 md:text-xl ${BODY}`}>
             {n.tagline}
           </p>
 
-          <p className={`mt-6 text-[11px] leading-6 text-[#1e1c0b]/64 ${HL} font-medium uppercase tracking-[0.14em]`}>
+          <p className={`mt-5 text-xs leading-relaxed text-[#1e1c0b]/64 ${HL} font-medium uppercase tracking-wider`}>
             {n.roleLine}
           </p>
         </div>
@@ -195,9 +194,9 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
       {/* ── Bento summary ────────────────────────────────────────────────── */}
       <section
         aria-label="Project summary"
-        className="border-b border-[rgba(30,28,11,0.10)] px-6 py-16 sm:px-8 sm:py-18 lg:px-16 xl:px-24 2xl:px-32"
+        className="border-b border-[rgba(30,28,11,0.10)] px-6 py-16 md:px-12 md:py-24"
       >
-        <div className="mx-auto max-w-[90rem]">
+        <div className="mx-auto max-w-6xl">
           <p className={`mb-9 ${LABEL}`}>At a glance</p>
           {/* 2-col on sm, 4-col on lg */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
@@ -211,7 +210,7 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
 
       {/* Mobile anchor bar mirrors desktop sticky nav for long reads. */}
       <div className="sticky top-[73px] z-30 border-b border-[rgba(30,28,11,0.1)] bg-[#fdf9ea]/95 px-6 py-3 backdrop-blur-sm sm:top-[81px] sm:px-8 lg:hidden">
-        <div className="mx-auto max-w-[90rem] overflow-x-auto">
+        <div className="mx-auto max-w-6xl overflow-x-auto">
           <div className="flex min-w-max gap-2">
             {SECTIONS.map(({ id, label }, i) => {
               const active = activeSection === id;
@@ -219,7 +218,7 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
                 <a
                   key={id}
                   href={`#${id}`}
-                  className={`inline-flex items-center border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-200 ${HL} ${
+                  className={`inline-flex items-center border px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${HL} ${
                     active
                       ? "border-[color:var(--accent-red)] bg-[color:var(--accent-red)]/8 text-[color:var(--accent-red)]"
                       : "border-[#1e1c0b]/20 text-[#1e1c0b]/65 hover:border-[color:var(--accent-red)]/40 hover:text-[#1e1c0b]"
@@ -234,14 +233,14 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
       </div>
 
       {/* ── Scrollytelling body ───────────────────────────────────────────── */}
-      <div className="px-6 sm:px-8 lg:px-16 xl:px-24 2xl:px-32">
-        <div className="mx-auto max-w-[90rem]">
+      <div className="px-6 md:px-12">
+        <div className="mx-auto max-w-6xl">
           {/*
             Asymmetric 2-col grid:
             - Left  30%  sticky sidebar  (hidden on mobile, shown lg+)
             - Right 70%  main content
           */}
-          <div className="lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:gap-14 xl:gap-20">
+          <div className="lg:grid lg:grid-cols-[minmax(0,2fr)_minmax(0,5fr)] lg:gap-12 xl:gap-16">
 
             {/* ── Sticky sidebar ─────────────────────────────────────────── */}
             <aside
@@ -287,29 +286,29 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
             </aside>
 
             {/* ── Main content ───────────────────────────────────────────── */}
-            <main className="min-w-0 py-14 pb-24 sm:py-16 sm:pb-28 lg:py-20 lg:pb-32">
+            <main className="min-w-0 py-16 pb-24 md:py-24 md:pb-32">
 
               {/* 1. Project overview */}
-              <section id="overview" className="mb-24 border-b border-[rgba(30,28,11,0.1)] pb-18 scroll-mt-28 lg:mb-28 lg:pb-24">
+              <section id="overview" className="mb-16 border-b border-[rgba(30,28,11,0.1)] pb-16 scroll-mt-28 md:mb-24 md:pb-24">
                 <p className={`mb-8 ${LABEL}`}>1. Project overview</p>
 
                 <div className="space-y-10 sm:space-y-12">
                   <div>
-                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Title &amp; summary</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Title &amp; summary</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.overview.summary} />
                     </p>
                   </div>
 
                   <div>
-                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>The challenge</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>The challenge</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.overview.challenge} />
                     </p>
                   </div>
 
                   <div>
-                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Target audience</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Target audience</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.overview.audience} />
                     </p>
@@ -318,19 +317,19 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
               </section>
 
               {/* 2. Strategic logic */}
-              <section id="strategic-logic" className="mb-24 border-b border-[rgba(30,28,11,0.1)] pb-18 scroll-mt-28 lg:mb-28 lg:pb-24">
+              <section id="strategic-logic" className="mb-16 border-b border-[rgba(30,28,11,0.1)] pb-16 scroll-mt-28 md:mb-24 md:pb-24">
                 <p className={`mb-8 ${LABEL}`}>2. Strategic logic</p>
 
                 <div className="space-y-10 sm:space-y-12">
                   <div>
-                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Design strategy</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Design strategy</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.strategicLogic.designStrategy} />
                     </p>
                   </div>
 
                   <div>
-                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Visual identity</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Visual identity</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.strategicLogic.visualIdentity} />
                     </p>
@@ -339,11 +338,11 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
               </section>
 
               {/* 3. The solution */}
-              <section id="solution" className="mb-24 border-b border-[rgba(30,28,11,0.1)] pb-18 scroll-mt-28 lg:mb-28 lg:pb-24">
+              <section id="solution" className="mb-16 border-b border-[rgba(30,28,11,0.1)] pb-16 scroll-mt-28 md:mb-24 md:pb-24">
                 <p className={`mb-8 ${LABEL}`}>3. The solution</p>
 
                 <div>
-                  <h2 className={`mb-3.5 ${SECTION_HEADING}`}>High-fidelity execution</h2>
+                  <h2 className={`mb-3 ${SECTION_HEADING}`}>High-fidelity execution</h2>
                   <p className={PROSE}>
                     <NarrativeRichText text={n.solution.body} />
                   </p>
@@ -367,7 +366,7 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
 
                 <div className="space-y-10 sm:space-y-12">
                   <div>
-                    <h2 className={`mb-3.5 ${SECTION_HEADING}`}>Impact &amp; takeaways</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Impact &amp; takeaways</h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.outcome.impact} />
                     </p>

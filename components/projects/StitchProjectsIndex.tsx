@@ -10,7 +10,7 @@ const HEADLINE =
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
 
 const IMG = {
-  siaria: "/images/siarialabs-thumbnail.png",
+  gigatax: "/images/siarialabs-thumbnail.png",
   msa: "/projects/msa-uta/hero-desktop.png",
   grounded: "/projects/grounded-talks/final-screen-01-landing.png",
   nafs: "/projects/nafs-fyi-thumbnail.png",
@@ -31,7 +31,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 }
 
 export function StitchProjectsIndex() {
-  const siaria = getProjectConfig("siaria");
+  const gigatax = getProjectConfig("gigatax");
   const msa = getProjectConfig("msa-uta");
   const nafs = getProjectConfig("nafs-fyi");
   const tanzeel = getProjectConfig("tanzeel-initiative");
@@ -51,7 +51,7 @@ export function StitchProjectsIndex() {
         </header>
 
         <div className="grid grid-cols-12 gap-8 lg:gap-12">
-          {/* Siaria: featured */}
+          {/* GigATax: featured */}
           <article
             className={`relative col-span-12 grid grid-cols-12 gap-0 kanso-card-featured bg-[#fff8dc]`}
           >
@@ -66,7 +66,7 @@ export function StitchProjectsIndex() {
               className={`kanso-corner relative col-span-12 min-h-[280px] overflow-hidden border-b border-[#af101a] bg-[#fff8dc] lg:col-span-7 lg:min-h-[420px] lg:border-b-0 lg:border-r`}
             >
               <Image
-                src={IMG.siaria}
+                src={IMG.gigatax}
                 alt=""
                 fill
                 className="object-cover object-left grayscale-0"
@@ -80,39 +80,32 @@ export function StitchProjectsIndex() {
               <div>
                 <div className="mb-6 flex items-center gap-4">
                   <span className="kanso-rule" />
-                  <CategoryLabel>Design agency</CategoryLabel>
+                  <CategoryLabel>Hackathon</CategoryLabel>
                 </div>
                 <h2
                   className={`mb-8 text-5xl font-bold uppercase tracking-tighter text-[#1e1c0b] lg:text-7xl ${HEADLINE}`}
                 >
-                  Siaria Labs
+                  GigATax
                 </h2>
                 <p className="mb-10 text-lg leading-relaxed opacity-90">
-                  As co-founder and lead designer at Siaria Labs, I lead the
-                  development of bespoke digital solutions, focusing on the
-                  intersection of technical excellence and visual authority.
+                  Taxes built for creators, streamers, and everyone else the IRS
+                  forgot.
                 </p>
                 <div className="mb-10 flex flex-wrap gap-2">
-                  <Tag>Responsive structural styling</Tag>
-                  <Tag>AI-augmented rapid prototyping</Tag>
-                  <Tag>Interaction &amp; motion logic</Tag>
-                  <Tag>Frontend implementation</Tag>
+                  <Tag>Hackathon</Tag>
+                  <Tag>UI/UX</Tag>
+                  <Tag>React</Tag>
+                  <Tag>FinTech</Tag>
                 </div>
-                {siaria ? (
+                {gigatax ? (
                   <ProjectCardActions
-                    docsSlug={siaria.slug}
-                    primaryHref={siaria.primaryHref}
-                    primaryLabel={siaria.primaryLabel}
-                    primaryExternal={siaria.primaryExternal}
-                    showPrimary={siaria.showPrimary}
-                  showDocumentation={false}
+                    docsSlug={gigatax.slug}
+                    primaryHref={gigatax.primaryHref}
+                    primaryLabel={gigatax.primaryLabel}
+                    primaryExternal={gigatax.primaryExternal}
+                    showPrimary={gigatax.showPrimary}
                   />
                 ) : null}
-                <p
-                  className={`mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#af101a]/90 ${HEADLINE}`}
-                >
-                  UNDER CONSTRUCTION
-                </p>
               </div>
             </div>
           </article>
