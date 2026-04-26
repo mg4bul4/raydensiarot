@@ -1,92 +1,23 @@
 import {
+  GIGATAX_NARRATIVE,
   MSA_UTA_NARRATIVE,
   NAFS_NARRATIVE,
   TANZEEL_NARRATIVE,
 } from "@/lib/narrative-case-studies";
-import { SITE_MSA_UTA_URL, SITE_SIARIA_LABS_URL } from "@/lib/site-links";
+import { SITE_MSA_UTA_URL } from "@/lib/site-links";
 import type { ProjectCardConfig } from "@/lib/project-registry-types";
 
 const vibeCodingNotes =
   "Vibe coding: explicit tokens (spacing on an 8px grid), type via CSS variables, and paired hover + focus-visible states so polish does not regress accessibility.";
 
 export const PROJECT_REGISTRY: Record<string, ProjectCardConfig> = {
-  siaria: {
-    slug: "siaria",
-    primaryHref: SITE_SIARIA_LABS_URL,
-    primaryLabel: "Visit Website",
+  gigatax: {
+    slug: "gigatax",
+    primaryHref: "https://devpost.com/software/gigatax",
+    primaryLabel: "View on Devpost",
     primaryExternal: true,
-    showPrimary: false,
-    docsContent: {
-      manualTitle: "Siaria Labs",
-      brandStrategy: {
-        typography: [
-          {
-            name: "Display / Headline",
-            role: "Epilogue 700–800 · Uppercase tracking for authority",
-            sample: "AGENCY · PRODUCT UI",
-          },
-          {
-            name: "Body",
-            role: "Manrope 400–500 · Comfortable reading for proposals",
-            sample: "Scope, timeline, and deliverables in plain language.",
-          },
-        ],
-        colors: [
-          {
-            name: "Cream field",
-            hex: "#FFF9E8",
-            usage: "Default surface; lets work samples carry saturation.",
-          },
-          {
-            name: "Accent",
-            hex: "#AF101A",
-            usage: "CTAs, key dividers, and emphasis without second accent colors.",
-          },
-          {
-            name: "Ink",
-            hex: "#1E1C0B",
-            usage: "Primary text; kept warm to match cream grounds.",
-          },
-        ],
-      },
-      componentArchitecture: [
-        {
-          name: "Navigation shell",
-          functionalLogic:
-            "Fixed bar with minimal chrome so portfolio and case routes stay scannable; logo returns to root.",
-        },
-        {
-          name: "Project tile",
-          functionalLogic:
-            "Image + meta + single primary action—no competing CTAs on listing views.",
-        },
-        {
-          name: "Contact strip",
-          functionalLogic:
-            "One conversion path per viewport height to reduce decision fatigue.",
-        },
-      ],
-      userFlows: [
-        {
-          title: "Prospect → proof",
-          why: "Visitors land on credibility first (discipline, craft), then route to contact only after scanning work—mirrors how buyers actually decide.",
-        },
-        {
-          title: "Repeat client → new engagement",
-          why: "Stable URL structure and clear service labels reduce re-orientation when returning for a second scope.",
-        },
-      ],
-      technicalExecution: [
-        {
-          title: "Implementation notes",
-          notes: `Next.js App Router, shallow routes, metadata per page for shareable previews. ${vibeCodingNotes}`,
-          code: `export const metadata = {
-  title: "Siaria Labs | Rayden Siarot",
-};`,
-          language: "ts",
-        },
-      ],
-    },
+    showPrimary: true,
+    narrativeCaseStudy: GIGATAX_NARRATIVE,
   },
 
   "msa-uta": {

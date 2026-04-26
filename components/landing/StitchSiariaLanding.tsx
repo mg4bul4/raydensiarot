@@ -10,7 +10,7 @@ import { PROFILE_PHOTO_SRC } from "@/lib/profile-photo";
 
 const IMG = {
   profile: PROFILE_PHOTO_SRC,
-  siaria: "/images/siarialabs-thumbnail.png",
+  gigatax: "/images/siarialabs-thumbnail.png",
   grounded: "/projects/grounded-talks/final-screen-01-landing.png",
   msa: "/projects/msa-uta/hero-desktop.png",
 } as const;
@@ -112,40 +112,31 @@ export function StitchSiariaLanding() {
             </span>
           </div>
           <div className={`grid grid-cols-1 gap-0 kanso-card md:grid-cols-3`}>
-            <div
-              className="flex flex-col overflow-hidden border-b border-[#af101a] bg-[#fff9e8] md:col-span-2 md:row-span-2 md:border-b-0 md:border-r"
+            <Link
+              href="/projects/gigatax/docs"
+              className="group flex flex-col overflow-hidden border-b border-[#af101a] bg-[#fff9e8] md:col-span-2 md:row-span-2 md:border-b-0 md:border-r"
             >
               <div
                 className={`flex items-center justify-between border-b bg-[#fff9e8] p-8 ${BORDER}`}
               >
                 <h3 className={`text-2xl font-bold uppercase tracking-tight text-[#1e1c0b] ${HEADLINE}`}>
-                  Siaria Labs
+                  GigATax
                 </h3>
-                <span
-                  className={`text-xs font-bold uppercase tracking-[0.2em] text-[#af101a] ${HEADLINE}`}
-                >
-                  UNDER CONSTRUCTION
-                </span>
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-[#af101a]" />
               </div>
               <div className="relative aspect-video bg-black">
                 <Image
-                  src={IMG.siaria}
+                  src={IMG.gigatax}
                   alt=""
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
                   sizes="(max-width: 768px) 100vw, 66vw"
                 />
               </div>
               <div className="flex flex-grow flex-col justify-center p-10 md:p-14">
-                <span className="mb-6 block text-[10px] font-bold uppercase tracking-[0.3em] text-[#af101a]">
-                  Role: Co-founder &amp; lead designer
-                </span>
                 <p className="max-w-2xl text-xl font-medium leading-relaxed md:text-2xl">
-                  As co-founder and lead designer, I spearhead the creation of
-                  fully custom digital solutions. We collaborate with clients to
-                  deliver high-fidelity, functional web experiences and
-                  comprehensive branding strategies that define powerful digital
-                  identities.
+                  Taxes built for creators, streamers, and everyone else the IRS
+                  forgot.
                 </p>
               </div>
               <div
@@ -153,14 +144,20 @@ export function StitchSiariaLanding() {
               >
                 <div className="flex gap-4">
                   <span className="border border-[#af101a]/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
-                    Agency
+                    Hackathon
                   </span>
                   <span className="border border-[#af101a]/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
-                    Founding designer
+                    UI/UX
+                  </span>
+                  <span className="border border-[#af101a]/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
+                    React
+                  </span>
+                  <span className="border border-[#af101a]/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
+                    FinTech
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
 
             <Link
               href="/projects/grounded-talks"
