@@ -10,7 +10,7 @@ const HEADLINE =
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
 
 const IMG = {
-  gigatax: "/images/siarialabs-thumbnail.png",
+  gigatax: "/projects/gigatax-thumbnail.png",
   msa: "/projects/msa-uta/hero-desktop.png",
   grounded: "/projects/grounded-talks/final-screen-01-landing.png",
   nafs: "/projects/nafs-fyi-thumbnail.png",
