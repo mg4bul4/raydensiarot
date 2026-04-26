@@ -32,7 +32,7 @@ export function ProjectDesignManualDocs({ config }: Props) {
             Strategy &amp; Implementation
           </p>
           <h1
-            className={`text-[clamp(2.5rem,12vw,6.5rem)] font-black uppercase leading-[0.92] tracking-tighter text-[#1e1c0b] ${headline}`}
+            className={`text-[clamp(2.5rem,12vw,6.5rem)] font-black uppercase leading-[0.92] tracking-tighter text-[color:var(--accent-red)] ${headline}`}
           >
             {d.manualTitle}
           </h1>

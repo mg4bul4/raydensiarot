@@ -56,7 +56,7 @@ export default function RootLayout({
         className={`${inter.className} min-h-full flex flex-col antialiased selection:bg-[#af101a] selection:text-white`}
       >
         <SiteNav />
-        <div className="relative z-10 flex min-h-full flex-1 flex-col pt-20 sm:pt-24">
+        <div className="relative z-10 flex min-h-full flex-1 flex-col">
           {children}
         </div>
       </body>

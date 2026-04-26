@@ -85,7 +85,7 @@ export function SiteNav() {
   }, [pathname, closeMenu]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="sticky inset-x-0 top-0 z-50">
       <div className="relative z-50 border-b border-[#af101a] bg-[#fff9e8] px-6 py-4 sm:px-8">
         <div className="mx-auto flex max-w-[100rem] items-center justify-between gap-4">
           <Link

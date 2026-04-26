@@ -52,6 +52,11 @@ body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
 /* Major headings: fluid Gothic / ink-adjacent sans */
 .kanso-heading {
   font-family: var(--font-kanso-heading), ui-sans-serif, sans-serif;

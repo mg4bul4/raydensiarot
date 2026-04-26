@@ -1,5 +1,5 @@
 /**
- * Renders strings with **bold** segments (Disciplined Canvas case-study copy).
+ * Renders narrative copy and strips markdown-style bold markers.
  */
 export function NarrativeRichText({
   text,
@@ -13,11 +13,7 @@ export function NarrativeRichText({
     <span className={className}>
       {parts.map((part, i) => {
         if (part.startsWith("**") && part.endsWith("**")) {
-          return (
-            <strong key={i} className="font-semibold text-[#1e1c0b]">
-              {part.slice(2, -2)}
-            </strong>
-          );
+          return <span key={i}>{part.slice(2, -2)}</span>;
         }
         return <span key={i}>{part}</span>;
       })}
