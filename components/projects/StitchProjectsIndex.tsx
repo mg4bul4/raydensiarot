@@ -10,11 +10,9 @@ const HEADLINE =
 const BODY = "[font-family:var(--font-stitch-body),ui-sans-serif,sans-serif]";
 
 const IMG = {
-  siaria:
-    "https://lh3.googleusercontent.com/aida/ADBb0uhb87DfVZRVt5n0FJBWG6ItefxKpU_EMSnRfHT-F8dhZhHwmEv2w9bTr_5txzZ17kk97s6_UIk1vVcXKcN9m9LkbvLJMt4UNP9K1keKrB3-ZyXtQ5R1QsxGqKONuUGJDgAvkjd12hooKvlevEyAovg5tWeL-K9sMgY9UsECrDj_Lmznrh3kYbpLC9fPDtESmKjMuN9qHGXvgG01rQI63MCq_awpdmmMpSVxWAX569ux8w_53RPQLBVCNAiYEcub-LUfTUDTmMPt1FA",
-  msa: "https://lh3.googleusercontent.com/aida/ADBb0ujWMk4fsfdKhxXH2Y2uuAn15wOEVdzLN3Q_xYWkKbmvIQ148HibweKc3PIMG00nBPJ4o4aoD3MCIc0j-29xIS05Ry4piU1ML0bzBzlkJb2MJODJ9xyqvibq5Lswmbmi74PAWhdM9KfJHJingmAwyMXc7Nfe8NZJtzfpJXBV6Z6uVTzA_iamLC7l91FXrApBaqxBWkaIb7wrjPB6TNKERYyzQ7SQxuPip039KUZRx3x4HdkMZ8lhOGngkS8Q2ZlbCnswk-5gaLFvvZQ",
-  grounded:
-    "https://lh3.googleusercontent.com/aida/ADBb0uj91YS6EZNG3VowYWpVC3JSddrEdRbYUqHCQyYoo2DlqRgURzyOazqsPrxW0n4SPHjQV6j3QxZ_3Blwar7YPeiBKLqWbY2_6T1Mrzeg_QpebQctH65TjBdIsGiD06VQQP_XbqeN5CqwF7_kMn0qCvSyueVcjk3-xFY5BDmXHJ3NO1Lfab3SHv119t_Tr2xNSH9bhpioDTrq8U0bW4CxMvWgOx0xQ78rxXl2EkvEEAxVQWPn-BqgJ8LZSgvZnKmHKMJHzAq-3jKlE3I",
+  siaria: "/images/hero-product-designer-v2.png",
+  msa: "/projects/msa-uta/hero-desktop.png",
+  grounded: "/projects/grounded-talks/final-screen-01-landing.png",
   nafs: "/projects/nafs-fyi-thumbnail.png",
   tanzeel: "/projects/tanzeel-thumbnail.png",
   graphicPosters: "/projects/posters/all-time-high-tour.png",
@@ -107,6 +105,7 @@ export function StitchProjectsIndex() {
                     primaryLabel={siaria.primaryLabel}
                     primaryExternal={siaria.primaryExternal}
                     showPrimary={siaria.showPrimary}
+                  showDocumentation={false}
                   />
                 ) : null}
                 <p
@@ -346,6 +345,7 @@ export function StitchProjectsIndex() {
                 primaryLabel={graphic.primaryLabel}
                 primaryExternal={graphic.primaryExternal}
                 showPrimary={graphic.showPrimary}
+                showDocumentation={false}
               />
             ) : null}
           </article>

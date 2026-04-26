@@ -21,7 +21,7 @@ export function StitchAboutPage() {
     <div className={`min-h-dvh bg-[#fff9e8] text-[#1e1c0b] ${BODY}`}>
       <main className="mx-auto max-w-7xl px-6 pb-12 pt-4 sm:px-8 md:pb-16">
         {/* Hero + portrait */}
-        <div className={`mb-12 grid grid-cols-1 gap-0 border bg-[#fff9e8] md:grid-cols-12 ${BORDER}`}>
+        <div className={`kanso-card mb-12 grid grid-cols-1 gap-0 border bg-[#fff9e8] md:grid-cols-12 ${BORDER}`}>
           <div className="flex flex-col justify-between bg-[#fff9e8] p-8 md:col-span-8 md:p-12">
             <div>
               <h1
@@ -59,7 +59,7 @@ export function StitchAboutPage() {
         {/* Experience + side columns */}
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           <div
-            className={`flex flex-col gap-12 border bg-[#fbf4d8] p-8 md:col-span-2 md:p-12 ${BORDER}`}
+            className={`kanso-card flex flex-col gap-12 border bg-[#fbf4d8] p-8 md:col-span-2 md:p-12 ${BORDER}`}
           >
             <div className="flex items-start justify-between">
               <h2
@@ -84,14 +84,26 @@ export function StitchAboutPage() {
                   <span
                     className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
-                    Founding Designer | JUN 2024 to PRESENT
+                    Founder &amp; Lead Designer | JUN 2024 to PRESENT
                   </span>
                 </div>
-                <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
-                  Leading design systems and high-fidelity interface design for
-                  global enterprise clients, focusing on data-heavy dashboard
-                  ecosystems.
-                </p>
+                <div className="max-w-2xl space-y-3 leading-relaxed text-[#1e1c0b]/80">
+                  <p>
+                    Led end-to-end design strategy for a range of clients, delivering
+                    high-fidelity UI/UX, brand identity systems, and responsive web
+                    experiences built in React and Tailwind CSS.
+                  </p>
+                  <p>
+                    Established scalable design systems and information architecture
+                    frameworks that improved navigation and consistency across complex
+                    digital products.
+                  </p>
+                  <p>
+                    Owned the full project lifecycle from stakeholder discovery and
+                    user research through implementation, ensuring outcomes aligned
+                    with user needs and business goals.
+                  </p>
+                </div>
               </div>
               <div className="border-l border-[#af101a] pl-6">
                 <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
@@ -103,13 +115,26 @@ export function StitchAboutPage() {
                   <span
                     className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
-                    Design Lead | OCT 2023 to JUN 2024
+                    Co-Founder &amp; Creative Director | OCT 2023 to JUN 2024
                   </span>
                 </div>
-                <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
-                  Defined the visual identity and mobile experience for a
-                  sustainable-tech podcast and media platform.
-                </p>
+                <div className="max-w-2xl space-y-3 leading-relaxed text-[#1e1c0b]/80">
+                  <p>
+                    Shaped the digital brand identity for a community-focused startup,
+                    leading creation of visual assets, social content, and web
+                    interfaces from the ground up.
+                  </p>
+                  <p>
+                    Translated mission and brand values into cohesive user journeys
+                    with cross-functional teams, supporting measurable growth in
+                    engagement and retention.
+                  </p>
+                  <p>
+                    Designed and refined digital marketing touchpoints using
+                    performance insights to strengthen visual hierarchy and messaging
+                    effectiveness.
+                  </p>
+                </div>
               </div>
               <div className="border-l border-[#af101a] pl-6">
                 <div className="mb-2 flex flex-col md:flex-row md:items-baseline md:justify-between">
@@ -121,20 +146,33 @@ export function StitchAboutPage() {
                   <span
                     className={`text-sm font-bold text-[#af101a] ${BODY}`}
                   >
-                    Web Dev and Design Intern | JAN 2024 to APR 2024
+                    Co-Developer &amp; UI Lead | JAN 2024 to APR 2024
                   </span>
                 </div>
-                <p className="max-w-2xl leading-relaxed text-[#1e1c0b]/80">
-                  Bridged the gap between design and code by implementing
-                  responsive web components and interactive prototypes.
-                </p>
+                <div className="max-w-2xl space-y-3 leading-relaxed text-[#1e1c0b]/80">
+                  <p>
+                    Led a full UI/UX overhaul of a student organization platform
+                    serving 500+ members, with emphasis on accessibility and inclusive
+                    design.
+                  </p>
+                  <p>
+                    Bridged design and engineering by building frontend components,
+                    ensuring high-fidelity execution and a smooth design-to-dev
+                    handoff.
+                  </p>
+                  <p>
+                    Ran user feedback sessions to uncover pain points and guide
+                    iterative improvements, resulting in a more intuitive and engaging
+                    digital experience.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-8">
             <div
-              className={`flex flex-col border bg-[#efe8cd] p-8 ${BORDER}`}
+              className={`kanso-card flex flex-col border bg-[#efe8cd] p-8 ${BORDER}`}
             >
               <h2
                 className={`mb-6 text-2xl font-black uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
@@ -153,7 +191,7 @@ export function StitchAboutPage() {
               </ul>
             </div>
 
-            <div className={`flex flex-col border bg-white p-8 ${BORDER}`}>
+            <div className={`kanso-card flex flex-col border bg-white p-8 ${BORDER}`}>
               <div className="mb-6 flex items-start justify-between">
                 <h2
                   className={`text-2xl font-black uppercase tracking-tighter text-[#af101a] ${HEADLINE}`}
@@ -179,7 +217,7 @@ export function StitchAboutPage() {
 
         {/* CTA */}
         <div
-          className={`flex flex-col items-center justify-between gap-8 border bg-[#af101a] p-10 text-white md:flex-row md:p-12 ${BORDER}`}
+          className={`kanso-card flex flex-col items-center justify-between gap-8 border bg-[#af101a] p-10 text-white md:flex-row md:p-12 ${BORDER}`}
         >
           <h2
             className={`text-center text-3xl font-black uppercase tracking-tighter md:text-left md:text-4xl lg:text-5xl ${HEADLINE}`}

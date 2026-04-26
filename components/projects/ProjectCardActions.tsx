@@ -10,6 +10,7 @@ export type ProjectCardActionsProps = {
   primaryLabel: string;
   primaryExternal?: boolean;
   showPrimary?: boolean;
+  showDocumentation?: boolean;
   docsDisabled?: boolean;
 };
 
@@ -19,6 +20,7 @@ export function ProjectCardActions({
   primaryLabel,
   primaryExternal,
   showPrimary = true,
+  showDocumentation = true,
   docsDisabled = false,
 }: ProjectCardActionsProps) {
   const docsHref = `/projects/${docsSlug}/docs`;
@@ -50,19 +52,21 @@ export function ProjectCardActions({
         )
       ) : null}
 
-      {docsDisabled ? (
-        <span
-          className={`inline-flex min-h-[44px] flex-1 cursor-not-allowed items-center justify-center gap-2 border border-[color:var(--accent-red)]/30 bg-transparent px-5 py-2.5 text-center text-xs font-bold uppercase tracking-[0.12em] text-[#1e1c0b]/35 sm:flex-initial sm:min-h-0 ${headline}`}
-          aria-disabled="true"
-        >
-          Documentation in progress
-        </span>
-      ) : (
-        <Link href={docsHref} className={outlineClassName}>
-          View Documentation
-          <ArrowRight className="h-4 w-4 shrink-0 opacity-80" aria-hidden />
-        </Link>
-      )}
+      {showDocumentation
+        ? docsDisabled ? (
+            <span
+              className={`inline-flex min-h-[44px] flex-1 cursor-not-allowed items-center justify-center gap-2 border border-[color:var(--accent-red)]/30 bg-transparent px-5 py-2.5 text-center text-xs font-bold uppercase tracking-[0.12em] text-[#1e1c0b]/35 sm:flex-initial sm:min-h-0 ${headline}`}
+              aria-disabled="true"
+            >
+              Documentation in progress
+            </span>
+          ) : (
+            <Link href={docsHref} className={outlineClassName}>
+              View Documentation
+              <ArrowRight className="h-4 w-4 shrink-0 opacity-80" aria-hidden />
+            </Link>
+          )
+        : null}
     </div>
   );
 }

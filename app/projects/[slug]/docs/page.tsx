@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${pageTitle} — ${narrative ? "Case study" : "Documentation"} | Rayden Siarot`,
     description: narrative
-      ? `The Disciplined Canvas: strategy and execution for ${pageTitle}.`
+      ? `Case study: strategy and execution for ${pageTitle}.`
       : `Strategy & implementation notes for ${pageTitle}.`,
   };
 }

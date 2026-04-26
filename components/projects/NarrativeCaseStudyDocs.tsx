@@ -173,10 +173,10 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
             Projects
           </Link>
 
-          <p className={`mb-5 ${LABEL}`}>{n.kicker}</p>
+          <p className={`mb-5 ${LABEL}`}>Case study</p>
 
           <h1
-            className={`text-[clamp(2.8rem,10vw,6rem)] font-black uppercase leading-[0.92] tracking-[-0.03em] text-[#1e1c0b] ${HL}`}
+            className={`text-[clamp(2.8rem,10vw,6rem)] font-black uppercase leading-[0.92] tracking-[-0.03em] text-[color:var(--accent-red)] ${HL}`}
           >
             {n.displayTitle}
           </h1>
