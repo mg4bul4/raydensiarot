@@ -37,34 +37,33 @@ export function ProjectDesignManualDocs({ config }: Props) {
           >
             {d.manualTitle}
           </h1>
-          {/* Compact metadata block keeps scope readable near the hero. */}
           <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
             <p className={`border border-[#1e1c0b]/15 bg-[#fff9e8] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[#1e1c0b]/80 shadow-[0_6px_20px_rgba(30,28,11,0.05)] ${headline}`}>
-              Format: project brief
+              Medium: print &amp; digital
             </p>
             <p className={`border border-[#1e1c0b]/15 bg-[#fff9e8] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[#1e1c0b]/80 shadow-[0_6px_20px_rgba(30,28,11,0.05)] ${headline}`}>
-              Focus: strategy + implementation
+              7 pieces &middot; 2023–2025
             </p>
             <p className={`border border-[#1e1c0b]/15 bg-[#fff9e8] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[#1e1c0b]/80 shadow-[0_6px_20px_rgba(30,28,11,0.05)] ${headline}`}>
-              Status: documentation snapshot
+              Tools: Illustrator &middot; Photoshop
             </p>
           </div>
         </header>
 
         <section className="mb-20 space-y-10 sm:mb-24 sm:space-y-12 lg:mb-28">
           <p className={`text-[11px] font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${headline}`}>
-            1. Context
+            1. Creative approach
           </p>
           <h2
             className={`border-b border-[color:var(--accent-red)]/25 pb-4 text-[1.9rem] font-black uppercase leading-[1.12] tracking-tight text-[#1e1c0b] lg:text-[2.1rem] ${headline}`}
           >
-            Brand strategy
+            Visual language
           </h2>
 
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
             <div>
               <h3 className={`mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${headline}`}>
-                Typography scale
+                Design principles
               </h3>
               <ul className="space-y-10">
                 {d.brandStrategy.typography.map((t) => (
@@ -80,7 +79,7 @@ export function ProjectDesignManualDocs({ config }: Props) {
             </div>
             <div>
               <h3 className={`mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${headline}`}>
-                Color theory
+                Color approach
               </h3>
               <ul className="space-y-7">
                 {d.brandStrategy.colors.map((c) => (
@@ -107,12 +106,12 @@ export function ProjectDesignManualDocs({ config }: Props) {
 
         <section className="mb-20 sm:mb-24 lg:mb-28">
           <p className={`mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${headline}`}>
-            2. The problem
+            2. The work
           </p>
           <h2
             className={`mb-8 border-b border-[color:var(--accent-red)]/25 pb-4 text-[1.9rem] font-black uppercase leading-[1.12] tracking-tight text-[#1e1c0b] lg:text-[2.1rem] ${headline}`}
           >
-            Component architecture
+            Pieces &amp; rationale
           </h2>
           <ul className="space-y-9 sm:space-y-10">
             {d.componentArchitecture.map((c) => (
@@ -133,12 +132,12 @@ export function ProjectDesignManualDocs({ config }: Props) {
 
         <section className="mb-20 sm:mb-24 lg:mb-28">
           <p className={`mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${headline}`}>
-            3. Approach
+            3. Process
           </p>
           <h2
             className={`mb-8 border-b border-[color:var(--accent-red)]/25 pb-4 text-[1.9rem] font-black uppercase leading-[1.12] tracking-tight text-[#1e1c0b] lg:text-[2.1rem] ${headline}`}
           >
-            User flow &amp; UX logic
+            Design principles
           </h2>
           {/* Horizontal cards preserve scanability for comparative UX rationale. */}
           <div className="-mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 pl-6 pr-6 sm:mx-0 sm:pl-0 sm:pr-0">
@@ -158,12 +157,12 @@ export function ProjectDesignManualDocs({ config }: Props) {
 
         <section>
           <p className={`mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[color:var(--accent-red)]/90 ${headline}`}>
-            4. Solution and status
+            4. Implementation
           </p>
           <h2
             className={`mb-8 border-b border-[color:var(--accent-red)]/25 pb-4 text-[1.9rem] font-black uppercase leading-[1.12] tracking-tight text-[#1e1c0b] lg:text-[2.1rem] ${headline}`}
           >
-            Technical execution
+            Tools &amp; process notes
           </h2>
           <div className="space-y-12 sm:space-y-14">
             {d.technicalExecution.map((block) => (

@@ -4,20 +4,16 @@ import type {
 } from "@/lib/project-registry-types";
 import { NarrativeCaseStudyDocs } from "@/components/projects/NarrativeCaseStudyDocs";
 import { ProjectDesignManualDocs } from "@/components/projects/ProjectDesignManualDocs";
-import { GigATaxCaseStudyDocs } from "@/components/projects/GigATaxCaseStudyDocs";
 
 type ProjectDocsPageProps = {
   config: ProjectCardConfig;
 };
 
 /**
- * Project documentation: narrative case study ("Disciplined Canvas") when
+ * Project documentation: narrative case study when
  * {@link ProjectCardConfig.narrativeCaseStudy} is set; otherwise design manual.
  */
 export function ProjectDocsPage({ config }: ProjectDocsPageProps) {
-  if (config.slug === "gigatax") {
-    return <GigATaxCaseStudyDocs />;
-  }
   if (config.narrativeCaseStudy) {
     return <NarrativeCaseStudyDocs narrative={config.narrativeCaseStudy} />;
   }
