@@ -81,29 +81,60 @@ export function StitchAboutPage() {
                   <h3
                     className={`text-lg font-bold uppercase tracking-tight text-[#1e1c0b] sm:text-xl ${HEADLINE}`}
                   >
-                    Ark Design Agency
+                    NAFS Technologies LLC
                   </h3>
                   <span
                     className={`text-xs font-semibold uppercase tracking-[0.08em] text-[#af101a] sm:text-sm ${BODY}`}
                   >
-                    Founder &amp; Lead Designer | JUN 2024 to PRESENT
+                    Product Designer | MAY 2026 to PRESENT
                   </span>
                 </div>
                 <div className="max-w-2xl space-y-3 text-[15px] leading-7 text-[#1e1c0b]/82 sm:text-base">
                   <p>
-                    Led end-to-end design strategy for a range of clients, delivering
-                    high-fidelity UI/UX, brand identity systems, and responsive web
-                    experiences built in React and Tailwind CSS.
+                    Led end-to-end product design for Nafs, an iOS Islamic wellness
+                    app, across 8+ core features including prayer tracking, Quran
+                    reflections, dhikr counter, and a fiqh-guided cycle tracker.
                   </p>
                   <p>
-                    Established scalable design systems and information architecture
-                    frameworks that improved navigation and consistency across complex
-                    digital products.
+                    Conducted user interviews and usability testing with Muslim users
+                    to translate cultural and spiritual context into intuitive mobile
+                    flows that balance religious sensitivity with modern UX patterns.
                   </p>
                   <p>
-                    Owned the full project lifecycle from stakeholder discovery and
-                    user research through implementation, ensuring outcomes aligned
-                    with user needs and business goals.
+                    Bridged design and engineering by building frontend screens in
+                    React Native and HTML/CSS, and created a unified visual system
+                    with typography, theming, and reusable Figma components.
+                  </p>
+                </div>
+              </div>
+              <div className="border-l-2 border-[#af101a]/80 pl-5 sm:pl-6">
+                <div className="mb-3 flex flex-col gap-2 xl:flex-row xl:items-baseline xl:justify-between">
+                  <h3
+                    className={`text-lg font-bold uppercase tracking-tight text-[#1e1c0b] sm:text-xl ${HEADLINE}`}
+                  >
+                    ARC Design Agency
+                  </h3>
+                  <span
+                    className={`text-xs font-semibold uppercase tracking-[0.08em] text-[#af101a] sm:text-sm ${BODY}`}
+                  >
+                    Founding Designer | JUN 2024 to PRESENT
+                  </span>
+                </div>
+                <div className="max-w-2xl space-y-3 text-[15px] leading-7 text-[#1e1c0b]/82 sm:text-base">
+                  <p>
+                    Established the agency&apos;s design practice from the ground up,
+                    owning UX strategy and delivery for small-business digital
+                    transformation engagements.
+                  </p>
+                  <p>
+                    Designed end-to-end user journeys and wireframes that resolved
+                    onboarding and adoption friction, helping clients reduce drop-off
+                    and improve product clarity.
+                  </p>
+                  <p>
+                    Translated complex client data into stakeholder-facing dashboard
+                    and infographic systems in Figma and Adobe tools to support faster
+                    decision-making and more reliable reporting.
                   </p>
                 </div>
               </div>
@@ -117,55 +148,19 @@ export function StitchAboutPage() {
                   <span
                     className={`text-xs font-semibold uppercase tracking-[0.08em] text-[#af101a] sm:text-sm ${BODY}`}
                   >
-                    Co-Founder &amp; Creative Director | OCT 2023 to JUN 2024
+                    Design Lead | OCT 2023 to JUN 2024
                   </span>
                 </div>
                 <div className="max-w-2xl space-y-3 text-[15px] leading-7 text-[#1e1c0b]/82 sm:text-base">
                   <p>
-                    Shaped the digital brand identity for a community-focused startup,
-                    leading creation of visual assets, social content, and web
-                    interfaces from the ground up.
+                    Designed and developed a responsive website in HTML/CSS that
+                    improved cross-platform accessibility and helped drive a major
+                    increase in mobile traffic.
                   </p>
                   <p>
-                    Translated mission and brand values into cohesive user journeys
-                    with cross-functional teams, supporting measurable growth in
-                    engagement and retention.
-                  </p>
-                  <p>
-                    Designed and refined digital marketing touchpoints using
-                    performance insights to strengthen visual hierarchy and messaging
-                    effectiveness.
-                  </p>
-                </div>
-              </div>
-              <div className="border-l-2 border-[#af101a]/80 pl-5 sm:pl-6">
-                <div className="mb-3 flex flex-col gap-2 xl:flex-row xl:items-baseline xl:justify-between">
-                  <h3
-                    className={`text-lg font-bold uppercase tracking-tight text-[#1e1c0b] sm:text-xl ${HEADLINE}`}
-                  >
-                    Tomorrow&apos;s Leaders Today
-                  </h3>
-                  <span
-                    className={`text-xs font-semibold uppercase tracking-[0.08em] text-[#af101a] sm:text-sm ${BODY}`}
-                  >
-                    Co-Developer &amp; UI Lead | JAN 2024 to APR 2024
-                  </span>
-                </div>
-                <div className="max-w-2xl space-y-3 text-[15px] leading-7 text-[#1e1c0b]/82 sm:text-base">
-                  <p>
-                    Led a full UI/UX overhaul of a student organization platform
-                    serving 500+ members, with emphasis on accessibility and inclusive
-                    design.
-                  </p>
-                  <p>
-                    Bridged design and engineering by building frontend components,
-                    ensuring high-fidelity execution and a smooth design-to-dev
-                    handoff.
-                  </p>
-                  <p>
-                    Ran user feedback sessions to uncover pain points and guide
-                    iterative improvements, resulting in a more intuitive and engaging
-                    digital experience.
+                    Produced 30+ data-driven graphics for LinkedIn and Instagram to
+                    visualize complex discussion themes and increase audience
+                    engagement.
                   </p>
                 </div>
               </div>
