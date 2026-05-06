@@ -175,7 +175,7 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
             Projects
           </Link>
 
-          <p className={`mb-5 ${LABEL}`}>Case study</p>
+          <p className={`mb-5 ${LABEL}`}>{n.kicker}</p>
 
           <h1 className={`text-5xl font-black uppercase leading-[0.95] tracking-tight text-[color:var(--accent-red)] md:text-6xl ${HL}`}>
             {n.displayTitle}
@@ -188,6 +188,41 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
           <p className={`mt-5 text-xs leading-relaxed text-[#1e1c0b]/64 ${HL} font-medium uppercase tracking-wider`}>
             {n.roleLine}
           </p>
+
+          {/* Team + tech stack metadata — only rendered when the narrative supplies them */}
+          {(n.team || n.techStack) && (
+            <div className="mt-8 space-y-6">
+              {n.team && (
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                  <div className="rounded-[2px] border border-[#1e1c0b]/15 bg-[#fff9e8] p-5 shadow-[0_6px_20px_rgba(30,28,11,0.05)]">
+                    <p className={`text-xs font-bold uppercase tracking-wider text-[#1e1c0b]/70 ${HL}`}>Role</p>
+                    <p className={`mt-1 text-sm font-medium leading-relaxed text-[#1e1c0b]/88 ${BODY}`}>{n.roleLine.replace(/^Role:\s*/i, "")}</p>
+                  </div>
+                  <div className="rounded-[2px] border border-[#1e1c0b]/15 bg-[#fff9e8] p-5 shadow-[0_6px_20px_rgba(30,28,11,0.05)] sm:col-span-2">
+                    <p className={`text-xs font-bold uppercase tracking-wider text-[#1e1c0b]/70 ${HL}`}>Team</p>
+                    <p className={`mt-1 text-sm font-medium leading-relaxed text-[#1e1c0b]/88 ${BODY}`}>{n.team}</p>
+                  </div>
+                </div>
+              )}
+              {n.techStack && (
+                <div>
+                  <p className={`mb-3 text-xs font-bold uppercase tracking-widest text-[#1e1c0b]/62 ${HL}`}>
+                    Tech stack
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {n.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className={`rounded-[2px] border border-[color:var(--accent-red)] bg-[color:var(--accent-red)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#fff9e8] ${HL}`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
@@ -322,18 +357,71 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
 
                 <div className="space-y-10 sm:space-y-12">
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Design strategy</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>
+                      {n.strategicLogic.designStrategyHeading ?? "Design strategy"}
+                    </h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.strategicLogic.designStrategy} />
                     </p>
                   </div>
 
                   <div>
-                    <h2 className={`mb-3 ${SECTION_HEADING}`}>Visual identity</h2>
+                    <h2 className={`mb-3 ${SECTION_HEADING}`}>
+                      {n.strategicLogic.visualIdentityHeading ?? "Visual identity"}
+                    </h2>
                     <p className={PROSE}>
                       <NarrativeRichText text={n.strategicLogic.visualIdentity} />
                     </p>
                   </div>
+
+                  {/* Process screenshots — wireframes / flow evidence */}
+                  {n.strategicLogic.processImages && n.strategicLogic.processImages.length > 0 && (
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                      {n.strategicLogic.processImages.map((img) => (
+                        <figure key={img.src} className="flex flex-col gap-3">
+                          <div className="overflow-hidden rounded-[2px] border border-[color:var(--accent-red)]/20 bg-[#fff9e8] shadow-[0_10px_28px_rgba(30,28,11,0.10)]">
+                            <Image
+                              src={img.src}
+                              alt={img.alt}
+                              width={1280}
+                              height={800}
+                              className="w-full object-cover object-top"
+                              sizes="(max-width: 640px) 100vw, 33vw"
+                            />
+                          </div>
+                          <figcaption className={`text-[11px] font-medium uppercase tracking-[0.18em] text-[#1e1c0b]/50 ${HL}`}>
+                            {img.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Persona cards — rendered as a 2-col image grid with captions */}
+                  {n.strategicLogic.personaImages && n.strategicLogic.personaImages.length > 0 && (
+                    <div>
+                      <h2 className={`mb-6 ${SECTION_HEADING}`}>User personas</h2>
+                      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        {n.strategicLogic.personaImages.map((img) => (
+                          <figure key={img.src} className="flex flex-col gap-3">
+                            <div className="overflow-hidden rounded-[2px] border border-[color:var(--accent-red)]/20 bg-[#fff9e8] shadow-[0_10px_28px_rgba(30,28,11,0.08)]">
+                              <Image
+                                src={img.src}
+                                alt={img.alt}
+                                width={1200}
+                                height={1600}
+                                className="w-full object-contain object-top"
+                                sizes="(max-width: 640px) 100vw, 50vw"
+                              />
+                            </div>
+                            <figcaption className={`text-[11px] font-medium uppercase tracking-[0.18em] text-[#1e1c0b]/50 ${HL}`}>
+                              {img.caption}
+                            </figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </section>
 
@@ -342,6 +430,20 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
                 <p className={`mb-8 ${LABEL}`}>3. The solution</p>
 
                 <div>
+                  {/* Landing / hero screenshot — anchors the section visually before prose */}
+                  {n.solution.heroImage && (
+                    <div className="mb-10 overflow-hidden rounded-[2px] border border-[color:var(--accent-red)]/20 shadow-[0_14px_34px_rgba(30,28,11,0.12)]">
+                      <Image
+                        src={n.solution.heroImage.src}
+                        alt={n.solution.heroImage.alt}
+                        width={1920}
+                        height={1080}
+                        className="w-full object-cover object-top"
+                        sizes="(max-width: 1024px) 100vw, 70vw"
+                      />
+                    </div>
+                  )}
+
                   <h2 className={`mb-3 ${SECTION_HEADING}`}>High-fidelity execution</h2>
                   <p className={PROSE}>
                     <NarrativeRichText text={n.solution.body} />
@@ -357,8 +459,70 @@ export function NarrativeCaseStudyDocs({ narrative: n }: Props) {
                       />
                     ))}
                   </div>
+
+                  {/* Figma prototype embed */}
+                  {n.solution.prototypeEmbedUrl && (
+                    <div className="mt-12">
+                      <h2 className={`mb-6 ${SECTION_HEADING}`}>Interactive prototype</h2>
+                      <div className="overflow-hidden rounded-[2px] border border-[color:var(--accent-red)]/20 bg-[#fff9e8]">
+                        <iframe
+                          title="Figma prototype"
+                          className="block h-[min(520px,78vh)] min-h-[360px] w-full border-0 sm:h-[600px] sm:min-h-[600px]"
+                          src={n.solution.prototypeEmbedUrl}
+                          allowFullScreen
+                        />
+                      </div>
+                      <p className={`mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#1e1c0b]/50 ${HL}`}>
+                        Interactive prototype (Figma)
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Additional final screens — labeled figures */}
+                  {n.solution.additionalScreens && n.solution.additionalScreens.length > 0 && (
+                    <div className="mt-12 space-y-12">
+                      {n.solution.additionalScreens.map((screen) => (
+                        <figure key={screen.src} className="flex flex-col gap-3">
+                          <h3 className={`text-xl font-medium leading-tight tracking-tight text-[#1e1c0b] md:text-2xl ${HL}`}>
+                            {screen.title}
+                          </h3>
+                          <div className="overflow-hidden rounded-[2px] border border-[color:var(--accent-red)]/20 bg-[#fff9e8] shadow-[0_10px_28px_rgba(30,28,11,0.08)]">
+                            <Image
+                              src={screen.src}
+                              alt={screen.alt}
+                              width={1920}
+                              height={1080}
+                              className="w-full object-cover object-top"
+                              sizes="(max-width: 1024px) 100vw, 70vw"
+                            />
+                          </div>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </section>
+
+              {/* Full-bleed interruption image — shown between solution and outcome when present */}
+              {n.solution.fullBleedImage && (
+                <div className="-mx-6 mb-16 sm:-mx-8 md:mx-0 md:mb-24">
+                  <figure className="flex flex-col gap-3">
+                    <div className="overflow-hidden border-y border-[color:var(--accent-red)]/20 md:rounded-[2px] md:border shadow-[0_14px_40px_rgba(30,28,11,0.13)]">
+                      <Image
+                        src={n.solution.fullBleedImage.src}
+                        alt={n.solution.fullBleedImage.alt}
+                        width={1920}
+                        height={1080}
+                        className="w-full object-cover object-top"
+                        sizes="(max-width: 1024px) 100vw, 70vw"
+                      />
+                    </div>
+                    <figcaption className={`px-6 text-[11px] font-medium uppercase tracking-[0.18em] text-[#1e1c0b]/50 md:px-0 ${HL}`}>
+                      {n.solution.fullBleedCaption}
+                    </figcaption>
+                  </figure>
+                </div>
+              )}
 
               {/* 4. The outcome */}
               <section id="outcome" className="scroll-mt-28">

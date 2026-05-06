@@ -1,5 +1,6 @@
 import {
   GIGATAX_NARRATIVE,
+  GROUNDED_TALKS_NARRATIVE,
   MSA_UTA_NARRATIVE,
   NAFS_NARRATIVE,
   TANZEEL_NARRATIVE,
@@ -48,6 +49,15 @@ export const PROJECT_REGISTRY: Record<string, ProjectCardConfig> = {
     narrativeCaseStudy: TANZEEL_NARRATIVE,
   },
 
+  "grounded-talks": {
+    slug: "grounded-talks",
+    primaryHref: "https://www.figma.com/proto/JCudWWWOUFPvT874qDMIGH?node-id=618-338&t=ZT80TGs74DUIt1r2-6",
+    primaryLabel: "View Prototype",
+    primaryExternal: true,
+    showPrimary: true,
+    narrativeCaseStudy: GROUNDED_TALKS_NARRATIVE,
+  },
+
   "graphic-design": {
     slug: "graphic-design",
     primaryHref: "/projects/posters",
@@ -59,53 +69,98 @@ export const PROJECT_REGISTRY: Record<string, ProjectCardConfig> = {
       brandStrategy: {
         typography: [
           {
-            name: "Poster display",
-            role: "Epilogue / condensed grotesk at poster scale",
+            name: "Display type as image",
+            role: "Typography in these posters is treated as a visual element first, not a legibility tool. Scale, weight, and placement carry emotional charge before the words are read.",
             sample: "ALL TIME HIGH · TOUR",
           },
           {
-            name: "Annotation",
-            role: "Manrope for objectives in portfolio",
-            sample: "Objective · Visual logic",
+            name: "Contrast as hierarchy",
+            role: "Every piece uses high contrast to establish read-order without relying on color alone. The eye lands on the right element even at reduced size or in low light.",
+            sample: "Halftone · Silhouette · Cut type",
+          },
+          {
+            name: "Texture and print reference",
+            role: "Grain, halftone, and distress are intentional signals, not decoration. They reference specific print traditions: zine culture, screenprint, vintage offset.",
+            sample: "Quran Night · Retro Gundam · Dreaming",
           },
         ],
         colors: [
-          { name: "Gallery cream", hex: "#FDF9EA", usage: "Digital gallery field; matches site Kanso base." },
-          { name: "Accent red", hex: "#AF101A", usage: "1px frames + key emphasis in UI chrome only." },
-          { name: "True black (print)", hex: "#0A0A0A", usage: "Referenced for halftone and ink-heavy pieces in docs." },
+          {
+            name: "Context-specific palettes",
+            hex: "#0A0A0A",
+            usage: "Each poster is built around the constraints of its brief. Event posters lean warm and photographic. Speculative and experimental work uses limited, high-contrast palettes closer to screenprint.",
+          },
+          {
+            name: "Dark fields as composition",
+            hex: "#1A1A1A",
+            usage: "Dark grounds are a recurring structural choice. They isolate subjects, add weight, and keep the overall feel legible and punchy at any scale.",
+          },
+          {
+            name: "Accent color as focal point",
+            hex: "#AF101A",
+            usage: "A single saturated accent per piece focuses attention. The red frame in Retro Gundam, the cyan bar in I Won't Tell, the neon in Future Folklore — each functions as a deliberate visual stop.",
+          },
         ],
       },
       componentArchitecture: [
         {
-          name: "Poster tile",
+          name: "All Time High Tour",
           functionalLogic:
-            "Aspect ratio locked; hover scale 1.02 + title/year overlay for scan without opening lightbox.",
+            "Promote a local DIY punk show with a raw, high-energy identity. High-contrast halftone and cut-and-paste type reference 90s zine culture and classic punk flyers.",
         },
         {
-          name: "Lightbox",
+          name: "Dreaming",
           functionalLogic:
-            "Cream full-screen field isolates print work from noisy page chrome.",
+            "Capture a surreal, subconscious mood using gritty lo-fi visual language. Silhouette and airbrushed glow sit on dense texture so depth and mystery stay legible at poster scale.",
         },
         {
-          name: "Strategic blurb block",
+          name: "Retro Gundam Screenprint",
           functionalLogic:
-            "Objective vs Visual logic trains clients to read intent before craft detail.",
+            "Evoke nostalgia for classic mecha anime with a distressed, limited-palette graphic. Complementary orange and purple on a dark field, framed by a bold red edge for vintage print impact.",
+        },
+        {
+          name: "I Won't Tell",
+          functionalLogic:
+            "Bridge classical sculpture and digital print with a provocative take on secrecy and identity. Halftone pattern and a censorship strip focus attention on what is withheld, not shown.",
+        },
+        {
+          name: "Showdown Nights After Hours",
+          functionalLogic:
+            "Promote a late-night community program that balances energy, clarity, and spiritual tone. Celestial backdrop with metallic type keeps hierarchy readable over a busy photographic scene.",
+        },
+        {
+          name: "Quran Night: The Serenity of Remembrance",
+          functionalLogic:
+            "Design a dignified invite for a university spiritual event that welcomes students and guests. Warm dark palette, script headline, and serif detail signal tradition and calm in one glance.",
+        },
+        {
+          name: "Future Folklore Festival",
+          functionalLogic:
+            "Promote a fictional festival blending North African heritage with a far-future cyberpunk lens. Neon gradients and scanline texture sell retro-futurism without losing cultural silhouette.",
         },
       ],
       userFlows: [
         {
-          title: "Curator → evaluate craft",
-          why: "Grid spacing (ma) prevents visual competition between posters; each piece breathes independently.",
+          title: "Objective before execution",
+          why: "Every piece starts with a clear brief: what needs to be communicated, to whom, and in what context. Visual decisions follow from that constraint, not the other way around.",
         },
         {
-          title: "Art director → steal with pride",
-          why: "Lightbox reveals full bleed for texture/halftone decisions that thumbnails hide.",
+          title: "Print tradition as reference",
+          why: "Zine culture, screenprint, vintage offset, and halftone photography are deliberate reference points, not aesthetic accidents. Knowing the tradition makes the departure intentional.",
+        },
+        {
+          title: "Legibility under real conditions",
+          why: "Posters are read at distance, at small size, in feeds, and in low light. Every composition is stress-tested for read-order and contrast before it's finished.",
         },
       ],
       technicalExecution: [
         {
-          title: "Data-driven poster list",
-          notes: `Posters load from data/posters.json; Next/Image uses intrinsic dimensions to avoid layout shift. ${vibeCodingNotes}`,
+          title: "Tools and process",
+          notes: `Primary tools: Adobe Illustrator, Photoshop, and Figma depending on the piece. Print-informed work (halftone, screenprint simulation) is produced in Photoshop with custom halftone screens and grain overlays. Vector and type-heavy work lives in Illustrator. Final exports are optimized for both digital display and print-ready output where the brief requires it.`,
+        },
+        {
+          title: "Gallery implementation",
+          notes: `Posters load from data/posters.json with intrinsic dimensions to avoid layout shift. Each entry carries an objective and visual logic field that surfaces the design rationale inline with the work. ${vibeCodingNotes}`,
           code: `import data from "@/data/posters.json";
 export const posters = data.posters;`,
           language: "ts",

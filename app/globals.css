@@ -6,24 +6,19 @@
   --kanso-ink: #000000;
   --kanso-beni: #af101a;
   --accent-red: var(--kanso-beni);
-  /* Legacy token aliases (avoid breaking arbitrary refs) */
+  /* Legacy token aliases */
   --bg-deep: var(--kanso-cream);
   --fg-stark: var(--kanso-ink);
-  --neon-green: var(--kanso-beni);
-  --grid-line: transparent;
 }
 
 @theme inline {
   --color-bg-deep: var(--kanso-cream);
   --color-fg-stark: var(--kanso-ink);
-  --color-neon-green: var(--kanso-beni);
   --color-kanso-cream: var(--kanso-cream);
   --color-kanso-ink: var(--kanso-ink);
   --color-kanso-beni: var(--kanso-beni);
   --font-display: var(--font-kanso-heading), ui-sans-serif, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
-  --background: var(--kanso-cream);
-  --foreground: var(--kanso-ink);
 }
 
 @keyframes marquee {
@@ -77,11 +72,6 @@ body::before {
   background-size: 128px 128px;
 }
 
-.crt-scanlines,
-.noise-grain {
-  display: none;
-}
-
 .marquee-track {
   animation: marquee 28s linear infinite;
 }
@@ -104,13 +94,14 @@ body::before {
 
 /* Hard offset shadow — the defining motif of 1970s Japanese poster design */
 .kanso-card {
-  border: 2px solid #af101a;
-  box-shadow: 4px 4px 0px #af101a;
+  border: 2px solid var(--kanso-beni);
+  box-shadow: 4px 4px 0px var(--kanso-beni);
 }
 
+/* Featured: ink shadow intentionally grounds the card with more visual weight than standard red */
 .kanso-card-featured {
-  border: 3px solid #af101a;
-  box-shadow: 6px 6px 0px #1e1c0b;
+  border: 3px solid var(--kanso-beni);
+  box-shadow: 6px 6px 0px var(--kanso-ink);
 }
 
 /* Horizontal rule: the "ma" spacer from Japanese print composition */

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ProjectCardActions } from "@/components/projects/ProjectCardActions";
 import { getProjectConfig } from "@/lib/project-registry";
@@ -33,6 +33,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 export function StitchProjectsIndex() {
   const gigatax = getProjectConfig("gigatax");
   const msa = getProjectConfig("msa-uta");
+  const grounded = getProjectConfig("grounded-talks");
   const nafs = getProjectConfig("nafs-fyi");
   const tanzeel = getProjectConfig("tanzeel-initiative");
   const graphic = getProjectConfig("graphic-design");
@@ -198,13 +199,15 @@ export function StitchProjectsIndex() {
                 <Tag>UI/UX design</Tag>
                 <Tag>Creative &amp; marketing strategy</Tag>
               </div>
-              <Link
-                href="/projects/grounded-talks"
-                className={`mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-tighter text-[#af101a] hover:underline ${HEADLINE}`}
-              >
-                Read case study
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              {grounded ? (
+                <ProjectCardActions
+                  docsSlug={grounded.slug}
+                  primaryHref={grounded.primaryHref}
+                  primaryLabel={grounded.primaryLabel}
+                  primaryExternal={grounded.primaryExternal}
+                  showPrimary={grounded.showPrimary}
+                />
+              ) : null}
             </div>
           </article>
 
